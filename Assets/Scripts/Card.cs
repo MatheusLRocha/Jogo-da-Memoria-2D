@@ -24,16 +24,17 @@ public class Card : MonoBehaviour
         InteligenciaArtificialAplicada,
     }
 
-    public CardType cardType;
-    public CardState cardState;
-
-    // Cria estados da carta para modificar as animações
+// Cria estados da carta para modificar as animações
     public enum CardState
     {
         Idle,
         Selected,
     }
 
+    public CardType cardType;
+    public CardState cardState;
+
+    
     void Start()
     {
         // Pega o componente Animator do objeto
