@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
+                //Muda o estado das cartas para Matched e depois destroi os objetos (O estado Matched ainda não tem um uso definido)
+                cardJogador1.ChangeState(Card.CardState.Matched);
+                cardJogador2.ChangeState(Card.CardState.Matched);                   
+                Destroy(cardJogador1.gameObject);
+                Destroy(cardJogador2.gameObject);
             }
             else
             {
