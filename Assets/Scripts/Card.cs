@@ -29,6 +29,7 @@ public class Card : MonoBehaviour
     {
         Idle,
         Selected,
+        Matched,
     }
 
     public CardType cardType;

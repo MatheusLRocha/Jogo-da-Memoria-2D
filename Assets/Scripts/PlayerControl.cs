@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -38,6 +39,7 @@ public class PlayerControl : MonoBehaviour
                 ChangeCard(1);
             else if (Keyboard.current.aKey.wasPressedThisFrame)
                 ChangeCard(-1);
+                
         }
         else if (playerID == 2)
         {
@@ -61,29 +63,53 @@ public class PlayerControl : MonoBehaviour
 
     void ChangeCard(int direction)
     {
-        // Limpa a seleção da carta anterior
-        cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
-
-        // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
-        Card card = cards[currentIndex].GetComponent<Card>();
-        card.ChangeState(Card.CardState.Idle);
-
-        int newIndex = currentIndex + direction;
-
-        if (newIndex > cards.Count - 1)
+        // Limpa a seleção da carta anterior e pula se a carta já tiver sido destruída
+        if (cards[currentIndex] != null)
         {
-            newIndex = 0;
+            cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
+        
+        
+
+            // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
+            Card card = cards[currentIndex].GetComponent<Card>();
+            card.ChangeState(Card.CardState.Idle);
+
+            int newIndex = currentIndex + direction;
+
+            if (newIndex > cards.Count - 1)
+            {
+                newIndex = 0;
+            }
+            else if (newIndex < 0)
+            {
+                newIndex = cards.Count - 1;
+            }
+        
+            currentIndex = newIndex;
         }
-        else if (newIndex < 0)
+
+        else if (cards[currentIndex] == null)
         {
-            newIndex = cards.Count - 1;
+            while (cards[currentIndex] == null)
+            {
+                currentIndex += direction;
+                if (currentIndex > cards.Count - 1)
+            {
+                currentIndex = 0;
+            }
+            else if (currentIndex < 0)
+            {
+                currentIndex = cards.Count - 1;
+            }
+        
+            }
         }
-
-
-        currentIndex = newIndex;
+        
 
         // Seleciona a próxima carta
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
-    }
 
+        
+    }
 }
+
