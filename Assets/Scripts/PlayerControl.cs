@@ -88,12 +88,12 @@ public class PlayerControl : MonoBehaviour
             currentIndex = newIndex;
         }
 
-        else if (cards[currentIndex] == null)
+        // Verifica os índices dos objetos destruídos
+        while (cards[currentIndex] == null)
         {
-            while (cards[currentIndex] == null)
-            {
-                currentIndex += direction;
-                if (currentIndex > cards.Count - 1)
+            // Equanto estiver percorrendo pelo objeto destruído, muda o índice até o próximo valor existente
+            currentIndex += direction;
+            if (currentIndex > cards.Count - 1)
             {
                 currentIndex = 0;
             }
@@ -102,7 +102,6 @@ public class PlayerControl : MonoBehaviour
                 currentIndex = cards.Count - 1;
             }
         
-            }
         }
         
 
