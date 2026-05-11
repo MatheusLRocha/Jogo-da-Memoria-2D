@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -38,6 +39,7 @@ public class PlayerControl : MonoBehaviour
                 ChangeCard(1);
             else if (Keyboard.current.aKey.wasPressedThisFrame)
                 ChangeCard(-1);
+                
         }
         else if (playerID == 2)
         {
@@ -61,29 +63,55 @@ public class PlayerControl : MonoBehaviour
 
     void ChangeCard(int direction)
     {
-        // Limpa a seleção da carta anterior
-        cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
-
-        // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
-        Card card = cards[currentIndex].GetComponent<Card>();
-        card.ChangeState(Card.CardState.Idle);
-
-        int newIndex = currentIndex + direction;
-
-        if (newIndex > cards.Count - 1)
+        // Limpa a seleção da carta anterior e pula se a carta já tiver sido destruída
+        if (cards[currentIndex] != null)
         {
-            newIndex = 0;
+            cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
+        
+        
+
+            // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
+            Card card = cards[currentIndex].GetComponent<Card>();
+            card.ChangeState(Card.CardState.Idle);
+
+            int newIndex = currentIndex + direction;
+
+            if (newIndex > cards.Count - 1)
+            {
+                // Se o índice novo for maior que do o índice da última carta da fileira, volta para o início
+                newIndex = 0;
+            }
+            else if (newIndex < 0)
+            {
+                // Se o índice novo for menor que a primeira carta da fileira, vai para o fim
+                newIndex = cards.Count - 1;
+            }
+        
+            currentIndex = newIndex;
         }
-        else if (newIndex < 0)
+
+        // Verifica as cartas destruídas
+        while (cards[currentIndex] == null)
         {
-            newIndex = cards.Count - 1;
+            // Se o índice atual estiver com a carta destruída, avança de acordo com a direção indicada
+            currentIndex += direction;
+
+            // Verifica se o índice é menor que a menor carta ou maior que a última carta
+            if (currentIndex > cards.Count - 1)
+            {
+                currentIndex = 0;
+            }
+            else if (currentIndex < 0)
+            {
+                currentIndex = cards.Count - 1;
+            }
         }
-
-
-        currentIndex = newIndex;
+        
 
         // Seleciona a próxima carta
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
-    }
 
+        
+    }
 }
+

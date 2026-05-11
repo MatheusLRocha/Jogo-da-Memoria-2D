@@ -51,6 +51,10 @@ public class Card : MonoBehaviour
         else if (cardState == CardState.Selected)
         {
             anim.SetBool("isSelected", false);
+        } 
+        else if (cardState == CardState.Matched)
+        {
+            anim.SetBool("isMatched", false);
         }
 
         // Variável recebe o novo estado
@@ -64,6 +68,10 @@ public class Card : MonoBehaviour
         else if (cardState == CardState.Selected)
         {
             anim.SetBool("isSelected", true);
+        }
+        else if (cardState == CardState.Matched)
+        {
+            anim.SetBool("isMatched", true);
         }
     }
 }
