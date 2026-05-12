@@ -30,6 +30,7 @@ public class Card : MonoBehaviour
         Idle,
         Selected,
         Matched,
+        Dismatched
     }
 
     public CardType cardType;
@@ -53,6 +54,12 @@ public class Card : MonoBehaviour
         else if (cardState == CardState.Selected)
         {
             anim.SetBool("isSelected", false);
+        } else if (cardState == CardState.Matched)
+        {
+            anim.SetBool("isMatched", false);
+        } else if (cardState == CardState.Dismatched)
+        {
+            anim.SetBool("isDismatched", false);
         }
 
         // Variável recebe o novo estado
@@ -66,6 +73,12 @@ public class Card : MonoBehaviour
         else if (cardState == CardState.Selected)
         {
             anim.SetBool("isSelected", true);
+        } else if (cardState == CardState.Matched)
+        {
+            anim.SetBool("isMatched", true);
+        } else if (cardState == CardState.Dismatched)
+        {
+            anim.SetBool("isDismatched", true);
         }
     }
 }
