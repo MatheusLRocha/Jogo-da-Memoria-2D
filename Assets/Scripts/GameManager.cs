@@ -47,14 +47,16 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
-                //Muda o estado das cartas para Matched e depois destroi os objetos (O estado Matched ainda não tem um uso definido)
+                //Muda o estado das cartas para Matched e depois destroi os objetos
                 cardJogador1.ChangeState(Card.CardState.Matched);
                 cardJogador2.ChangeState(Card.CardState.Matched);                   
-                Destroy(cardJogador1.gameObject);
-                Destroy(cardJogador2.gameObject);
+                //Destroy(cardJogador1.gameObject);
+                //Destroy(cardJogador2.gameObject);
             }
             else
             {
+                cardJogador1.ChangeState(Card.CardState.Dismatched);
+                cardJogador2.ChangeState(Card.CardState.Dismatched);
                 Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(-1);
             }
