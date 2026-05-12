@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour
                 UpdatePoints(1);
                 //Muda o estado das cartas para Matched e depois destroi os objetos
                 cardJogador1.ChangeState(Card.CardState.Matched);
-                cardJogador2.ChangeState(Card.CardState.Matched);                   
+                cardJogador2.ChangeState(Card.CardState.Matched);
+                cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
+                cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue;                  
                 //Destroy(cardJogador1.gameObject);
                 //Destroy(cardJogador2.gameObject);
             }
