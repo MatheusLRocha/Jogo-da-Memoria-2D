@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEditor.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,22 +49,18 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
                 //Muda o estado das cartas para Matched e depois destroi os objetos
-                cardJogador1.ChangeState(Card.CardState.Matched);
-                cardJogador2.ChangeState(Card.CardState.Matched);                   
+                StartCoroutine(TrocarAnimacao(Card.CardState.Matched));                   
                 //Destroy(cardJogador1.gameObject);
                 //Destroy(cardJogador2.gameObject);
             }
             else
             {
-                cardJogador1.ChangeState(Card.CardState.Dismatched);
-                cardJogador2.ChangeState(Card.CardState.Dismatched);
+                StartCoroutine(TrocarAnimacao(Card.CardState.Dismatched));
                 Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(-1);
             }
 
-            // Limpa os valores para a próxima rodada
-            cardJogador1 = null;
-            cardJogador2 = null;
+            
         }
     }
 
@@ -71,5 +68,28 @@ public class GameManager : MonoBehaviour
     {
         currentPoints += value;
         scoreText.text = currentPoints + "/5"; 
+    }
+
+
+    // Coroutine que serve como um "temporizador" para trocar e limpar a animação
+    IEnumerator TrocarAnimacao(Card.CardState animacao)
+    {
+        yield return new WaitForSeconds(1f);
+
+        cardJogador1.ChangeState(animacao);
+        cardJogador2.ChangeState(animacao);
+
+        // yield return serve para "pausar" a coroutine por um certo tempo e depois continuar o resto de sua execução se tiver após ele
+        yield return new WaitForSeconds(1.5f); 
+
+        Debug.Log("Coroutine feita após 1.5s");
+
+        // Verifica se as cartas não estão nulas para aplicar as animações
+        if (cardJogador1 != null) cardJogador1.ChangeState(Card.CardState.Idle);
+        if (cardJogador2 != null) cardJogador2.ChangeState(Card.CardState.Idle);
+
+        // Limpa os valores para a próxima rodada após executar todas as animações
+        cardJogador1 = null;
+        cardJogador2 = null;
     }
 }
