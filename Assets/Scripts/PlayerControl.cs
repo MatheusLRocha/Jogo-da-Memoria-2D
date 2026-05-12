@@ -61,10 +61,10 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void ChangeCard(int direction)
+    public void ChangeCard(int direction)
     {
         // Limpa a seleção da carta anterior e pula se a carta já tiver sido destruída
-        if (cards[currentIndex] != null)
+        if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
         {
             cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
         
@@ -89,7 +89,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         // Verifica os índices dos objetos destruídos
-        while (cards[currentIndex] == null)
+        while (cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched)
         {
             // Equanto estiver percorrendo pelo objeto destruído, muda o índice até o próximo valor existente
             currentIndex += direction;

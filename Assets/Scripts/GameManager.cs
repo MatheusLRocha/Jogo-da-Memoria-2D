@@ -49,6 +49,10 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
                 //Muda o estado das cartas para Matched e depois destroi os objetos
+                cardJogador1.ChangeState(Card.CardState.Matched);
+                cardJogador2.ChangeState(Card.CardState.Matched);
+                cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
+                cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue;                  
                 StartCoroutine(TrocarAnimacao(Card.CardState.Matched));                   
                 //Destroy(cardJogador1.gameObject);
                 //Destroy(cardJogador2.gameObject);
