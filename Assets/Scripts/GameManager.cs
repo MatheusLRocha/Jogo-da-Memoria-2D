@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEditor.SceneManagement;
 using System.Collections;
+using Unity.VectorGraphics;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +34,12 @@ public class GameManager : MonoBehaviour
     // Cria variável para mexer no texto
     public TextMeshProUGUI scoreText;
     int currentPoints = 0;
+
+    // Verifica frame por frame se os pontos chegaram no limite
+    void Update()
+    {
+        EndGame(currentPoints);
+    }
 
     // Função verifica a compatibilidade entre a carta do jogador 1 de do jogador 2 para pontuação
     public void VerificarTipos(int id, Card card)
@@ -66,6 +74,15 @@ public class GameManager : MonoBehaviour
             cardJogador1 = null;
             cardJogador2 = null;
         }
+    }
+
+    // Verifica a pontuação para finalizar o jogo
+    void EndGame(int points)
+    {
+        if (points == 5)
+        {
+            SceneManager.LoadScene("SampleScene");
+        } 
     }
 
     void UpdatePoints(int value)
