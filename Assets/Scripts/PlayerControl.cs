@@ -101,7 +101,6 @@ public class PlayerControl : MonoBehaviour
             {
                 currentIndex = cards.Count - 1;
             }
-        
         }
         
 

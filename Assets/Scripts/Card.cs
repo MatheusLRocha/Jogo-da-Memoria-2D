@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -47,38 +48,32 @@ public class Card : MonoBehaviour
     public void ChangeState(CardState newState)
     {
         // Limpa os estados antigos para usar os novos
-        if (cardState == CardState.Idle)
-        {
-            anim.SetBool("isIdle", false);
-        }
-        else if (cardState == CardState.Selected)
-        {
-            anim.SetBool("isSelected", false);
-        } else if (cardState == CardState.Matched)
-        {
-            anim.SetBool("isMatched", false);
-        } else if (cardState == CardState.Dismatched)
-        {
-            anim.SetBool("isDismatched", false);
-        }
+        anim.SetBool("isIdle", false);
+        anim.SetBool("isSelected", false);
+        anim.SetBool("isMatched", false);
+        anim.SetBool("isDismatched", false);
 
         // Variável recebe o novo estado
         cardState = newState;
 
         // Atualiza os estados
-        if (cardState == CardState.Idle)
+        switch (cardState) 
         {
-            anim.SetBool("isIdle", true);
-        }
-        else if (cardState == CardState.Selected)
-        {
-            anim.SetBool("isSelected", true);
-        } else if (cardState == CardState.Matched)
-        {
-            anim.SetBool("isMatched", true);
-        } else if (cardState == CardState.Dismatched)
-        {
-            anim.SetBool("isDismatched", true);
+            case CardState.Idle:
+                anim.SetBool("isIdle", true);
+                break;
+            
+            case CardState.Selected:
+                anim.SetBool("isSelected", true);
+                break;
+
+            case CardState.Matched:
+                anim.SetBool("isMatched", true);
+                break;
+
+            case CardState.Dismatched:
+                anim.SetBool("isDismatched", true);
+                break;
         }
     }
 }
