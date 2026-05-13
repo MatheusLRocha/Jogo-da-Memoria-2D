@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviour
                 UpdatePoints(-1);
             }
 
-            
+            cardJogador1 = null;
+            cardJogador2 = null;
         }
     }
 

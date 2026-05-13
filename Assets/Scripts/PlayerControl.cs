@@ -64,6 +64,7 @@ public class PlayerControl : MonoBehaviour
     public void ChangeCard(int direction)
     {
         // Limpa a seleção da carta anterior e pula se a carta já tiver sido destruída
+
         if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
         {
             cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
