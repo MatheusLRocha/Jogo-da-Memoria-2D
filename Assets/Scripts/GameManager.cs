@@ -61,16 +61,18 @@ public class GameManager : MonoBehaviour
                 cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue;                  
                 
                 cardJogador1.ChangeState(Card.CardState.Matched);
-                cardJogador2.ChangeState(Card.CardState.Matched);                   
+                cardJogador2.ChangeState(Card.CardState.Matched);              
             }
             else
             {
-                cardJogador1.ChangeState(Card.CardState.Dismatched);
-                cardJogador1.ChangeState(Card.CardState.Dismatched);
                 Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(-1);
+
+                cardJogador1.ChangeState(Card.CardState.Dismatched);
+                cardJogador2.ChangeState(Card.CardState.Dismatched);
             }
 
+            // Limpa as cartas para a próxima jogada
             cardJogador1 = null;
             cardJogador2 = null;
         }
