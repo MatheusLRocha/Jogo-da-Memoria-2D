@@ -48,11 +48,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
-                //Muda o estado das cartas para Matched e depois destroi os objetos
-                cardJogador1.ChangeState(Card.CardState.Matched);
-                cardJogador2.ChangeState(Card.CardState.Matched);
-                cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
-                cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue;                  
+                //Muda o estado das cartas para Matched e depois destroi os objetos                 
                 StartCoroutine(TrocarAnimacao(Card.CardState.Matched));                   
                 //Destroy(cardJogador1.gameObject);
                 //Destroy(cardJogador2.gameObject);
@@ -78,10 +74,16 @@ public class GameManager : MonoBehaviour
     // Coroutine que serve como um "temporizador" para trocar e limpar a animação
     IEnumerator TrocarAnimacao(Card.CardState animacao)
     {
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
 
         cardJogador1.ChangeState(animacao);
         cardJogador2.ChangeState(animacao);
+        if (animacao == Card.CardState.Matched)
+        {
+            cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
+            cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue; 
+        }
+        
 
         // yield return serve para "pausar" a coroutine por um certo tempo e depois continuar o resto de sua execução se tiver após ele
         yield return new WaitForSeconds(1.5f); 
@@ -89,8 +91,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Coroutine feita após 1.5s");
 
         // Verifica se as cartas não estão nulas para aplicar as animações
-        if (cardJogador1 != null) cardJogador1.ChangeState(Card.CardState.Idle);
-        if (cardJogador2 != null) cardJogador2.ChangeState(Card.CardState.Idle);
+        //if (cardJogador1 != null) cardJogador1.ChangeState(Card.CardState.Idle);
+        //if (cardJogador2 != null) cardJogador2.ChangeState(Card.CardState.Idle);
 
         // Limpa os valores para a próxima rodada após executar todas as animações
         cardJogador1 = null;
