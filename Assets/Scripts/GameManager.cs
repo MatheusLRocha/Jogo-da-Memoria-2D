@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEditor.SceneManagement;
 using System.Collections;
+using Unity.VectorGraphics;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +35,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     int currentPoints = 0;
 
+    // Verifica frame por frame se os pontos chegaram no limite
+    void Update()
+    {
+        EndGame(currentPoints);
+    }
+
     // Função verifica a compatibilidade entre a carta do jogador 1 de do jogador 2 para pontuação
     public void VerificarTipos(int id, Card card)
     {
@@ -55,24 +63,29 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(TrocarAnimacao(Card.CardState.Dismatched));
                 Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(-1);
+
+                cardJogador1.ChangeState(Card.CardState.Dismatched);
+                cardJogador2.ChangeState(Card.CardState.Dismatched);
             }
 
-            
+            // Limpa as cartas para a próxima jogada
+            cardJogador1 = null;
+            cardJogador2 = null;
         }
     }
 
-    void UpdatePoints(int value)
+    // Verifica a pontuação para finalizar o jogo
+    void EndGame(int points)
     {
-        currentPoints += value;
-        scoreText.text = currentPoints + "/5"; 
+        if (points == 5)
+        {
+            SceneManager.LoadScene("SampleScene");
+        } 
     }
 
-
-    // Coroutine que serve como um "temporizador" para trocar e limpar a animação
-    IEnumerator TrocarAnimacao(Card.CardState animacao)
+    void UpdatePoints(int value)
     {
         //yield return new WaitForSeconds(1f);
 
