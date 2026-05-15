@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -59,6 +60,7 @@ public class PlayerControl : MonoBehaviour
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
             GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
             ChangeCard(1);
+            WindowManager.instance.hasMatched = true;
         }
     }
 

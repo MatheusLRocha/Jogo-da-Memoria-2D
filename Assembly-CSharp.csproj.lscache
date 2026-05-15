@@ -54,6 +54,8 @@ Assets/Scripts/
  Card.cs
  GameManager.cs
  PlayerControl.cs
+ ScrpitableObjects/WindowBasic.cs
+ WindowManager.cs
 Assets/TextMesh Pro/Examples & Extras/Scripts/
  Benchmark01.cs
  Benchmark01_UGUI.cs

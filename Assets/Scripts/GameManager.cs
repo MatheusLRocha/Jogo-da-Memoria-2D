@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Verifica frame por frame se os pontos chegaram no limite
     void Update()
     {
-        EndGame(currentPoints);
+        //EndGame(currentPoints);
     }
 
     // Função verifica a compatibilidade entre a carta do jogador 1 de do jogador 2 para pontuação
@@ -56,10 +56,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
-                //Muda o estado das cartas para Matched e depois destroi os objetos                 
-                StartCoroutine(TrocarAnimacao(Card.CardState.Matched));                   
-                //Destroy(cardJogador1.gameObject);
-                //Destroy(cardJogador2.gameObject);
+                //Muda o estado das cartas para Matched e depois muda de cor                 
+                StartCoroutine(TrocarAnimacao(Card.CardState.Matched)); 
             }
             else
             {
@@ -77,17 +75,17 @@ public class GameManager : MonoBehaviour
     }
 
     // Verifica a pontuação para finalizar o jogo
-    void EndGame(int points)
-    {
-        if (points == 5)
-        {
-            SceneManager.LoadScene("SampleScene");
-        } 
-    }
+    //void EndGame(int points)
+    //{
+    //    if (points == 5)
+    //     {
+    //        SceneManager.LoadScene("SampleScene");
+    //    } 
+    // }
 
     void UpdatePoints(int value)
     {
-        currentPoints = value;
+        currentPoints += value;
         scoreText.text = currentPoints + "/5";
     }
 
@@ -108,9 +106,9 @@ public class GameManager : MonoBehaviour
         
 
         // yield return serve para "pausar" a coroutine por um certo tempo e depois continuar o resto de sua execução se tiver após ele
-        yield return new WaitForSeconds(1.5f); 
-
+        yield return new WaitForSeconds(1.5f);
         Debug.Log("Coroutine feita após 1.5s");
+
 
         // Verifica se as cartas não estão nulas para aplicar as animações
         //if (cardJogador1 != null) cardJogador1.ChangeState(Card.CardState.Idle);
