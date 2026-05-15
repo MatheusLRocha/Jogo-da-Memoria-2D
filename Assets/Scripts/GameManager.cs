@@ -87,8 +87,17 @@ public class GameManager : MonoBehaviour
 
     void UpdatePoints(int value)
     {
-        //yield return new WaitForSeconds(1f);
+        currentPoints = value;
+        scoreText.text = currentPoints + "/5";
+    }
 
+
+
+    //Coroutine serve como  um "temporizador" para trocar e limpar a animação
+
+    IEnumerator TrocarAnimacao(Card.CardState animacao)
+    {
+        //yield return new WaitForSeconds(1f);
         cardJogador1.ChangeState(animacao);
         cardJogador2.ChangeState(animacao);
         if (animacao == Card.CardState.Matched)
