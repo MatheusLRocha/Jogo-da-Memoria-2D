@@ -25,7 +25,7 @@ public class Card : MonoBehaviour
         InteligenciaArtificialAplicada,
     }
 
-// Cria estados da carta para modificar as animações
+    // Cria estados da carta para modificar as animações
     public enum CardState
     {
         Idle,
