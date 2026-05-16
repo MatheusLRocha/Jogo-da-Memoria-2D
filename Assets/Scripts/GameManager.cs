@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     }
 
     // Cria as variáveis para acessar os cards de cada jogador
-    Card cardJogador1;
-    Card cardJogador2;
+    public Card cardJogador1;
+    public Card cardJogador2;
 
     // Cria variável para mexer no texto
     public TextMeshProUGUI scoreText;
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             // Se o tipo do card dos dois jogadores forem iguais, eles pontuam, caso contrário, perdem um ponto
             if (cardJogador1.cardType == cardJogador2.cardType)
             {
+                WindowManager.instance.matchedTypeNumber = (int)cardJogador1.cardType;
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
                 //Muda o estado das cartas para Matched e depois muda de cor                 
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
             cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue; 
         }
         
-
+        WindowManager.instance.hasMatched = true;
         // yield return serve para "pausar" a coroutine por um certo tempo e depois continuar o resto de sua execução se tiver após ele
         yield return new WaitForSeconds(1.5f);
         Debug.Log("Coroutine feita após 1.5s");

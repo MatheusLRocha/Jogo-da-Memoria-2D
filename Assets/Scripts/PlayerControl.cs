@@ -1,13 +1,11 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+
 
 public class PlayerControl : MonoBehaviour
 {
+    
     // Apenas cria um cabeçalho no Unity para melhor organização
     [Header("Configurações do jogador")]
 
@@ -18,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] List<GameObject> cards;
 
     // Gera um index atual para transitar entre as cartas
-    int currentIndex = 0;
+    public int currentIndex = 0;
 
     void Start()
     {
@@ -60,7 +58,6 @@ public class PlayerControl : MonoBehaviour
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
             GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
             ChangeCard(1);
-            WindowManager.instance.hasMatched = true;
         }
     }
 
