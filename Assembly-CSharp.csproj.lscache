@@ -52,6 +52,7 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 [sourceFiles]
 Assets/Scripts/
  Card.cs
+ ExitButton.cs
  GameManager.cs
  PlayerControl.cs
  ScrpitableObjects/WindowBasic.cs
