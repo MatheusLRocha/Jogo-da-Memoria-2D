@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: ba71cf0b704a8c249a2167bc509043e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2200875442803267891
+    second: USC_0
+  - first:
+      213: -507680170728959791
+    second: USC_1
+  - first:
+      213: -2744442777918470790
+    second: USC_2
+  - first:
+      213: -5769571654467320040
+    second: USC_3
+  - first:
+      213: 7156949833997399365
+    second: USC_4
+  - first:
+      213: 4745076448114576411
+    second: USC_5
+  - first:
+      213: -5000113697929806389
+    second: USC_6
+  - first:
+      213: 9157445647359239771
+    second: USC_7
+  - first:
+      213: -129686129799049121
+    second: USC_8
+  - first:
+      213: -740485917891132490
+    second: USC_9
+  - first:
+      213: 2993177603636110491
+    second: USC_10
+  - first:
+      213: -3350607957163281783
+    second: USC_11
+  - first:
+      213: 7444615097512657243
+    second: USC_12
+  - first:
+      213: -717367992701080172
+    second: USC_13
+  - first:
+      213: 5913208522999766575
+    second: USC_14
+  - first:
+      213: 5327047549650616036
+    second: USC_15
+  - first:
+      213: 2137184845340421823
+    second: USC_16
+  - first:
+      213: -4614849514477213054
+    second: USC_17
+  - first:
+      213: 2551073003912251322
+    second: USC_18
+  - first:
+      213: 5328378933325585019
+    second: USC_19
+  - first:
+      213: 473842983270888079
+    second: USC_20
+  - first:
+      213: -9136768098351085488
+    second: USC_21
+  - first:
+      213: -8260477609704284862
+    second: USC_22
+  - first:
+      213: -5126347445694946416
+    second: USC_23
+  - first:
+      213: -8769966512419597475
+    second: USC_24
+  - first:
+      213: 2673166171969193194
+    second: USC_25
+  - first:
+      213: -3274467195910597211
+    second: USC_26
+  - first:
+      213: -6008737726636701533
+    second: USC_27
+  - first:
+      213: -2505908358551926521
+    second: USC_28
+  - first:
+      213: -7663322190120264310
+    second: USC_29
+  - first:
+      213: -8747784304999899289
+    second: USC_30
+  - first:
+      213: -47669611063041978
+    second: USC_31
+  - first:
+      213: 7016383368315985942
+    second: USC_32
+  - first:
+      213: -3776418818706227107
+    second: USC_33
+  - first:
+      213: 2986703679697129970
+    second: USC_34
+  - first:
+      213: -427049027640937251
+    second: USC_35
+  - first:
+      213: -7255410628070489044
+    second: USC_36
+  - first:
+      213: -7188374183354552086
+    second: USC_37
+  - first:
+      213: 5557244420093498731
+    second: USC_38
+  - first:
+      213: 2745554982492221218
+    second: USC_39
+  - first:
+      213: -8399977070460945498
+    second: USC_40
+  - first:
+      213: 3384551152891718042
+    second: USC_41
+  - first:
+      213: -8986624710806754406
+    second: USC_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 57
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: USC_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1288
+        width: 354
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3395b23fd841b8e10800000000000000
+      internalID: 2200875442803267891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1367
+        width: 289
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0d034139b54f8f0800000000000000
+      internalID: -507680170728959791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1426
+        width: 135
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7588cb85d7c9e9d0800000000000000
+      internalID: -2744442777918470790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 816
+        width: 643
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8170055162d5eefa0800000000000000
+      internalID: -5769571654467320040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_4
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1090
+        width: 260
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545b4b274f7925360800000000000000
+      internalID: 7156949833997399365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_5
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1095
+        width: 262
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c01f993e5e9d140800000000000000
+      internalID: 4745076448114576411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_6
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1095
+        width: 79
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd345e55170c9ab0800000000000000
+      internalID: -5000113697929806389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_7
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 1092
+        width: 237
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b566bcc4c48c51f70800000000000000
+      internalID: 9157445647359239771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_8
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1096
+        width: 302
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50580de623433ef0800000000000000
+      internalID: -129686129799049121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_9
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 1091
+        width: 265
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b38bee1bf349b5f0800000000000000
+      internalID: -740485917891132490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_10
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1096
+        width: 542
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94a2660c27e98920800000000000000
+      internalID: 2993177603636110491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_11
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 1096
+        width: 257
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9827fa3b0df3081d0800000000000000
+      internalID: -3350607957163281783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_12
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 1091
+        width: 290
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5180c8ecf5905760800000000000000
+      internalID: 7444615097512657243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_13
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 955
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d21d58c956b06f0800000000000000
+      internalID: -717367992701080172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_14
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e963872dfef0250800000000000000
+      internalID: 5913208522999766575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_15
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 955
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee3a82c5897de940800000000000000
+      internalID: 5327047549650616036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_16
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe2dd52b4ec8ad10800000000000000
+      internalID: 2137184845340421823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_17
+      rect:
+        serializedVersion: 2
+        x: 2703
+        y: 954
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28aa3bd21d2c4ffb0800000000000000
+      internalID: -4614849514477213054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_18
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 955
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab74742816b376320800000000000000
+      internalID: 2551073003912251322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_19
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 956
+        width: 15
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7adb8da86432f940800000000000000
+      internalID: 5328378933325585019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_20
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 1017
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f823c29cead639600800000000000000
+      internalID: 473842983270888079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_21
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05889aeb2dda33180800000000000000
+      internalID: -9136768098351085488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_22
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d128e3163ec5d80800000000000000
+      internalID: -8260477609704284862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_23
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 955
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0932f10a82e8bd8b0800000000000000
+      internalID: -5126347445694946416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_24
+      rect:
+        serializedVersion: 2
+        x: 2053
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5398271ce1da4680800000000000000
+      internalID: -8769966512419597475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_25
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae480d9687ef81520800000000000000
+      internalID: 2673166171969193194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_26
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 954
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a554172f61ce82d0800000000000000
+      internalID: -3274467195910597211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_27
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 954
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a8c45f8fdcac9ca0800000000000000
+      internalID: -6008737726636701533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_28
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 939
+        width: 59
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70984d0ff99393dd0800000000000000
+      internalID: -2505908358551926521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_29
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d5382f11966a590800000000000000
+      internalID: -7663322190120264310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_30
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 956
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f5eb8b580a99680800000000000000
+      internalID: -8747784304999899289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_31
+      rect:
+        serializedVersion: 2
+        x: 2540
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640a106cdb4a65ff0800000000000000
+      internalID: -47669611063041978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_32
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 954
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610ee64cf733f5160800000000000000
+      internalID: 7016383368315985942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_33
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 956
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d504aebb717779bc0800000000000000
+      internalID: -3776418818706227107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_34
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f113b52c27e27920800000000000000
+      internalID: 2986703679697129970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_35
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 956
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd439c50c21d21af0800000000000000
+      internalID: -427049027640937251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_36
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 954
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24c34e797a9f4b90800000000000000
+      internalID: -7255410628070489044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_37
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0309014c3cd3c90800000000000000
+      internalID: -7188374183354552086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_38
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65d1b54b5c4f1d40800000000000000
+      internalID: 5557244420093498731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_39
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fa0c2c5bb2a1620800000000000000
+      internalID: 2745554982492221218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_40
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 954
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abbfb10c594d6b80800000000000000
+      internalID: -8399977070460945498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_41
+      rect:
+        serializedVersion: 2
+        x: 3321
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a99ef38675758fe20800000000000000
+      internalID: 3384551152891718042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USC_42
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 954
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bad9e4078194380800000000000000
+      internalID: -8986624710806754406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      USC_0: 2200875442803267891
+      USC_1: -507680170728959791
+      USC_10: 2993177603636110491
+      USC_11: -3350607957163281783
+      USC_12: 7444615097512657243
+      USC_13: -717367992701080172
+      USC_14: 5913208522999766575
+      USC_15: 5327047549650616036
+      USC_16: 2137184845340421823
+      USC_17: -4614849514477213054
+      USC_18: 2551073003912251322
+      USC_19: 5328378933325585019
+      USC_2: -2744442777918470790
+      USC_20: 473842983270888079
+      USC_21: -9136768098351085488
+      USC_22: -8260477609704284862
+      USC_23: -5126347445694946416
+      USC_24: -8769966512419597475
+      USC_25: 2673166171969193194
+      USC_26: -3274467195910597211
+      USC_27: -6008737726636701533
+      USC_28: -2505908358551926521
+      USC_29: -7663322190120264310
+      USC_3: -5769571654467320040
+      USC_30: -8747784304999899289
+      USC_31: -47669611063041978
+      USC_32: 7016383368315985942
+      USC_33: -3776418818706227107
+      USC_34: 2986703679697129970
+      USC_35: -427049027640937251
+      USC_36: -7255410628070489044
+      USC_37: -7188374183354552086
+      USC_38: 5557244420093498731
+      USC_39: 2745554982492221218
+      USC_4: 7156949833997399365
+      USC_40: -8399977070460945498
+      USC_41: 3384551152891718042
+      USC_42: -8986624710806754406
+      USC_5: 4745076448114576411
+      USC_6: -5000113697929806389
+      USC_7: 9157445647359239771
+      USC_8: -129686129799049121
+      USC_9: -740485917891132490
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

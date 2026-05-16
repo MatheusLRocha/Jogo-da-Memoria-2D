@@ -1,12 +1,11 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+
 
 public class PlayerControl : MonoBehaviour
 {
+    
     // Apenas cria um cabeçalho no Unity para melhor organização
     [Header("Configurações do jogador")]
 
@@ -17,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] List<GameObject> cards;
 
     // Gera um index atual para transitar entre as cartas
-    int currentIndex = 0;
+    public int currentIndex = 0;
 
     void Start()
     {
