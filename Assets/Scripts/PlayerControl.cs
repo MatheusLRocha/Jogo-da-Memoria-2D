@@ -20,8 +20,21 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
+        ShuffleCards();
+        currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
+    }
+
+    void ShuffleCards()
+    {
+        for (int i = cards.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            GameObject temp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = temp;
+        }
     }
 
     void Update()
