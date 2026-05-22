@@ -1,9 +1,19 @@
 using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    /// Coisas para mexer amanhã (sprite muito pequeno e outros problemas)
+    //public Sprite frente;
+    //public Sprite verso;
+
+    //private SpriteRenderer sr;
+    //private Image img;
+    //private bool mostrandoFrente = false;
+
+
     // Variável do componente Animator para modificar as animações da carta
     Animator anim;
 
@@ -36,7 +46,7 @@ public class Card : MonoBehaviour
 
     public CardType cardType;
     public CardState cardState;
-
+    public int playerID;
     
     void Start()
     {
@@ -76,4 +86,164 @@ public class Card : MonoBehaviour
                 break;
         }
     }
+    public void CardContent()
+    {
+    if (cardType == CardType.Administracao)
+        {
+            if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.CienciasContabeis)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.Logistica)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.GestaoFinanceira)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.Marketing)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.RecursosHumanos)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.GestaoComercial)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.ProcessosGerenciais)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.CienciasComputacao)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.AnaliseDesenvolvimentoSistemas)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.SitemasInformacao)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.JogosDigitais)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    else if(cardType == CardType.InteligenciaArtificialAplicada)
+        { 
+        if (playerID == 1)
+            {
+                // Texto administração
+            }
+            else
+            {
+                // Imagem Administração
+            }
+            // Fazer a Instantiate randomizada já internamente
+        }
+    }
 }
+

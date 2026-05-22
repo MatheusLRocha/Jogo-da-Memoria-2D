@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
+using UnityEditor.PackageManager;
 
 
 public class PlayerControl : MonoBehaviour
@@ -10,7 +13,11 @@ public class PlayerControl : MonoBehaviour
     [Header("Configurações do jogador")]
 
     // Cria um campo público para escolher quem é o jogador 1 e quem é o jogador 2
-    [SerializeField] int playerID;
+    [SerializeField] public int playerID;
+
+    [SerializeField] public List<Transform> posicoes;
+
+    [SerializeField] public GameObject CardPrefab;
 
     // Cria uma lista de objetos para receber todas as cartas do jogo
     [SerializeField] List<GameObject> cards;
@@ -18,11 +25,51 @@ public class PlayerControl : MonoBehaviour
     // Gera um index atual para transitar entre as cartas
     public int currentIndex = 0;
 
+    List<int> choosen = new List<int>();
+
     void Start()
     {
+        InstantiateCards();
+        currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
     }
+    
+    void InstantiateCards()
+    {
+        for (int i = posicoes.Count - 1; i > -1; i--)
+        {
+            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity);
+            Card card = cards[i].GetComponent<Card>();
+
+            // Escolhe aleatoriamente um tipo de carta a partir do enum Card.CardType
+            int typeCount = Enum.GetValues(typeof(Card.CardType)).Length;
+            bool antiRepeat = true;
+            while (antiRepeat)
+            {
+                int j = UnityEngine.Random.Range(0, typeCount);
+                bool alreadyChosen = false;
+
+                for (int l = 0; l < choosen.Count; l++)
+                {
+                    if (j == choosen[l])
+                    {
+                        alreadyChosen = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyChosen)
+                {
+                    card.cardType = (Card.CardType)j;
+                    choosen.Add(j);
+                    antiRepeat = false;
+                }
+            }
+        }
+    }
+
+
 
     void Update()
     {

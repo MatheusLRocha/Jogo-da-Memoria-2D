@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     void UpdatePoints(int value)
     {
         currentPoints += value;
-        scoreText.text = currentPoints + "/5";
+        scoreText.text = currentPoints + "/13";
     }
 
 
