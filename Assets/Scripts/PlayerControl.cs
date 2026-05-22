@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
+using UnityEditor.PackageManager;
 
 
 public class PlayerControl : MonoBehaviour
@@ -22,36 +25,51 @@ public class PlayerControl : MonoBehaviour
     // Gera um index atual para transitar entre as cartas
     public int currentIndex = 0;
 
+    List<int> choosen = new List<int>();
+
     void Start()
     {
         InstantiateCards();
-        ShufflePosition();
         currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
     }
-
+    
     void InstantiateCards()
     {
-        for (int i = posicoes.Count-1; i > -1; i--)
+        for (int i = posicoes.Count - 1; i > -1; i--)
         {
             cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity);
-            Card card = cards[i].GetComponent<Card>(); //For pra verificar se o tipo já foi, se não adiciona 
-            int j = Random.Range(0, i + 1);
+            Card card = cards[i].GetComponent<Card>();
 
-            card.cardType = Card.CardType.Marketing;
+            // Escolhe aleatoriamente um tipo de carta a partir do enum Card.CardType
+            int typeCount = Enum.GetValues(typeof(Card.CardType)).Length;
+            bool antiRepeat = true;
+            while (antiRepeat)
+            {
+                int j = UnityEngine.Random.Range(0, typeCount);
+                bool alreadyChosen = false;
+
+                for (int l = 0; l < choosen.Count; l++)
+                {
+                    if (j == choosen[l])
+                    {
+                        alreadyChosen = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyChosen)
+                {
+                    card.cardType = (Card.CardType)j;
+                    choosen.Add(j);
+                    antiRepeat = false;
+                }
+            }
         }
     }
-    void ShufflePosition()
-    {
-        for (int i = cards.Count - 1; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            GameObject temp = cards[i];
-            cards[i] = cards[j];
-            cards[j] = temp;
-        }
-    }
+
+
 
     void Update()
     {

@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    
-    public Sprite frente;
-    public Sprite verso;
+    /// Coisas para mexer amanhã (sprite muito pequeno e outros problemas)
+    //public Sprite frente;
+    //public Sprite verso;
 
-    private SpriteRenderer sr;
-    private Image img;
-    private bool mostrandoFrente = false;
+    //private SpriteRenderer sr;
+    //private Image img;
+    //private bool mostrandoFrente = false;
+
 
     // Variável do componente Animator para modificar as animações da carta
     Animator anim;
