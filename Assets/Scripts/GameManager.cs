@@ -54,9 +54,12 @@ public class GameManager : MonoBehaviour
             // Se o tipo do card dos dois jogadores forem iguais, eles pontuam, caso contrário, perdem um ponto
             if (cardJogador1.cardType == cardJogador2.cardType)
             {
+                // Pega o respectivo índice da carta matched para pegar seus dados e inserir na janela
                 WindowManager.instance.matchedTypeNumber = (int)cardJogador1.cardType;
+
                 Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(1);
+
                 //Muda o estado das cartas para Matched e depois muda de cor                 
                 StartCoroutine(TrocarAnimacao(Card.CardState.Matched)); 
             }
@@ -65,8 +68,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
                 UpdatePoints(-1);
 
-                cardJogador1.ChangeState(Card.CardState.Dismatched);
-                cardJogador2.ChangeState(Card.CardState.Dismatched);
+                StartCoroutine(TrocarAnimacao(Card.CardState.Dismatched));
             }
 
             // Limpa as cartas para a próxima jogada
@@ -84,6 +86,8 @@ public class GameManager : MonoBehaviour
     //    } 
     // }
 
+
+    // Atualiza a pontuação e seu respectivo texto
     void UpdatePoints(int value)
     {
         currentPoints += value;
@@ -93,30 +97,20 @@ public class GameManager : MonoBehaviour
 
 
     //Coroutine serve como  um "temporizador" para trocar e limpar a animação
-
     IEnumerator TrocarAnimacao(Card.CardState animacao)
     {
-        //yield return new WaitForSeconds(1f);
         cardJogador1.ChangeState(animacao);
         cardJogador2.ChangeState(animacao);
         if (animacao == Card.CardState.Matched)
         {
             cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
             cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue; 
+
+            // Faz com que no gerenciador de janelas afirme que o match foi feito
+            WindowManager.instance.hasMatched = true;
+            
+            yield return new WaitForSeconds(1.5f);
+            Debug.Log("Coroutine feita após 1.5s");
         }
-        
-        WindowManager.instance.hasMatched = true;
-        // yield return serve para "pausar" a coroutine por um certo tempo e depois continuar o resto de sua execução se tiver após ele
-        yield return new WaitForSeconds(1.5f);
-        Debug.Log("Coroutine feita após 1.5s");
-
-
-        // Verifica se as cartas não estão nulas para aplicar as animações
-        //if (cardJogador1 != null) cardJogador1.ChangeState(Card.CardState.Idle);
-        //if (cardJogador2 != null) cardJogador2.ChangeState(Card.CardState.Idle);
-
-        // Limpa os valores para a próxima rodada após executar todas as animações
-        cardJogador1 = null;
-        cardJogador2 = null;
     }
 }

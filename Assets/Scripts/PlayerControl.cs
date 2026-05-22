@@ -10,7 +10,11 @@ public class PlayerControl : MonoBehaviour
     [Header("Configurações do jogador")]
 
     // Cria um campo público para escolher quem é o jogador 1 e quem é o jogador 2
-    [SerializeField] int playerID;
+    [SerializeField] public int playerID;
+
+    [SerializeField] public List<Transform> posicoes;
+
+    [SerializeField] public GameObject CardPrefab;
 
     // Cria uma lista de objetos para receber todas as cartas do jogo
     [SerializeField] List<GameObject> cards;
@@ -20,13 +24,25 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-        ShuffleCards();
+        InstantiateCards();
+        ShufflePosition();
         currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
     }
 
-    void ShuffleCards()
+    void InstantiateCards()
+    {
+        for (int i = posicoes.Count-1; i > -1; i--)
+        {
+            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity);
+            Card card = cards[i].GetComponent<Card>(); //For pra verificar se o tipo já foi, se não adiciona 
+            int j = Random.Range(0, i + 1);
+
+            card.cardType = Card.CardType.Marketing;
+        }
+    }
+    void ShufflePosition()
     {
         for (int i = cards.Count - 1; i > 0; i--)
         {
@@ -39,6 +55,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        // Verifica a cada frame se o jogador se movimentou
         VerifyPlayer();
     }
 
@@ -76,14 +93,11 @@ public class PlayerControl : MonoBehaviour
 
     public void ChangeCard(int direction)
     {
-        // Limpa a seleção da carta anterior e pula se a carta já tiver sido destruída
-
+        // Limpa a seleção da carta anterior e pula se a carta já tiver sido a correta
         if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
         {
             cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
         
-        
-
             // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
             Card card = cards[currentIndex].GetComponent<Card>();
             card.ChangeState(Card.CardState.Idle);
@@ -102,11 +116,12 @@ public class PlayerControl : MonoBehaviour
             currentIndex = newIndex;
         }
 
-        // Verifica os índices dos objetos destruídos
+        // Verifica os índices dos objetos que ja deram match
         while (cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched)
         {
-            // Equanto estiver percorrendo pelo objeto destruído, muda o índice até o próximo valor existente
+            // Equanto estiver percorrendo pelo objeto matched, muda o índice até o próximo valor existente não matched
             currentIndex += direction;
+
             if (currentIndex > cards.Count - 1)
             {
                 currentIndex = 0;
@@ -120,8 +135,6 @@ public class PlayerControl : MonoBehaviour
 
         // Seleciona a próxima carta
         cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
-
-        
     }
 }
 
