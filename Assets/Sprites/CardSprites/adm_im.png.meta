@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0fdfded12b716202b823e655fc7b2a9e
+guid: 245c5ecdfee876c408d20b3e1cd07b21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3797821790913027022
-    second: CARTA_MEMORIZE_EAD_1.1_0
+      213: 8074176688042565125
+    second: adm_im_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CARTA_MEMORIZE_EAD_1.1_0
+      name: adm_im_0
       rect:
         serializedVersion: 2
-        x: 747
-        y: 363
-        width: 396
-        height: 531
+        x: 748
+        y: 306
+        width: 455
+        height: 596
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecbdb9f0cc294b430800000000000000
-      internalID: 3797821790913027022
+      spriteID: 50e54804bec3d0070800000000000000
+      internalID: 8074176688042565125
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CARTA_MEMORIZE_EAD_1.1_0: 3797821790913027022
+      adm_im_0: 8074176688042565125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

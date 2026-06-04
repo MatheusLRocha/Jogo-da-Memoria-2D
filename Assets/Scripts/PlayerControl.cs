@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 using UnityEditor.PackageManager;
+using System.Numerics;
 
 
 public class PlayerControl : MonoBehaviour
@@ -16,6 +17,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] public int playerID;
 
     [SerializeField] public List<Transform> posicoes;
+
+    // Campo para selecionar onde as cartas vão nascer
+    [SerializeField] public Transform pai;
 
     [SerializeField] public GameObject CardPrefab;
 
@@ -32,15 +36,22 @@ public class PlayerControl : MonoBehaviour
         InstantiateCards();
         currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
-        cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
-    }
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
+
+    }   
     
     void InstantiateCards()
     {
+        // Grande loop que randomiza as cartas ao mesmo tempo que cria elas
         for (int i = posicoes.Count - 1; i > -1; i--)
         {
-            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity);
+            cards[i] = Instantiate(CardPrefab, posicoes[i].position, UnityEngine.Quaternion.identity, pai);
             Card card = cards[i].GetComponent<Card>();
+            
+            // Garante acesso do playerID para a carta da mão específica
+            card.playerID = playerID;
+            card.CardContent();
 
             // Escolhe aleatoriamente um tipo de carta a partir do enum Card.CardType
             int typeCount = Enum.GetValues(typeof(Card.CardType)).Length;
@@ -105,6 +116,8 @@ public class PlayerControl : MonoBehaviour
 
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
             GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
+            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.2f, 1.2f, 0.0f);
+            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
             ChangeCard(1);
         }
     }
@@ -114,8 +127,9 @@ public class PlayerControl : MonoBehaviour
         // Limpa a seleção da carta anterior e pula se a carta já tiver sido a correta
         if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
         {
-            cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.white;
-        
+            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.2f, 1.2f, 0.0f);
+            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);            
+            
             // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
             Card card = cards[currentIndex].GetComponent<Card>();
             card.ChangeState(Card.CardState.Idle);
@@ -152,7 +166,7 @@ public class PlayerControl : MonoBehaviour
         
 
         // Seleciona a próxima carta
-        cards[currentIndex].GetComponent<SpriteRenderer>().color = Color.red;
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
     }
 }
-

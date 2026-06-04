@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ccb078289ceeb8610b5d9380a2470ca9
+guid: 820ee3d4807ead2439b4839f0ffa08d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3775729091996732956
-    second: "CARTA_ADMINISTRA\xC7\xC3O_1.1_0"
+      213: -5160006561421913767
+    second: OutroUsc_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "CARTA_ADMINISTRA\xC7\xC3O_1.1_0"
+      name: OutroUsc_0
       rect:
         serializedVersion: 2
-        x: 748
-        y: 306
-        width: 455
-        height: 596
+        x: 0
+        y: 0
+        width: 1084
+        height: 687
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e13d6f356ae99bc0800000000000000
-      internalID: -3775729091996732956
+      spriteID: 95113cb0f59f368b0800000000000000
+      internalID: -5160006561421913767
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "CARTA_ADMINISTRA\xC7\xC3O_1.1_0": -3775729091996732956
+      OutroUsc_0: -5160006561421913767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

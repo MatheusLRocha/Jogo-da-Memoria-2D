@@ -1460,14 +1460,14 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1882,6 +1882,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2073148504}
     m_Modifications:
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_text
+      value: 'Lorem ipsum dolor sit amet. Quo aliquid quia sed amet quasi non omnis
+        placeat. Qui repellat consectetur est autem internos qui distinctio dolores
+        ea provident provident aut tenetur doloribus ut atque soluta. Quo error perferendis
+        in ullam fugit sit porro necessitatibus sed voluptatem quod et distinctio
+        corporis qui tempore odio? Et optio voluptates ea pariatur dolor vel internos
+        sequi sit nihil accusamus ad quibusdam eveniet et dolores quasi sed fugit
+        Quis.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585212246733237, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269435889818165949, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269435889818165949, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269435889818165949, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3911565880710133119, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
       propertyPath: m_Name
       value: WindowBackground
