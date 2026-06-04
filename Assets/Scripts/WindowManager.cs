@@ -90,7 +90,7 @@ public class WindowManager : MonoBehaviour{
         }
         else
         {
-            Debug.LogWarning("WindowManager imagemObjeto is not assigned or is missing the Image component.");
+            Debug.LogWarning("WindowManager imagemObjeto não contém uma imagem atribuida.");
         }
 
         // Se não deu match, a janela continua desativada e os players podem mexer nas cartas

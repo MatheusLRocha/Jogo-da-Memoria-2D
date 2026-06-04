@@ -50,25 +50,28 @@ public class GameManager : MonoBehaviour
         // Verifica se ambos os jogadores selecionaram uma carta
         if (cardJogador1 != null && cardJogador2 != null)
         {
+            // Armazena a referencia de cada um antes que sejam limpos
+            Card card1 = cardJogador1;
+            Card card2 = cardJogador2;
 
             // Se o tipo do card dos dois jogadores forem iguais, eles pontuam, caso contrário, perdem um ponto
-            if (cardJogador1.cardType == cardJogador2.cardType)
+            if (card1.cardType == card2.cardType)
             {
                 // Pega o respectivo índice da carta matched para pegar seus dados e inserir na janela
-                WindowManager.instance.matchedTypeNumber = (int)cardJogador1.cardType;
+                WindowManager.instance.matchedTypeNumber = (int)card1.cardType;
 
-                Debug.Log("Os tipos são iguais " + cardJogador1.cardType + " " + cardJogador2.cardType);
+                Debug.Log("Os tipos são iguais " + card1.cardType + " " + card2.cardType);
                 UpdatePoints(1);
 
                 //Muda o estado das cartas para Matched e depois muda de cor                 
-                StartCoroutine(TrocarAnimacao(Card.CardState.Matched)); 
+                StartCoroutine(TrocarAnimacao(card1, card2, Card.CardState.Matched)); 
             }
             else
             {
-                Debug.Log("Tipos diferentes! " + cardJogador1.cardType + " " + cardJogador2.cardType);
+                Debug.Log("Tipos diferentes! " + card1.cardType + " " + card2.cardType);
                 UpdatePoints(-1);
 
-                StartCoroutine(TrocarAnimacao(Card.CardState.Dismatched));
+                StartCoroutine(TrocarAnimacao(card1, card2, Card.CardState.Dismatched));
             }
 
             // Limpa as cartas para a próxima jogada
@@ -97,20 +100,50 @@ public class GameManager : MonoBehaviour
 
 
     //Coroutine serve como  um "temporizador" para trocar e limpar a animação
-    IEnumerator TrocarAnimacao(Card.CardState animacao)
+    IEnumerator TrocarAnimacao(Card card1, Card card2, Card.CardState animacao)
     {
-        cardJogador1.ChangeState(animacao);
-        cardJogador2.ChangeState(animacao);
+        // Wait a frame to ensure animator state change is registered
+        yield return null;
+        //Inicia a animação das cartas
+        card1.ChangeState(animacao);
+        card2.ChangeState(animacao);
+        
         if (animacao == Card.CardState.Matched)
         {
-            cardJogador1.GetComponent<SpriteRenderer>().color = Color.blue;
-            cardJogador2.GetComponent<SpriteRenderer>().color = Color.blue; 
+            
+            yield return new WaitForSeconds(0.17f);
+            //Divide o tempo para colocar o sprite da carta virada e depois ativa a tela
+            card1.GetComponent<SpriteRenderer>().sprite = card1.thisSprite;
+            card2.GetComponent<SpriteRenderer>().sprite = card2.thisSprite;
 
+            yield return new WaitForSeconds(0.9f);
+            
             // Faz com que no gerenciador de janelas afirme que o match foi feito
             WindowManager.instance.hasMatched = true;
             
-            yield return new WaitForSeconds(1.5f);
-            Debug.Log("Coroutine feita após 1.5s");
+            
+        }
+        else if (animacao == Card.CardState.Dismatched)
+        {
+            // Salva o sprite original
+            Sprite ogsprite = card1.GetComponent<SpriteRenderer>().sprite;
+            // Wait for the dismatched animation to play
+            yield return new WaitForSeconds(0.18f);
+
+            // Divide o tempo para mostrar a carta de trás e, depois, voltar à original
+            card1.GetComponent<SpriteRenderer>().sprite = card1.thisSprite;
+            card2.GetComponent<SpriteRenderer>().sprite = card2.thisSprite;
+
+            yield return new WaitForSeconds(1.40f);
+
+            card1.GetComponent<SpriteRenderer>().sprite = ogsprite;
+            card2.GetComponent<SpriteRenderer>().sprite = ogsprite;
+
+            yield return new WaitForSeconds(0.6f);
+
+            // Reset cards back to Idle state
+            card1.ChangeState(Card.CardState.Idle);
+            card2.ChangeState(Card.CardState.Idle);
         }
     }
 }
