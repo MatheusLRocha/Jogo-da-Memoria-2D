@@ -33,6 +33,10 @@ public class WindowManager : MonoBehaviour{
 
     // Variável para pegar o índice da carta matched
     public int matchedTypeNumber;
+    //Variável que bloqueia as cartas durante a ativação da janela
+    public bool isWindowActive = false;
+    Animator anim;
+    
     void Awake()
     {
         // Verifica se já existe uma cópia da instância ou não
@@ -46,6 +50,7 @@ public class WindowManager : MonoBehaviour{
 
         // Deixa como padrão a inatividade das janelas informativas
         janelaFundo.SetActive(false);
+        anim = janelaFundo.GetComponent<Animator>();
     }
 
     void Update()
@@ -58,12 +63,6 @@ public class WindowManager : MonoBehaviour{
     }
 
     
-    void WindowCall()
-    {
-        ScriptableObject janelaEscolhida = janelas[0];
-        // Aqui você pode adicionar a lógica para exibir a janela escolhida
-    }
-
 
     
     IEnumerator WindowControl(){
@@ -72,13 +71,8 @@ public class WindowManager : MonoBehaviour{
 
         // Ativa a janela
         janelaFundo.SetActive(true);
-
-        // Desativa os objetos do PlayerControl
-        foreach (GameObject obj in playerControlObject)
-        {
-            // Não permite mexer nas cartas enquanto a janela estiver habilitada
-            obj.SetActive(false);
-        }
+        anim.SetBool("Activated", true);
+        isWindowActive = true;
 
         // Coloca no texto da janela o valor do texto do respectivo scriptable object
         infoTexto.text = janelas[matchedTypeNumber].textoCurso;
@@ -96,13 +90,10 @@ public class WindowManager : MonoBehaviour{
         // Se não deu match, a janela continua desativada e os players podem mexer nas cartas
         if (hasMatched == false)
         {
+            anim.SetBool("Activated", false);
+            yield return new WaitForSeconds(1.3f);
             janelaFundo.SetActive(false);
-
-            // Ativa os objetos do PlayerControl
-            foreach (GameObject obj in playerControlObject)
-            {
-                obj.SetActive(true);
-            }
+            isWindowActive = false;
         }    
     }
 
