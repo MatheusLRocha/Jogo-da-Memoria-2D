@@ -98,6 +98,10 @@ public class PlayerControl : MonoBehaviour
                     ChangeCard(1);
                 else if (Keyboard.current.aKey.wasPressedThisFrame)
                     ChangeCard(-1);
+                else if (Keyboard.current.wKey.wasPressedThisFrame)
+                    ChangeCard(-4);
+                else if (Keyboard.current.sKey.wasPressedThisFrame)
+                    ChangeCard(4); 
                     
             }
             else if (playerID == 2)
@@ -106,6 +110,10 @@ public class PlayerControl : MonoBehaviour
                     ChangeCard(1);
                 else if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
                     ChangeCard(-1);
+                else if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+                    ChangeCard(-4);
+                else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+                    ChangeCard(4);
             }
 
             // Verifica se algum dos jogadores apertou o botão para selecionar as cartas
