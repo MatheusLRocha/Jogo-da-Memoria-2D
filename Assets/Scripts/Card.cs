@@ -98,15 +98,15 @@ public class Card : MonoBehaviour
     // (Incompleto) Função de selecionar o sprite específico da carta
     public void CardContent()
     {
-        if (playerID == 1)
-        {
-            thisSprite = Sprites[0];
-        }
-        else
-        {
-            thisSprite = Sprites[0];
-        }
-
+        if (cardType == CardType.Administracao)
+            if (playerID == 1)
+            {
+                thisSprite = Sprites[0];
+            }
+            else
+            {
+                thisSprite = Sprites[0];
+            }
     }
 
     // Mostra as cartas no inicio
