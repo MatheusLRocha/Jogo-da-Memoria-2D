@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -58,6 +59,7 @@ public class Card : MonoBehaviour
     {
         // Pega o componente Animator do objeto
         anim = GetComponent<Animator>();
+        StartCoroutine(StartShowing());
     }
 
     // Função que verifica e faz as mudanças de animação na carta
@@ -96,15 +98,26 @@ public class Card : MonoBehaviour
     // (Incompleto) Função de selecionar o sprite específico da carta
     public void CardContent()
     {
-        if (playerID == 1)
-        {
-            thisSprite = Sprites[0];
-        }
-        else
-        {
-            thisSprite = Sprites[0];
-        }
+        if (cardType == CardType.Administracao)
+            if (playerID == 1)
+            {
+                thisSprite = Sprites[0];
+            }
+            else
+            {
+                thisSprite = Sprites[0];
+            }
+    }
 
+    // Mostra as cartas no inicio
+    private IEnumerator StartShowing()
+    {
+        Sprite waiter;
+        waiter = GetComponent<SpriteRenderer>().sprite;
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().sprite = thisSprite;
+        yield return new WaitForSeconds(2.2f);
+        GetComponent<SpriteRenderer>().sprite = waiter;
     }
 }
 

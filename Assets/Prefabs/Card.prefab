@@ -154,6 +154,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card
   Sprites:
   - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
+  - {fileID: -888488328326368013, guid: 8a51fc24b36ed3343b95533eff0d3bc9, type: 3}
+  - {fileID: -7851042402547062165, guid: 051d372394f3203409b9ee0ba318a291, type: 3}
+  - {fileID: -5791846974082813069, guid: 133f3d8a4ce96ce4186850552514e692, type: 3}
+  - {fileID: 3891087185351647009, guid: ddab255e8c632504c8c3c96020a2f017, type: 3}
+  - {fileID: 4925156119044964847, guid: 384d4b588727eee4b83e78e52748ac66, type: 3}
+  - {fileID: 187595077669528923, guid: c1475b52a7de64b49b984e7e6f48d8cb, type: 3}
+  - {fileID: 2961336012892050712, guid: 04cc210cbb86a4244980ac6394537b4e, type: 3}
+  - {fileID: -2533858466485355933, guid: 36432e54399ccf444b10ae2399227bfa, type: 3}
+  - {fileID: 7363223163424464221, guid: 8b82e293bfb374841b06eca406f496e2, type: 3}
+  - {fileID: -1208788419333051466, guid: d3e339948a968424993f63fbfb7b2915, type: 3}
+  - {fileID: -8598733365609711572, guid: 4827a5b6766e6a241aadc0786ed58839, type: 3}
+  - {fileID: -1516842854709001337, guid: 6fd4695b5793ef54ebc06f777c934e08, type: 3}
   thisSprite: {fileID: 0}
   cardType: 0
   cardState: 1
