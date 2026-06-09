@@ -6,9 +6,9 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private  GameObject painelModoJogo;
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelCreditos;
-   public void Padrao()
+    public void Padrao()
     {
-        SceneManager.LoadScene(nomeDoModoDeJogo);
+        SceneManager.LoadScene(1);
     }
 
     public void Extra()
