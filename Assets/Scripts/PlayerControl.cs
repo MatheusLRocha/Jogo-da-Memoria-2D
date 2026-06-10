@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
 
     // Gera um index atual para transitar entre as cartas
     public int currentIndex = 0;
+    private bool youCanMoveNow = false;
 
     List<int> choosen = new List<int>();
 
@@ -38,7 +39,7 @@ public class PlayerControl : MonoBehaviour
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
         cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
         cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
-
+        StartCoroutine(StartShowing());
     }   
     
     void InstantiateCards()
@@ -90,7 +91,8 @@ public class PlayerControl : MonoBehaviour
 
     void VerifyPlayer()
     {
-        if (WindowManager.instance.isWindowActive == false){
+        if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
+        {
             if (playerID == 1)
             {
                 // Verifica se o jogador está se movimentando para a direita ou para a esquerda
@@ -181,5 +183,10 @@ public class PlayerControl : MonoBehaviour
         // Seleciona a próxima carta
         cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
         cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
+    }
+    private System.Collections.IEnumerator StartShowing()
+    {
+        yield return new WaitForSeconds(2.6f);
+        youCanMoveNow = true;
     }
 }
