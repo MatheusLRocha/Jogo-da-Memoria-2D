@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEditor;
+using JetBrains.Annotations;
 
 public class WindowManager : MonoBehaviour{
     // Cria instância do script, o que permite com que outros scripts possam mexer aqui
@@ -36,6 +38,9 @@ public class WindowManager : MonoBehaviour{
     //Variável que bloqueia as cartas durante a ativação da janela
     public bool isWindowActive = false;
     public int finaleActivator = 0;
+    public bool changer = true;
+    private bool hasIncrementedThisActivation = false; // Rastreia se já incrementou nesta ativação
+    [SerializeField] public GameObject TelaFinal;
     Animator anim;
     
     void Awake()
@@ -61,12 +66,21 @@ public class WindowManager : MonoBehaviour{
         {
             StartCoroutine(WindowControl());
         }
+        
+        // Incrementa finaleActivator apenas uma vez quando a janela fica ativa
+        // Este código roda todos os frames, mas só incrementa quando as condições são atendidas
+        if (isWindowActive == true && hasIncrementedThisActivation == false)
+        {
+            finaleActivator++;
+            hasIncrementedThisActivation = true; // Bloqueia futuras ativações
+        }
     }
 
     
 
     
     IEnumerator WindowControl(){
+        
         // Espera 0,5 segundos para mostrar a janela
         yield return new WaitForSeconds(0.5f);
 
@@ -95,7 +109,13 @@ public class WindowManager : MonoBehaviour{
             yield return new WaitForSeconds(1.3f);
             janelaFundo.SetActive(false);
             isWindowActive = false;
-            finaleActivator ++;
+            hasIncrementedThisActivation = false; // Reseta a flag para a próxima ativação
+            if (finaleActivator == 13)
+            {
+                TelaFinal.SetActive(true);
+            }
+            yield return new WaitForSeconds(1.3f);
+            changer = true;
         }    
     }
 

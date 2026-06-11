@@ -2884,6 +2884,8 @@ MonoBehaviour:
   matchedTypeNumber: 0
   isWindowActive: 0
   finaleActivator: 0
+  changer: 1
+  TelaFinal: {fileID: 1388929536}
 --- !u!1 &2136290605
 GameObject:
   m_ObjectHideFlags: 0
