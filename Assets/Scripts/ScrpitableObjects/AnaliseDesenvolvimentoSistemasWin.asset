@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: AnaliseDesenvolvimentoSistemasWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: Texto curso
+  textoCurso: "An\xE1lise e Desenvolvimento de Sistemas    (Tecn\xF3logo - 2.5 anos)
+    :                                                       O curso de An\xE1lise
+    e Desenvolvimento de Sistemas \xE9 voltado para a cria\xE7\xE3o de softwares,
+    aplicativos e solu\xE7\xF5es digitais. Os estudantes aprendem programa\xE7\xE3o,
+    banco de dados e desenvolvimento de sistema.  Curiosidade:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    Muitos aplicativos usados diariamente, como redes sociais e servi\xE7os de entrega,
+    contam com profissionais de ADS em suas equipes de desenvolvimento. "
   imagemCurso: {fileID: 21300000, guid: 75fc883f4b1fbb340b9d5837107e2f04, type: 3}
