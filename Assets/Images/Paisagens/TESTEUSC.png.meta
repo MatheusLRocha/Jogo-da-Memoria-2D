@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e2d76f85554245842b7f3c9a357df590
+guid: a8891fa442e04a740818834a41160958
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8902402073846475505
-    second: PaisagemTeste_0
+      213: 2979771003613096449
+    second: TESTEUSC_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PaisagemTeste_0
+      name: TESTEUSC_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 853
+        x: 308
+        y: 513
+        width: 1159
+        height: 745
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fae15be48fab8b70800000000000000
-      internalID: 8902402073846475505
+      spriteID: 10a2e56b0f54a5920800000000000000
+      internalID: 2979771003613096449
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PaisagemTeste_0: 8902402073846475505
+      TESTEUSC_0: 2979771003613096449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RecursosHumanosWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
   textoCurso: Recursos Humanos Curso
-  imagemCurso: {fileID: 21300000, guid: eb064857da3d9bb45b55b3c82d5bec3f, type: 3}
+  imagemCurso: {fileID: 4925156119044964847, guid: 384d4b588727eee4b83e78e52748ac66, type: 3}
