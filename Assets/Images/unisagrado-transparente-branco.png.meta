@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: ca1f5e1cfd2132e4ca3afad493c46ea6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2907334277197489245
+    second: unisagrado-transparente-branco_0
+  - first:
+      213: 5455518019787529152
+    second: unisagrado-transparente-branco_1
+  - first:
+      213: 4390847694732195760
+    second: unisagrado-transparente-branco_2
+  - first:
+      213: -5729219297651234007
+    second: unisagrado-transparente-branco_3
+  - first:
+      213: 7525198416905517894
+    second: unisagrado-transparente-branco_4
+  - first:
+      213: 6315744176340765314
+    second: unisagrado-transparente-branco_5
+  - first:
+      213: -1439544378512317655
+    second: unisagrado-transparente-branco_6
+  - first:
+      213: 8978768117813567621
+    second: unisagrado-transparente-branco_7
+  - first:
+      213: -6488295201137152138
+    second: unisagrado-transparente-branco_8
+  - first:
+      213: -1258341895291065299
+    second: unisagrado-transparente-branco_9
+  - first:
+      213: 8020768667767454553
+    second: unisagrado-transparente-branco_10
+  - first:
+      213: -2398261773318539678
+    second: unisagrado-transparente-branco_11
+  - first:
+      213: 5052573148380782818
+    second: unisagrado-transparente-branco_12
+  - first:
+      213: 7798907246034486751
+    second: unisagrado-transparente-branco_13
+  - first:
+      213: 5661008986207230674
+    second: unisagrado-transparente-branco_14
+  - first:
+      213: -8964780282496940103
+    second: unisagrado-transparente-branco_15
+  - first:
+      213: -2629367031700325881
+    second: unisagrado-transparente-branco_16
+  - first:
+      213: 4967665496806461856
+    second: unisagrado-transparente-branco_17
+  - first:
+      213: 7650285296780356133
+    second: unisagrado-transparente-branco_18
+  - first:
+      213: 4697307227322642317
+    second: unisagrado-transparente-branco_19
+  - first:
+      213: 7909875287210447400
+    second: unisagrado-transparente-branco_20
+  - first:
+      213: -8829349599913961792
+    second: unisagrado-transparente-branco_21
+  - first:
+      213: -4158101143956957113
+    second: unisagrado-transparente-branco_22
+  - first:
+      213: -490107267135179982
+    second: unisagrado-transparente-branco_23
+  - first:
+      213: -6390237138305465847
+    second: unisagrado-transparente-branco_24
+  - first:
+      213: -2024445763447652178
+    second: unisagrado-transparente-branco_25
+  - first:
+      213: 8112694055580472911
+    second: unisagrado-transparente-branco_26
+  - first:
+      213: 4927240981976498315
+    second: unisagrado-transparente-branco_27
+  - first:
+      213: -7623096114062981353
+    second: unisagrado-transparente-branco_28
+  - first:
+      213: 2551440620463430196
+    second: unisagrado-transparente-branco_29
+  - first:
+      213: 2051495977631188473
+    second: unisagrado-transparente-branco_30
+  - first:
+      213: 1199309674322637485
+    second: unisagrado-transparente-branco_31
+  - first:
+      213: -4226051172671008009
+    second: unisagrado-transparente-branco_32
+  - first:
+      213: -2414589320230407866
+    second: unisagrado-transparente-branco_33
+  - first:
+      213: -4433521091070206417
+    second: unisagrado-transparente-branco_34
+  - first:
+      213: -5212765161470996836
+    second: unisagrado-transparente-branco_35
+  - first:
+      213: -1914706462129804104
+    second: unisagrado-transparente-branco_36
+  - first:
+      213: 5119702667324181486
+    second: unisagrado-transparente-branco_37
+  - first:
+      213: -922378277771766759
+    second: unisagrado-transparente-branco_38
+  - first:
+      213: -2729246825991019234
+    second: unisagrado-transparente-branco_39
+  - first:
+      213: -2848723225794705410
+    second: unisagrado-transparente-branco_40
+  - first:
+      213: -109753353912152134
+    second: unisagrado-transparente-branco_41
+  - first:
+      213: -1672424756941037707
+    second: unisagrado-transparente-branco_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1288
+        width: 354
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab935ce0e217a7d0800000000000000
+      internalID: -2907334277197489245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1367
+        width: 289
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb9d230cb4e5bb40800000000000000
+      internalID: 5455518019787529152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1426
+        width: 135
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7fa53f6bc6fec30800000000000000
+      internalID: 4390847694732195760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 816
+        width: 643
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b6f2b4769bd70b0800000000000000
+      internalID: -5729219297651234007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_4
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1090
+        width: 260
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b3cf70710ee6860800000000000000
+      internalID: 7525198416905517894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_5
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1095
+        width: 262
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a880bbdd706a750800000000000000
+      internalID: 6315744176340765314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_6
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1095
+        width: 79
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923ec58c306b50ce0800000000000000
+      internalID: -1439544378512317655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_7
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 1092
+        width: 237
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58061e6180efa9c70800000000000000
+      internalID: 8978768117813567621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_8
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1096
+        width: 302
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f295a14e1f4f5a0800000000000000
+      internalID: -6488295201137152138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_9
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 1091
+        width: 265
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c2f2596b8798ee0800000000000000
+      internalID: -1258341895291065299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_10
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1096
+        width: 542
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95bbcd38b9e7f4f60800000000000000
+      internalID: 8020768667767454553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_11
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 1096
+        width: 257
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26633faaf99a7bed0800000000000000
+      internalID: -2398261773318539678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_12
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 1091
+        width: 290
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0e9ee32885e1640800000000000000
+      internalID: 5052573148380782818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_13
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 955
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd50b14e1d84b3c60800000000000000
+      internalID: 7798907246034486751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_14
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da1d2dfda1ff8e40800000000000000
+      internalID: 5661008986207230674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_15
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 955
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7085c94d3b69380800000000000000
+      internalID: -8964780282496940103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_16
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70af06b9d9c928bd0800000000000000
+      internalID: -2629367031700325881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_17
+      rect:
+        serializedVersion: 2
+        x: 2703
+        y: 954
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a11d141371b0f440800000000000000
+      internalID: 4967665496806461856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_18
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 955
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52aacf8c1f54b2a60800000000000000
+      internalID: 7650285296780356133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_19
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 956
+        width: 15
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fe07d2900303140800000000000000
+      internalID: 4697307227322642317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_20
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 1017
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822d1d75aa585cd60800000000000000
+      internalID: 7909875287210447400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_21
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 1019
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6146b9159d77580800000000000000
+      internalID: -8829349599913961792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_22
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748dc464a057b46c0800000000000000
+      internalID: -4158101143956957113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_23
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 955
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233f198890ac239f0800000000000000
+      internalID: -490107267135179982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_24
+      rect:
+        serializedVersion: 2
+        x: 2053
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9024bccfd215157a0800000000000000
+      internalID: -6390237138305465847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_25
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea088aadd49b7e3e0800000000000000
+      internalID: -2024445763447652178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_26
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 954
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f461c4ab244169070800000000000000
+      internalID: 8112694055580472911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_27
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 954
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80c4754193116440800000000000000
+      internalID: 4927240981976498315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_28
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 939
+        width: 59
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7178d902972553690800000000000000
+      internalID: -7623096114062981353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_29
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a9938e9b9886320800000000000000
+      internalID: 2551440620463430196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_30
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 956
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f589dce8b0687c10800000000000000
+      internalID: 2051495977631188473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_31
+      rect:
+        serializedVersion: 2
+        x: 2540
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2b0b96bcdc4a010800000000000000
+      internalID: 1199309674322637485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_32
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 954
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2525a59dc0a55c0800000000000000
+      internalID: -4226051172671008009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_33
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 956
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641f6396ec7ad7ed0800000000000000
+      internalID: -2414589320230407866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_34
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ede86be08f872c0800000000000000
+      internalID: -4433521091070206417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_35
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 956
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e4dfc34b988a7b0800000000000000
+      internalID: -5212765161470996836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_36
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 954
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcab930e989d65e0800000000000000
+      internalID: -1914706462129804104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_37
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb4a795376dc0740800000000000000
+      internalID: 5119702667324181486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_38
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 955
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91490e4e7dd0333f0800000000000000
+      internalID: -922378277771766759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_39
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 956
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e156170d874cf1ad0800000000000000
+      internalID: -2729246825991019234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_40
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 954
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef70a1fb15d4778d0800000000000000
+      internalID: -2848723225794705410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_41
+      rect:
+        serializedVersion: 2
+        x: 3321
+        y: 956
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf8827f7e31a7ef0800000000000000
+      internalID: -109753353912152134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unisagrado-transparente-branco_42
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 954
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fd5f06b8a5ac8e0800000000000000
+      internalID: -1672424756941037707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      unisagrado-transparente-branco_0: -2907334277197489245
+      unisagrado-transparente-branco_1: 5455518019787529152
+      unisagrado-transparente-branco_10: 8020768667767454553
+      unisagrado-transparente-branco_11: -2398261773318539678
+      unisagrado-transparente-branco_12: 5052573148380782818
+      unisagrado-transparente-branco_13: 7798907246034486751
+      unisagrado-transparente-branco_14: 5661008986207230674
+      unisagrado-transparente-branco_15: -8964780282496940103
+      unisagrado-transparente-branco_16: -2629367031700325881
+      unisagrado-transparente-branco_17: 4967665496806461856
+      unisagrado-transparente-branco_18: 7650285296780356133
+      unisagrado-transparente-branco_19: 4697307227322642317
+      unisagrado-transparente-branco_2: 4390847694732195760
+      unisagrado-transparente-branco_20: 7909875287210447400
+      unisagrado-transparente-branco_21: -8829349599913961792
+      unisagrado-transparente-branco_22: -4158101143956957113
+      unisagrado-transparente-branco_23: -490107267135179982
+      unisagrado-transparente-branco_24: -6390237138305465847
+      unisagrado-transparente-branco_25: -2024445763447652178
+      unisagrado-transparente-branco_26: 8112694055580472911
+      unisagrado-transparente-branco_27: 4927240981976498315
+      unisagrado-transparente-branco_28: -7623096114062981353
+      unisagrado-transparente-branco_29: 2551440620463430196
+      unisagrado-transparente-branco_3: -5729219297651234007
+      unisagrado-transparente-branco_30: 2051495977631188473
+      unisagrado-transparente-branco_31: 1199309674322637485
+      unisagrado-transparente-branco_32: -4226051172671008009
+      unisagrado-transparente-branco_33: -2414589320230407866
+      unisagrado-transparente-branco_34: -4433521091070206417
+      unisagrado-transparente-branco_35: -5212765161470996836
+      unisagrado-transparente-branco_36: -1914706462129804104
+      unisagrado-transparente-branco_37: 5119702667324181486
+      unisagrado-transparente-branco_38: -922378277771766759
+      unisagrado-transparente-branco_39: -2729246825991019234
+      unisagrado-transparente-branco_4: 7525198416905517894
+      unisagrado-transparente-branco_40: -2848723225794705410
+      unisagrado-transparente-branco_41: -109753353912152134
+      unisagrado-transparente-branco_42: -1672424756941037707
+      unisagrado-transparente-branco_5: 6315744176340765314
+      unisagrado-transparente-branco_6: -1439544378512317655
+      unisagrado-transparente-branco_7: 8978768117813567621
+      unisagrado-transparente-branco_8: -6488295201137152138
+      unisagrado-transparente-branco_9: -1258341895291065299
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
