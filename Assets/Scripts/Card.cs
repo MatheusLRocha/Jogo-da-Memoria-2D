@@ -138,7 +138,7 @@ public class Card : MonoBehaviour
         }
         
         spriteRenderer.sprite = thisSprite;
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(10f);
         spriteRenderer.sprite = backSprite;
     }
 }
