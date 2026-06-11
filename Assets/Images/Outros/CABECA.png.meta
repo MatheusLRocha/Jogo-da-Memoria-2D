@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd945a44d9a871dac8ef46387eb40c95
+guid: 53e767f49a4a76f45b51a3656a69df50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7639376899406271743
-    second: USC1_0
+      213: -3408023775703939460
+    second: CABECA_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: USC1_0
+      name: CABECA_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 11
         y: 0
-        width: 1084
-        height: 687
+        width: 1494
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff49f6a90d4840a60800000000000000
-      internalID: 7639376899406271743
+      spriteID: c76c417be6444b0d0800000000000000
+      internalID: -3408023775703939460
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      USC1_0: 7639376899406271743
+      CABECA_0: -3408023775703939460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

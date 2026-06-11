@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.58094, y: -4.24725, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 0.1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -153,20 +153,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Card
   Sprites:
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
-  - {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
+  - {fileID: 443350630707734667, guid: 2804d9297b81d6b4aaa92e1806c66da4, type: 3}
   thisSprite: {fileID: 0}
+  backSprite: {fileID: 0}
   SpriteChecker: 0
   cardType: 0
   cardState: 1
