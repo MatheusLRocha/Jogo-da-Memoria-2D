@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 
 public class Card : MonoBehaviour
@@ -16,12 +17,16 @@ public class Card : MonoBehaviour
 
     // Variável do componente Animator para modificar as animações da carta
     Animator anim;
+    SpriteRenderer spriteRenderer;
 
     // Lista de sprites das cartas
     [SerializeField] public List<Sprite> Sprites;
 
     // Variável que mostra qual o sprite da carta em específico
     public Sprite thisSprite;
+    public Sprite backSprite;
+    public bool SpriteChecker = false;
+    private bool contentSet = false;
 
     // Cria uma classificação dos tipos de carta e adiciona cada um em cada carta
     public enum CardType
@@ -55,6 +60,14 @@ public class Card : MonoBehaviour
     
     // Propriedade que obtém o playerID do componente PlayerControl pai
     public int playerID;
+
+    void Awake()
+    {
+        // Captura o SpriteRenderer e salva o sprite original do prefab o mais cedo possível
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        backSprite = spriteRenderer.sprite;
+    }
+
     void Start()
     {
         // Pega o componente Animator do objeto
@@ -95,29 +108,38 @@ public class Card : MonoBehaviour
         }
     }
 
-    // (Incompleto) Função de selecionar o sprite específico da carta
+    // Função que seleciona o sprite específico da carta baseado no cardType
     public void CardContent()
     {
-        if (cardType == CardType.Administracao)
-            if (playerID == 1)
-            {
-                thisSprite = Sprites[0];
-            }
-            else
-            {
-                thisSprite = Sprites[0];
-            }
+        if (!SpriteChecker) return;
+        
+        int spriteIndex = (int)cardType;
+        
+        if (spriteIndex >= 0 && spriteIndex < Sprites.Count)
+        {
+            thisSprite = Sprites[spriteIndex];
+            contentSet = true;
+        }
+        else
+        {
+            Debug.LogWarning($"Sprite index {spriteIndex} out of range for card type {cardType}");
+        }
     }
 
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
     {
-        Sprite waiter;
-        waiter = GetComponent<SpriteRenderer>().sprite;
         yield return new WaitForSeconds(0.2f);
-        GetComponent<SpriteRenderer>().sprite = thisSprite;
+        
+        // Aguarda CardContent() ser chamado para usar o sprite correto
+        while (!contentSet)
+        {
+            yield return null;
+        }
+        
+        spriteRenderer.sprite = thisSprite;
         yield return new WaitForSeconds(2.2f);
-        GetComponent<SpriteRenderer>().sprite = waiter;
+        spriteRenderer.sprite = backSprite;
     }
 }
 

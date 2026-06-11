@@ -52,7 +52,6 @@ public class PlayerControl : MonoBehaviour
             
             // Garante acesso do playerID para a carta da mão específica
             card.playerID = playerID;
-            card.CardContent();
 
             // Escolhe aleatoriamente um tipo de carta a partir do enum Card.CardType
             int typeCount = Enum.GetValues(typeof(Card.CardType)).Length;
@@ -78,6 +77,8 @@ public class PlayerControl : MonoBehaviour
                     antiRepeat = false;
                 }
             }
+            card.SpriteChecker = true;
+            card.CardContent();
         }
     }
 

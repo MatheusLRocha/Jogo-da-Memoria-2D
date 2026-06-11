@@ -125,8 +125,6 @@ public class GameManager : MonoBehaviour
         }
         else if (animacao == Card.CardState.Dismatched)
         {
-            // Salva o sprite original
-            Sprite ogsprite = card1.GetComponent<SpriteRenderer>().sprite;
             // Wait for the dismatched animation to play
             yield return new WaitForSeconds(0.18f);
 
@@ -136,8 +134,8 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(1.40f);
 
-            card1.GetComponent<SpriteRenderer>().sprite = ogsprite;
-            card2.GetComponent<SpriteRenderer>().sprite = ogsprite;
+            card1.GetComponent<SpriteRenderer>().sprite = card1.backSprite;
+            card2.GetComponent<SpriteRenderer>().sprite = card2.backSprite;
 
             yield return new WaitForSeconds(0.6f);
 
