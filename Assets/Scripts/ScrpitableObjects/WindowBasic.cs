@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WindowBasic", menuName = "Scriptable Objects/WindowBasic")]
 public class WindowBasic : ScriptableObject{
     [SerializeField]
-    public string textoCurso = "Texto curso";
+    public TextAreaAttribute textoCurso;
     [SerializeField]
     public Sprite imagemCurso;
 
