@@ -35,6 +35,7 @@ public class WindowManager : MonoBehaviour{
     public int matchedTypeNumber;
     //Variável que bloqueia as cartas durante a ativação da janela
     public bool isWindowActive = false;
+    public int finaleActivator = 0;
     Animator anim;
     
     void Awake()
@@ -94,6 +95,7 @@ public class WindowManager : MonoBehaviour{
             yield return new WaitForSeconds(1.3f);
             janelaFundo.SetActive(false);
             isWindowActive = false;
+            finaleActivator ++;
         }    
     }
 
