@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: LogisticaWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: Logistica Curso
-  imagemCurso: {fileID: 21300000, guid: 076ca9fc0415bb145b56f98ce05b90ab, type: 3}
+  textoCurso: "Log\xEDstica (Tecn\xF3logo - 2 anos) :                                                                                                                     
+    \xC1rea respons\xE1vel pelo gerenciamento do fluxo de produtos, materiais e informa\xE7\xF5es,
+    ensinando sobre transporte, armazenagem, estoques e cadeia de suprimentos.                                                                                                                
+    Aumenta a efici\xEAncia e reduz custos operacionais, sendo uma atividade fundamental
+    para o com\xE9rcio e a ind\xFAstria pela necessidade de organiza\xE7\xE3o e ordem
+    de centros de distribui\xE7\xE3o, transportadoras e sistemas de rastreamento
+    de produtos "
+  imagemCurso: {fileID: -7851042402547062165, guid: 051d372394f3203409b9ee0ba318a291, type: 3}

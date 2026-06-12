@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: CienciasComputacaoWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: "Ci\xEAncias Da Computa\xE7\xE3o Curso"
-  imagemCurso: {fileID: 21300000, guid: 066e2231a1aa953449f855ee7e9999fa, type: 3}
+  textoCurso: "Ci\xEAncia da Computa\xE7\xE3o (Bacharelado - 4 anos) :                                                                                             
+    Aprofunda os fundamentos te\xF3ricos e cient\xEDficos da tecnologia, explorando
+    algoritmos, estruturas de dados, intelig\xEAncia artificial e sistemas computacionais,
+    focando em compreender como a computa\xE7\xE3o funciona em n\xEDveis mais profundos.                                                                                                                                       
+    \xC9 uma excelente op\xE7\xE3o para pesquisa, inova\xE7\xE3o e desenvolvimento
+    tecnol\xF3gico avan\xE7ado, sendo seus profissionais a principal fonte das novas
+    tecnologias de nosso tempo. "
+  imagemCurso: {fileID: -2533858466485355933, guid: 36432e54399ccf444b10ae2399227bfa, type: 3}

@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
             card1.GetComponent<SpriteRenderer>().sprite = card1.thisSprite;
             card2.GetComponent<SpriteRenderer>().sprite = card2.thisSprite;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
             
             // Faz com que no gerenciador de janelas afirme que o match foi feito
             WindowManager.instance.hasMatched = true;

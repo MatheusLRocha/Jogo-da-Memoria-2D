@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: MarketingWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: Marketing Curso
-  imagemCurso: {fileID: 21300000, guid: 9ae276219214b1d4da8396d29cb807a2, type: 3}
+  textoCurso: "Marketing (Tecn\xF3logo - 2 anos) :                                                                                                                     
+    Estuda o mercado e o comportamento dos consumidores para criar estrat\xE9gias
+    de comunica\xE7\xE3o e vendas, abordando branding, marketing digital, pesquisa
+    de mercado e publicidade.                                                                                                                                                     
+    Aproxima empresas e clientes de forma eficiente, sendo uma \xE1rea din\xE2mica
+    e em constante transforma\xE7\xE3o, principalmente hoje em dia com a alta dos
+    an\xFAncios e propagandas no meio digital. "
+  imagemCurso: {fileID: 3891087185351647009, guid: ddab255e8c632504c8c3c96020a2f017, type: 3}

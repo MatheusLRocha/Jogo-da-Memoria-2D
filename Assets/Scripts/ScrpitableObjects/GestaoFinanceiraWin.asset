@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: GestaoFinanceiraWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: "Gest\xE3o Financeira Curso"
-  imagemCurso: {fileID: 21300000, guid: c2c519196a5c2824bbee923f67cb2186, type: 3}
+  textoCurso: "Gest\xE3o Financeira (Tecn\xF3logo - 2 anos) :                                                                                                      
+    Forma profissionais especializados em planejamento e controle de recursos financeiros.
+    O curso aborda or\xE7amento, investimentos, fluxo de caixa e an\xE1lise de custos.                                                                                                                         
+    Empresas de todos os portes precisam de uma boa gest\xE3o financeira para garantir
+    sustentabilidade econ\xF4mica em suas decis\xF5es.                                                                                          "
+  imagemCurso: {fileID: -5791846974082813069, guid: 133f3d8a4ce96ce4186850552514e692, type: 3}
