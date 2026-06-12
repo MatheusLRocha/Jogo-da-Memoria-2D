@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour
         // Grande loop que randomiza as cartas ao mesmo tempo que cria elas
         for (int i = posicoes.Count - 1; i > -1; i--)
         {
-            cards[i] = Instantiate(CardPrefab, posicoes[i].position, UnityEngine.Quaternion.identity, pai);
+            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity, pai);
             Card card = cards[i].GetComponent<Card>();
             
             // Garante acesso do playerID para a carta da mão específica
@@ -55,12 +55,12 @@ public class PlayerControl : MonoBehaviour
             bool antiRepeat = true;
             while (antiRepeat)
             {
-                int j = UnityEngine.Random.Range(0, typeCount);
+                int possibleType = UnityEngine.Random.Range(0, typeCount);
                 bool alreadyChosen = false;
 
                 for (int l = 0; l < choosen.Count; l++)
                 {
-                    if (j == choosen[l])
+                    if (possibleType == choosen[l])
                     {
                         alreadyChosen = true;
                         break;
@@ -69,8 +69,8 @@ public class PlayerControl : MonoBehaviour
 
                 if (!alreadyChosen)
                 {
-                    card.cardType = (Card.CardType)j;
-                    choosen.Add(j);
+                    card.cardType = (Card.CardType)possibleType;
+                    choosen.Add(possibleType);
                     antiRepeat = false;
                 }
             }
@@ -185,7 +185,7 @@ public class PlayerControl : MonoBehaviour
     }
     private System.Collections.IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(2.6f);
+        yield return new WaitForSeconds(10.5f);
         youCanMoveNow = true;
     }
 
