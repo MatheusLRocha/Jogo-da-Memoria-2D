@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
         InstantiateCards();
         currentIndex = 0;
         // Mostra que a carta inicial do baralho de cada jogador já começa selecionada no início do jogo
-        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
         cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
         StartCoroutine(StartShowing());
     }   
@@ -128,7 +128,7 @@ public class PlayerControl : MonoBehaviour
 
                 // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
                 GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
-                cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.15f, 1.15f, 0.0f);
+                cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
                 cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
                 ChangeCard(1);
             }
@@ -143,7 +143,7 @@ public class PlayerControl : MonoBehaviour
         // Limpa a seleção da carta anterior e pula se a carta já tiver sido a correta
         if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
         {
-            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.15f, 1.15f, 0.0f);
+            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
             cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);            
             
             // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
@@ -182,7 +182,7 @@ public class PlayerControl : MonoBehaviour
         
 
         // Seleciona a próxima carta
-        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
         cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
     }
     private System.Collections.IEnumerator StartShowing()
