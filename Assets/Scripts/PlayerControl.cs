@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Linq;
-using UnityEditor.PackageManager;
-using System.Numerics;
 
 
 public class PlayerControl : MonoBehaviour

@@ -1,6 +1,3 @@
-using System.ComponentModel.Design;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WindowBasic", menuName = "Scriptable Objects/WindowBasic")]
