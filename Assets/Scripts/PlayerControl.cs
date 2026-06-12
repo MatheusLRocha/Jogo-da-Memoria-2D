@@ -185,7 +185,7 @@ public class PlayerControl : MonoBehaviour
     }
     private System.Collections.IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(2.6f);
+        yield return new WaitForSeconds(10.5f);
         youCanMoveNow = true;
     }
 
