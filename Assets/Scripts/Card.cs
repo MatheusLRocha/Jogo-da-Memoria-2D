@@ -5,15 +5,6 @@ using System.Collections.Generic;
 
 public class Card : MonoBehaviour
 {
-    /// Coisas para mexer amanhã (sprite muito pequeno e outros problemas)
-    //public Sprite frente;
-    //public Sprite verso;
-
-    //private SpriteRenderer sr;
-    //private Image img;
-    //private bool mostrandoFrente = false;
-
-
     // Variável do componente Animator para modificar as animações da carta
     Animator anim;
     SpriteRenderer spriteRenderer;
@@ -23,6 +14,7 @@ public class Card : MonoBehaviour
 
     // Variável que mostra qual o sprite da carta em específico
     public Sprite thisSprite;
+    //Variável de backup do sprite antigo
     public Sprite backSprite;
     public bool SpriteChecker = false;
     private bool contentSet = false;
