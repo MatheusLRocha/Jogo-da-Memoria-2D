@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: SistemasInformacaoWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: "Sistemas da Informa\xE7\xE3o Curso"
-  imagemCurso: {fileID: 21300000, guid: 0541a3c331b310640845ae8ea81a691b, type: 3}
+  textoCurso: "Sistemas de Informa\xE7\xE3o (Bacharelado - 4 anos) :                                                                                         
+    Integra conhecimentos de tecnologia e gest\xE3o empresarial, formando profissionais
+    capazes de desenvolver e administrar sistemas que apoiam as opera\xE7\xF5es das
+    organiza\xE7\xF5es, abordando banco de dados, governan\xE7a de TI e an\xE1lise
+    de neg\xF3cios.                                                                                                                                        
+    Seus profissionais geralmente atuam como intermedi\xE1rios entre equipes t\xE9cnicas
+    e gestores, transformando necessidades do neg\xF3cio em solu\xE7\xF5es tecnol\xF3gicas. "
+  imagemCurso: {fileID: -1208788419333051466, guid: d3e339948a968424993f63fbfb7b2915, type: 3}

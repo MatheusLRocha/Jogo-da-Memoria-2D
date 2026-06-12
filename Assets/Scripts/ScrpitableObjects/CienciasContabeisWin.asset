@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: CienciasContabeisWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: Texto curso
-  imagemCurso: {fileID: 21300000, guid: 53ac19059e7ac9a41ba0e4a67f9f5794, type: 3}
+  textoCurso: "Ci\xEAncias Cont\xE1beis (Bacharelado - 4 anos) :                                                                                                 
+    Respons\xE1vel pelo controle financeiro e patrimonial das organiza\xE7\xF5es,
+    a \xE1rea aborda contabilidade, auditoria, legisla\xE7\xE3o tribut\xE1ria e an\xE1lise
+    financeira.                                                                                                                                            
+    Desempenham importante papel na tomada de decis\xF5es estrat\xE9gicas e transparentes
+    perante a legalidade, mantendo registros cont\xE1beis adequados e essenciais
+    para o funcionamento de qualquer neg\xF3cio formal. "
+  imagemCurso: {fileID: -888488328326368013, guid: 8a51fc24b36ed3343b95533eff0d3bc9, type: 3}

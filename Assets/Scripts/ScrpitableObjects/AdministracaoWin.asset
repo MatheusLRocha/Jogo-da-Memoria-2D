@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: AdministracaoWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: "Administra\xE7\xE3o (Bacharelado - 4 anos) :                                                                                                                   
+  textoCurso: "Administra\xE7\xE3o (Bacharelado - 4 anos) :                                                                                                            
     A  Administra\xE7\xE3o forma profissionais capazes de planejar, organizar e liderar
-    empresas dos mais diversos segmentos. O curso aborda \xE1reas como finan\xE7as,
-    marketing, recursos humanos e estrat\xE9gia.                                                                                         
-    Curiosidade:                                                                                                                                                          
-    Administradores podem trabalhar em praticamente qualquer setor da economia, desde
-    hospitais e escolas at\xE9 empresas de tecnologia, ind\xFAstria e com\xE9rcio. "
-  imagemCurso: {fileID: 21300000, guid: 0fdf7308aed4103498bb40aaaf995f74, type: 3}
+    empresas dos mais diversos segmentos abordando \xE1reas como finan\xE7as, marketing,
+    recursos humanos e estrat\xE9gia.                                                                                                                       
+    Por ser uma \xE1rea vers\xE1til, administradores podem trabalhar em praticamente
+    qualquer setor da economia, desde hospitais e escolas at\xE9 empresas de tecnologia,
+    ind\xFAstria e com\xE9rcio. "
+  imagemCurso: {fileID: 8074176688042565125, guid: 245c5ecdfee876c408d20b3e1cd07b21, type: 3}

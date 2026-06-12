@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: InteligenciaArtificialAplicadaWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: "Intelig\xEAncia Artificial Aplicada Curso"
-  imagemCurso: {fileID: 21300000, guid: 2bcc11bb28ab57c429eac1920771163b, type: 3}
+  textoCurso: "Intelig\xEAncia Artificial Aplicada                (Tecn\xF3logo -
+    2 anos e meio) :                                                                                                                            
+    Ensina como utilizar tecnologias de Intelig\xEAncia Artificial (IA) para resolver
+    problemas reais, abordando machine learning, an\xE1lise de dados e automa\xE7\xE3o
+    de processos com foco na aplica\xE7\xE3o pr\xE1tica dessas ferramentas em diferentes
+    setores.                                                                                                                                              
+    \xC9 uma das \xE1reas mais inovadoras e promissoras da atualidade justamente
+    por ser t\xE3o vers\xE1til. "
+  imagemCurso: {fileID: -1516842854709001337, guid: 6fd4695b5793ef54ebc06f777c934e08, type: 3}

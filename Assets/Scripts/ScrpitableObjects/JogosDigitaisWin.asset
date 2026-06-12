@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
   m_Name: JogosDigitaisWin
   m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
-  textoCurso: Jogos Digitais Curso
-  imagemCurso: {fileID: 21300000, guid: efa6b5b74ae654f46913891119dbba03, type: 3}
+  textoCurso: "Jogos Digitais (Tecn\xF3logo - 2 anos e meio) :                                                                                                    
+    O curso foi criado em volta do desenvolvimento de games e experi\xEAncias interativas,
+    reunindo programa\xE7\xE3o, design, arte digital e cria\xE7\xE3o de roteiros.                                                                                                                              
+    Seu objetivo \xE9 preparar profissionais n\xE3o s\xF3 para a ind\xFAstria de
+    entretenimento digital, mas para outras finalidades como treinamentos e simula\xE7\xF5es,
+    combinando a criatividade e a educa\xE7\xE3o com a tecnologia. "
+  imagemCurso: {fileID: -8598733365609711572, guid: 4827a5b6766e6a241aadc0786ed58839, type: 3}
