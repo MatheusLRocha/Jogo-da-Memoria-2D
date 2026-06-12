@@ -1,12 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using UnityEditor;
-using JetBrains.Annotations;
 
 public class WindowManager : MonoBehaviour{
     // Cria instância do script, o que permite com que outros scripts possam mexer aqui

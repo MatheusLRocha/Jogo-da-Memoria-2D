@@ -1,12 +1,6 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using TMPro;
-using UnityEditor.SceneManagement;
 using System.Collections;
-using Unity.VectorGraphics;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {

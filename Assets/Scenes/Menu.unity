@@ -1586,7 +1586,7 @@ GameObject:
   - component: {fileID: 361660979}
   - component: {fileID: 361660978}
   m_Layer: 5
-  m_Name: Texto1 (2)
+  m_Name: TextoBaixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Descri\xE7\xF5es ficam \xE0 Direita"
+  m_text: "Habilidades e/ou Caracter\xEDsticas ficam \xE0 Direita"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2986,9 +2986,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Jogo da mem\xF3ria feito com o intuito de mostrar os cursos EAD do UNISAGRADO
-    e entender as suas diferen\xE7as para uma escolha mais adequada \xE0s necessidades
-    do estudante."
+  m_text: "Jogo da mem\xF3ria feito com o intuito de mostrar os cursos EAD do UNISAGRADO,
+    gerando compreens\xE3o das diferen\xE7as entre suas forma\xE7\xF5es para uma
+    escolha de carreira alinhada aos objetivos do jogador"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3015,14 +3015,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4334,7 +4334,7 @@ GameObject:
   - component: {fileID: 900591150}
   - component: {fileID: 900591149}
   m_Layer: 5
-  m_Name: Texto1 (1)
+  m_Name: TextoCima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Descri\xE7\xE3o"
+  m_text: "Habilidades e/ou Caracter\xEDsticas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4406,8 +4406,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8166,10 +8166,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "No in\xEDcio dos jogos as cart\xE3o ir\xE3o se virar por alguns segundos,
-    aproveito esse tempo para se lembrar dos conte\xFAdos das cartas.\n\nO objetivo
-    \xE9 fazer a combina\xE7\xE3o de todas as imagens e descri\xE7\xF5es das 13 cartas
-    referentes aos cursos EAD da UNISAGRADO.\n\n         Bom jogo!"
+  m_text: "No in\xEDcio dos jogos as cartas ficar\xE3o viradas por alguns segundos,
+    aproveite esse tempo para memorizar os conte\xFAdos delas.\n\nO objetivo \xE9
+    fazer a combina\xE7\xE3o de todas as Imagens e Habilidades e/ou  Caracter\xEDsticas
+    das 13 cartas referentes aos cursos EAD do UNISAGRADO.\n\n         Bom jogo!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8265,7 +8265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1416758981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9423,8 +9423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -512.5766, y: 214.013}
-  m_SizeDelta: {x: 317.49585, y: -245.03406}
+  m_AnchoredPosition: {x: -507.97897, y: 214.013}
+  m_SizeDelta: {x: 481.6978, y: -245.0341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652037190
 MonoBehaviour:
@@ -9446,7 +9446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "S\xE3o 2 tipos de cartas:"
+  m_text: "S\xE3o dois tipos de cartas referentes a cada curso:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9473,14 +9473,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10523,7 +10523,7 @@ GameObject:
   - component: {fileID: 1789478234}
   - component: {fileID: 1789478233}
   m_Layer: 5
-  m_Name: TextoEsquerda
+  m_Name: TextoBaixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11301,7 +11301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1877961003
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11746,7 +11746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4925156119044964847, guid: 384d4b588727eee4b83e78e52748ac66, type: 3}
+  m_Sprite: {fileID: -7702823697297959779, guid: 7330e317ca8d1ad4fa22cd5d1c4d96f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12706,7 +12706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 487, y: 31}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2087172107
@@ -12855,7 +12855,7 @@ GameObject:
   - component: {fileID: 2108115280}
   - component: {fileID: 2108115279}
   m_Layer: 5
-  m_Name: TextoImagem
+  m_Name: TextoCima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
