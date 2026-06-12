@@ -128,6 +128,7 @@ public class PlayerControl : MonoBehaviour
                 cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
                 cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
                 ChangeCard(1);
+                StartCoroutine(StopMovimentation());
             }
         }
         else{
@@ -185,6 +186,13 @@ public class PlayerControl : MonoBehaviour
     private System.Collections.IEnumerator StartShowing()
     {
         yield return new WaitForSeconds(2.6f);
+        youCanMoveNow = true;
+    }
+
+    private System.Collections.IEnumerator StopMovimentation()
+    {
+        youCanMoveNow = false;
+        yield return new WaitForSeconds(5f);
         youCanMoveNow = true;
     }
 }
