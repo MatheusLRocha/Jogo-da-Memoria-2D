@@ -1,5 +1,7 @@
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject painelMenuInicial;
@@ -45,12 +47,17 @@ public class MenuPrincipalManager : MonoBehaviour
         painelMenuInicial.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         painelModoJogo.SetActive(false);
+        painelModoJogo.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
     }
 
     public void AbrirTutorial()
     {
         painelMenuInicial.SetActive(false);
         painelTutorial.SetActive(true);
+    }
+    public void PularTutorial()
+    {
+        tutorialAnim.SetBool("Faster", true);
     }
     public void FecharTutorial()
     {
@@ -63,6 +70,7 @@ public class MenuPrincipalManager : MonoBehaviour
         painelMenuInicial.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         painelTutorial.SetActive(false);
+        painelTutorial.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
     }
     public void AbrirCreditos()
     {
@@ -80,6 +88,7 @@ public class MenuPrincipalManager : MonoBehaviour
         painelMenuInicial.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         painelCreditos.SetActive(false);
+        painelCreditos.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
     }
     public void SairDoJogo()
     {
