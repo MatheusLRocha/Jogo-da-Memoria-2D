@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour
 
     List<int> choosen = new List<int>();
 
+    private int UP = -4;
+    private int DOWN = 4;
+    private int LEFT = -1;
+    private int RIGHT = 1;
+
     void Start()
     {
         InstantiateCards();
@@ -84,55 +89,75 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         // Verifica a cada frame se o jogador se movimentou
-        VerifyPlayer();
+        HandlePlayerControls();
     }
 
-    void VerifyPlayer()
+    void SetWASDControls()
+    {
+        if (Keyboard.current.aKey.wasPressedThisFrame) ChangeCard(LEFT);
+        if (Keyboard.current.dKey.wasPressedThisFrame) ChangeCard(RIGHT);
+        if (Keyboard.current.wKey.wasPressedThisFrame) ChangeCard(UP);
+        if (Keyboard.current.sKey.wasPressedThisFrame) ChangeCard(DOWN);
+    }
+
+    void SetArrowControls()
+    {
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame) ChangeCard(LEFT);
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame) ChangeCard(RIGHT);
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame) ChangeCard(UP);
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame) ChangeCard(DOWN);
+    }
+
+    void SetPlayerMovement()
+    {
+        if (VerifyPlayer())
+        {
+            SetWASDControls();
+        }
+        else
+        {
+            SetArrowControls();
+        }
+    }
+
+    void HandlePlayerMovement()
+    {
+        SetPlayerMovement();
+    }
+
+    void SetPlayerSelectionCard()
+    {
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        {
+            // Pega o componente Card(Script) da carta atual e muda seu estado para executar a animação
+            Card card = cards[currentIndex].GetComponent<Card>();
+            card.ChangeState(Card.CardState.Selected);
+
+            // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
+            GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
+            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
+            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
+            ChangeCard(1);
+            StartCoroutine(StopMovimentation());
+        }
+    }
+
+    void HandlePlayerSelectionCard()
+    {
+        SetPlayerSelectionCard();
+    }
+
+    bool VerifyPlayer()
+    {
+        return playerID == 1;
+    }
+
+    void HandlePlayerControls()
     {
         if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
         {
-            if (playerID == 1)
-            {
-                // Verifica se o jogador está se movimentando para a direita ou para a esquerda
-                if (Keyboard.current.dKey.wasPressedThisFrame)
-                    ChangeCard(1);
-                else if (Keyboard.current.aKey.wasPressedThisFrame)
-                    ChangeCard(-1);
-                else if (Keyboard.current.wKey.wasPressedThisFrame)
-                    ChangeCard(-4);
-                else if (Keyboard.current.sKey.wasPressedThisFrame)
-                    ChangeCard(4); 
-                    
-            }
-            else if (playerID == 2)
-            {
-                if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
-                    ChangeCard(1);
-                else if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
-                    ChangeCard(-1);
-                else if (Keyboard.current.upArrowKey.wasPressedThisFrame)
-                    ChangeCard(-4);
-                else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
-                    ChangeCard(4);
-            }
-
-            // Verifica se algum dos jogadores apertou o botão para selecionar as cartas
-            if (Keyboard.current.enterKey.wasPressedThisFrame)
-            {
-                // Pega o componente Card(Script) da carta atual e muda seu estado para executar a animação
-                Card card = cards[currentIndex].GetComponent<Card>();
-                card.ChangeState(Card.CardState.Selected);
-
-                // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
-                GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
-                cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
-                cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
-                ChangeCard(1);
-                StartCoroutine(StopMovimentation());
-            }
-        }
-        else{
-            return;
+            HandlePlayerMovement();
+            HandlePlayerSelectionCard();
         }
     }
 
