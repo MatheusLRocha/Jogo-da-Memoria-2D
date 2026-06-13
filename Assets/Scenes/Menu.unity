@@ -1313,7 +1313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &324236036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9753,8 +9753,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Felipe Juliano dos Santos  - Ci\xEAncias da Computa\xE7\xE3o\nGuilherme
     de Menezes  - Ci\xEAncias da Computa\xE7\xE3o\nJo\xE3o Daniel Ribeiro  - Ci\xEAncias
-    da Computa\xE7\xE3o\nLucas Gabriel Soares  - Publicidade e Propaganda\nMatheus
-    Luiz Rocha  - Ci\xEAncias da Computa\xE7\xE3o\nMiguel Bricailo Reghini  - Ci\xEAncias
+    da Computa\xE7\xE3o\nLucas de Souza  - Publicidade e Propaganda\nMatheus Luiz
+    Rocha  - Ci\xEAncias da Computa\xE7\xE3o\nMiguel Bricailo Reghini  - Ci\xEAncias
     da Computa\xE7\xE3o"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
