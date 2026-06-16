@@ -4,16 +4,13 @@ using TMPro;
 using UnityEngine;
 
 public class WindowManager : MonoBehaviour{
-    // Cria instância do script, o que permite com que outros scripts possam mexer aqui
     public static WindowManager instance;
 
-     // Apenas cria um cabeçalho no Unity para melhor organização
     [Header("Configurações das Janelas")]
 
     // Permite conectar o molde da janela no seu respectivo gerenciador
     [SerializeField] public GameObject janelaFundo;
 
-    // Referência para os objetos que contém o script PlayerControl
     [SerializeField] public List<GameObject> playerControlObject; 
 
     // Cria uma lista de objetos para receber todos os scriptable objects para usar nas janelas
@@ -80,25 +77,16 @@ public class WindowManager : MonoBehaviour{
         yield return new WaitForSeconds(0.5f);
 
         // Ativa a janela
-        janelaFundo.SetActive(true);
-        anim.SetBool("Activated", true);
-        isWindowActive = true;
+        ActivateWindow();
 
         // Coloca no texto da janela o valor do texto do respectivo scriptable object
-        infoTexto.text = janelas[matchedTypeNumber].textoCurso;
+        SetDescriptionText();
 
         // Verifica se existe uma imagem para ser colocada do card na janela
-        if (imagemObjeto != null)
-        {
-            imagemObjeto.sprite = janelas[matchedTypeNumber].imagemCurso;
-        }
-        else
-        {
-            Debug.LogWarning("WindowManager imagemObjeto não contém uma imagem atribuida.");
-        }
+        SetImageOnWindow();
 
         // Se não deu match, a janela continua desativada e os players podem mexer nas cartas
-        if (hasMatched == false)
+        if (!IsMatchedCards())
         {
             anim.SetBool("Activated", false);
             yield return new WaitForSeconds(1.3f);
@@ -114,5 +102,28 @@ public class WindowManager : MonoBehaviour{
         }    
     }
 
+    private void ActivateWindow()
+    {
+        janelaFundo.SetActive(true);
+        anim.SetBool("Activated", true);
+        isWindowActive = true;
+    }
 
+    private void SetDescriptionText()
+    {
+        infoTexto.text = janelas[matchedTypeNumber].textoCurso;
+    }
+
+    private void SetImageOnWindow()
+    {
+        if (imagemObjeto != null)
+            imagemObjeto.sprite = janelas[matchedTypeNumber].imagemCurso;
+        else
+            Debug.LogWarning("WindowManager imagemObjeto não contém uma imagem atribuida.");
+    }
+
+    private bool IsMatchedCards()
+    {
+        return hasMatched;
+    }
 }

@@ -5,21 +5,20 @@ using System.Collections.Generic;
 
 public class Card : MonoBehaviour
 {
-    // Variável do componente Animator para modificar as animações da carta
     Animator anim;
+    
     SpriteRenderer spriteRenderer;
 
-    // Lista de sprites das cartas
     [SerializeField] public List<Sprite> Sprites;
 
-    // Variável que mostra qual o sprite da carta em específico
-    public Sprite thisSprite;
+    public Sprite actualSprite;
     //Variável de backup do sprite antigo
-    public Sprite backSprite;
+    public Sprite backupOldSprite;
+
     public bool SpriteChecker = false;
+
     private bool contentSet = false;
 
-    // Cria uma classificação dos tipos de carta e adiciona cada um em cada carta
     public enum CardType
     {
         Administracao,
@@ -37,7 +36,6 @@ public class Card : MonoBehaviour
         InteligenciaArtificialAplicada,
     }
 
-    // Cria estados da carta para modificar as animações
     public enum CardState
     {
         Idle,
@@ -49,14 +47,13 @@ public class Card : MonoBehaviour
     public CardType cardType;
     public CardState cardState;
     
-    // Propriedade que obtém o playerID do componente PlayerControl pai
     public int playerID;
 
     void Awake()
     {
         // Captura o SpriteRenderer e salva o sprite original do prefab o mais cedo possível
         spriteRenderer = GetComponent<SpriteRenderer>();
-        backSprite = spriteRenderer.sprite;
+        backupOldSprite = spriteRenderer.sprite;
     }
 
     void Start()
@@ -66,19 +63,24 @@ public class Card : MonoBehaviour
         StartCoroutine(StartShowing());
     }
 
-    // Função que verifica e faz as mudanças de animação na carta
-    public void ChangeState(CardState newState)
+    public void HandleCardState(CardState newState)
     {
-        // Limpa os estados antigos para usar os novos
+        ClearOldCardStates();
+        ChangeState(newState);
+    }
+
+    private void ClearOldCardStates()
+    {
         anim.SetBool("isIdle", false);
         anim.SetBool("isSelected", false);
         anim.SetBool("isMatched", false);
         anim.SetBool("isDismatched", false);
+    }
 
-        // Variável recebe o novo estado
+    private void ChangeState(CardState newState)
+    {
         cardState = newState;
 
-        // Atualiza os estados
         switch (cardState) 
         {
             case CardState.Idle:
@@ -105,16 +107,9 @@ public class Card : MonoBehaviour
         if (!SpriteChecker) return;
         
         int spriteIndex = (int)cardType;
-        
-        if (spriteIndex >= 0 && spriteIndex < Sprites.Count)
-        {
-            thisSprite = Sprites[spriteIndex];
-            contentSet = true;
-        }
-        else
-        {
-            Debug.LogWarning($"Sprite index {spriteIndex} out of range for card type {cardType}");
-        }
+
+        actualSprite = Sprites[spriteIndex];
+        contentSet = true;
     }
 
     // Mostra as cartas no inicio
@@ -128,9 +123,9 @@ public class Card : MonoBehaviour
             yield return null;
         }
         
-        spriteRenderer.sprite = thisSprite;
+        spriteRenderer.sprite = actualSprite;
         yield return new WaitForSeconds(10f);
-        spriteRenderer.sprite = backSprite;
+        spriteRenderer.sprite = backupOldSprite;
     }
 }
 
