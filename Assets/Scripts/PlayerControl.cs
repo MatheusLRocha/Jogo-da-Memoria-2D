@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerControl : MonoBehaviour
 {
     
@@ -25,6 +24,7 @@ public class PlayerControl : MonoBehaviour
 
     // Gera um index atual para transitar entre as cartas
     public int currentIndex = 0;
+    
     private bool youCanMoveNow = false;
 
     List<int> choosen = new List<int>();
@@ -84,31 +84,21 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
-
     void Update()
     {
-        // Verifica a cada frame se o jogador se movimentou
         HandlePlayerControls();
     }
 
-    void SetWASDControls()
+    void HandlePlayerControls()
     {
-        if (Keyboard.current.aKey.wasPressedThisFrame) ChangeCard(LEFT);
-        if (Keyboard.current.dKey.wasPressedThisFrame) ChangeCard(RIGHT);
-        if (Keyboard.current.wKey.wasPressedThisFrame) ChangeCard(UP);
-        if (Keyboard.current.sKey.wasPressedThisFrame) ChangeCard(DOWN);
+        if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
+        {
+            HandlePlayerMovement();
+            HandlePlayerSelectionCard();
+        }
     }
-
-    void SetArrowControls()
-    {
-        if (Keyboard.current.leftArrowKey.wasPressedThisFrame) ChangeCard(LEFT);
-        if (Keyboard.current.rightArrowKey.wasPressedThisFrame) ChangeCard(RIGHT);
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame) ChangeCard(UP);
-        if (Keyboard.current.downArrowKey.wasPressedThisFrame) ChangeCard(DOWN);
-    }
-
-    void SetPlayerMovement()
+    
+    void HandlePlayerMovement()
     {
         if (VerifyPlayer())
         {
@@ -120,77 +110,96 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void HandlePlayerMovement()
-    {
-        SetPlayerMovement();
-    }
-
-    void SetPlayerSelectionCard()
-    {
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
-        {
-            // Pega o componente Card(Script) da carta atual e muda seu estado para executar a animação
-            Card card = cards[currentIndex].GetComponent<Card>();
-            card.ChangeState(Card.CardState.Selected);
-
-            // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
-            GameManager.instance.VerificarTipos(playerID, cards[currentIndex].GetComponent<Card>());
-            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
-            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
-            ChangeCard(1);
-            StartCoroutine(StopMovimentation());
-        }
-    }
-
-    void HandlePlayerSelectionCard()
-    {
-        SetPlayerSelectionCard();
-    }
-
     bool VerifyPlayer()
     {
         return playerID == 1;
     }
 
-    void HandlePlayerControls()
+    void SetWASDControls()
     {
-        if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
+        if (Keyboard.current.aKey.wasPressedThisFrame) HandleCardMovement(LEFT);
+        if (Keyboard.current.dKey.wasPressedThisFrame) HandleCardMovement(RIGHT);
+        if (Keyboard.current.wKey.wasPressedThisFrame) HandleCardMovement(UP);
+        if (Keyboard.current.sKey.wasPressedThisFrame) HandleCardMovement(DOWN);
+    }
+
+    void SetArrowControls()
+    {
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame) HandleCardMovement(LEFT);
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame) HandleCardMovement(RIGHT);
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame) HandleCardMovement(UP);
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame) HandleCardMovement(DOWN);
+    }    
+
+    void HandlePlayerSelectionCard()
+    {
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            HandlePlayerMovement();
-            HandlePlayerSelectionCard();
+            // Pega o componente Card(Script) da carta atual e muda seu estado para executar a animação
+            Card card = cards[currentIndex].GetComponent<Card>();
+            card.HandleCardState(Card.CardState.Selected);
+
+            // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
+            GameManager.instance.VerifyCardTypes(playerID, cards[currentIndex].GetComponent<Card>());
+            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
+            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);  
+            HandleCardMovement(RIGHT);
+            StartCoroutine(StopMovimentation());
         }
     }
 
-    public void ChangeCard(int direction)
+    public void HandleCardMovement(int direction)
     {
-        // Limpa a seleção da carta anterior e pula se a carta já tiver sido a correta
-        if (cards[currentIndex].GetComponent<Card>().cardState != Card.CardState.Matched)
+        if (!IsMatchedCards())
         {
-            cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
-            cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);            
-            
-            // Pega o componente Card da carta antiga e limpa seu estado para o modo parado
-            Card card = cards[currentIndex].GetComponent<Card>();
-            card.ChangeState(Card.CardState.Idle);
-
-            int newIndex = currentIndex + direction;
-
-            if (newIndex > cards.Count - 1)
-            {
-                newIndex = 0;
-            }
-            else if (newIndex < 0)
-            {
-                newIndex = cards.Count - 1;
-            }
-        
-            currentIndex = newIndex;
+            ChangeCardScale();
+            ChangeCardStateToIdle();
+            MoveToNextCard(direction);
         }
 
-        // Verifica os índices dos objetos que ja deram match
-        while (cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched)
+        FindNextDismatchedCard(direction);
+            
+        SelectNextCard();
+    }
+
+    private void MoveToNextCard(int direction)
+    {
+        int newIndex = currentIndex + direction;
+
+        if (newIndex > cards.Count - 1)
         {
-            // Equanto estiver percorrendo pelo objeto matched, muda o índice até o próximo valor existente não matched
+            newIndex = 0;
+        }
+        else if (newIndex < 0)
+        {
+            newIndex = cards.Count - 1;
+        }
+    
+        currentIndex = newIndex;
+    }
+
+    private void ChangeCardScale()
+    {
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.3f, 1.3f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, 0f);   
+    }
+
+    private void ChangeCardStateToIdle()
+    {
+        Card card = cards[currentIndex].GetComponent<Card>();
+        card.HandleCardState(Card.CardState.Idle);
+    }
+
+    private void SelectNextCard()
+    {
+        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
+        cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f); 
+    }
+
+    private void FindNextDismatchedCard(int direction)
+    {
+        while (IsMatchedCards())
+        {
             currentIndex += direction;
 
             if (currentIndex > cards.Count - 1)
@@ -202,12 +211,13 @@ public class PlayerControl : MonoBehaviour
                 currentIndex = cards.Count - 1;
             }
         }
-        
-
-        // Seleciona a próxima carta
-        cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(1.5f, 1.5f, 0.0f);
-        cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(cards[currentIndex].GetComponent<Transform>().localPosition.x, cards[currentIndex].GetComponent<Transform>().localPosition.y, -1f);            
     }
+
+    private bool IsMatchedCards()
+    {
+        return cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched;
+    }
+
     private System.Collections.IEnumerator StartShowing()
     {
         yield return new WaitForSeconds(10.5f);

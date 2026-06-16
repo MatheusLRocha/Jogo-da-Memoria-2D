@@ -1,17 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
-    // Gerencia questões como pontuação, verificação de valores semelhantes, entre outros
-
     public static GameManager instance; // Torna o script globalmente acessível para outros scripts
 
-    // Função Awake executa antes da Start()
     void Awake()
     {
-        // Verifica se já existe uma cópia da instância ou não
         if (instance == null)
         {
             instance = this;
@@ -21,121 +18,116 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Cria as variáveis para acessar os cards de cada jogador
-    public Card cardJogador1;
-    public Card cardJogador2;
+    public Card cardPlayer1;
+    public Card cardPlayer2;
 
-    // Cria variável para mexer no texto
     public TextMeshProUGUI scoreText;
     int currentPoints = 0;
 
-    // Verifica frame por frame se os pontos chegaram no limite
     void Update()
     {
         //EndGame(currentPoints);
     }
 
-    // Função verifica a compatibilidade entre a carta do jogador 1 de do jogador 2 para pontuação
-    public void VerificarTipos(int id, Card card)
+    public void VerifyCardTypes(int id, Card card)
     {
-        if (id == 1) cardJogador1 = card;
-        if (id == 2) cardJogador2 = card;
+        SetPlayersCards(id, card);
 
-        // Verifica se ambos os jogadores selecionaram uma carta
-        if (cardJogador1 != null && cardJogador2 != null)
-        {
-            // Armazena a referencia de cada um antes que sejam limpos
-            Card card1 = cardJogador1;
-            Card card2 = cardJogador2;
+        if (!IsAllPlayersSelectedCards()) return;
 
-            // Se o tipo do card dos dois jogadores forem iguais, eles pontuam, caso contrário, perdem um ponto
-            if (card1.cardType == card2.cardType)
-            {
-                // Pega o respectivo índice da carta matched para pegar seus dados e inserir na janela
-                WindowManager.instance.matchedTypeNumber = (int)card1.cardType;
-
-                Debug.Log("Os tipos são iguais " + card1.cardType + " " + card2.cardType);
-                UpdatePoints(1);
-
-                //Muda o estado das cartas para Matched e depois muda de cor                 
-                StartCoroutine(TrocarAnimacao(card1, card2, Card.CardState.Matched)); 
-            }
-            else
-            {
-                Debug.Log("Tipos diferentes! " + card1.cardType + " " + card2.cardType);
-                UpdatePoints(-1);
-
-                StartCoroutine(TrocarAnimacao(card1, card2, Card.CardState.Dismatched));
-            }
-
-            // Limpa as cartas para a próxima jogada
-            cardJogador1 = null;
-            cardJogador2 = null;
-        }
+        if (IsMatchedCards())
+            HandleMatchedCards();
+        else
+            HandleDismatchedCards();
     }
 
-    // Verifica a pontuação para finalizar o jogo
-    //void EndGame(int points)
-    //{
-    //    if (points == 5)
-    //     {
-    //        SceneManager.LoadScene("SampleScene");
-    //    } 
-    // }
+    private void ClearCards()
+    {
+        cardPlayer1 = null;
+        cardPlayer2 = null;
+    }
 
+    private void SetPlayersCards(int id, Card card)
+    {
+        if (id == 1) cardPlayer1 = card;
+        if (id == 2) cardPlayer2 = card;
+    }
 
-    // Atualiza a pontuação e seu respectivo texto
+    private bool IsAllPlayersSelectedCards()
+    {
+        return cardPlayer1 != null && cardPlayer2 != null;
+    }
+
+    private bool IsMatchedCards()
+    {
+        return cardPlayer1.cardType == cardPlayer2.cardType;
+    }
+
     void UpdatePoints(int value)
     {
         currentPoints += value;
         scoreText.text = currentPoints + "/13";
     }
 
-
-
-    //Coroutine serve como  um "temporizador" para trocar e limpar a animação
-    IEnumerator TrocarAnimacao(Card card1, Card card2, Card.CardState animacao)
+    private void HandleMatchedCards()
     {
-        // Wait a frame to ensure animator state change is registered
-        yield return null;
-        //Inicia a animação das cartas
-        card1.ChangeState(animacao);
-        card2.ChangeState(animacao);
-        
-        if (animacao == Card.CardState.Matched)
+        SetMatchedCardTypes();
+        UpdatePoints(1);
+        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
+    }
+
+    private void SetMatchedCardTypes()
+    {
+        WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
+    }
+
+    private void HandleDismatchedCards()
+    {
+        UpdatePoints(-1);
+        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
+    }
+
+    void HandleCardActions(Card card1, Card card2, Card.CardState animation)
+    {
+        DOVirtual.DelayedCall(0.1f, () =>
         {
-            
-            yield return new WaitForSeconds(0.17f);
-            //Divide o tempo para colocar o sprite da carta virada e depois ativa a tela
-            card1.GetComponent<SpriteRenderer>().sprite = card1.thisSprite;
-            card2.GetComponent<SpriteRenderer>().sprite = card2.thisSprite;
+            ChangeCardAnimation(card1, card2, animation);
+            ChangeCardSprites(card1, card2);
+            ClearCards();
+        });
+    }
 
-            yield return new WaitForSeconds(2f);
-            
-            // Faz com que no gerenciador de janelas afirme que o match foi feito
-            WindowManager.instance.hasMatched = true;
-            
-            
-        }
-        else if (animacao == Card.CardState.Dismatched)
+    void ChangeCardSprites(Card card1, Card card2)
+    {
+
+        if (IsMatchedCards())
         {
-            // Wait for the dismatched animation to play
-            yield return new WaitForSeconds(0.18f);
+            card1.GetComponent<SpriteRenderer>().sprite = card1.actualSprite;
+            card2.GetComponent<SpriteRenderer>().sprite = card2.actualSprite;
 
-            // Divide o tempo para mostrar a carta de trás e, depois, voltar à original
-            card1.GetComponent<SpriteRenderer>().sprite = card1.thisSprite;
-            card2.GetComponent<SpriteRenderer>().sprite = card2.thisSprite;
-
-            yield return new WaitForSeconds(5f);
-
-            card1.GetComponent<SpriteRenderer>().sprite = card1.backSprite;
-            card2.GetComponent<SpriteRenderer>().sprite = card2.backSprite;
-
-            yield return new WaitForSeconds(0.6f);
-
-            // Reset cards back to Idle state
-            card1.ChangeState(Card.CardState.Idle);
-            card2.ChangeState(Card.CardState.Idle);
+            DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
         }
+        else
+        {
+            card1.GetComponent<SpriteRenderer>().sprite = card1.actualSprite;
+            card2.GetComponent<SpriteRenderer>().sprite = card2.actualSprite;
+
+            DOVirtual.DelayedCall(5f, () => {
+                card1.GetComponent<SpriteRenderer>().sprite = card1.backupOldSprite;
+                card2.GetComponent<SpriteRenderer>().sprite = card2.backupOldSprite;
+            });
+
+            
+            DOVirtual.DelayedCall(0.6f, () =>
+            {
+                ChangeCardAnimation(card1, card2, Card.CardState.Idle);
+            });
+        } 
+    }
+
+    void ChangeCardAnimation(Card card1, Card card2, Card.CardState animation)
+    {
+        card1.HandleCardState(animation);
+        card2.HandleCardState(animation);
     }
 }
