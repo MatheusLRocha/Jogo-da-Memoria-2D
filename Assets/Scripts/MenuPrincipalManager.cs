@@ -4,93 +4,85 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 public class MenuPrincipalManager : MonoBehaviour
 {
-    [SerializeField] private GameObject painelMenuInicial;
-    [SerializeField] private  GameObject painelModoJogo;
-    [SerializeField] private GameObject painelTutorial;
-    [SerializeField] private GameObject painelCreditos;
-    Animator modoAnim;
-    Animator tutorialAnim;
-    Animator creditosAnim;
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private  GameObject gameModePanel;
+    [SerializeField] private GameObject tutorialPanel;
+    [SerializeField] private GameObject creditsPanel;
+
+    Animator anim;
+    Animator animTutorial;
+    Animator animCredits;
+
     public void Awake()
     {
-        modoAnim = painelModoJogo.GetComponent<Animator>();
-        tutorialAnim = painelTutorial.GetComponent<Animator>();
-        creditosAnim = painelCreditos.GetComponent<Animator>();
-        painelMenuInicial.SetActive(true);
-        painelModoJogo.SetActive(false);
-        painelCreditos.SetActive(false);
-        painelTutorial.SetActive(false);
+        SetAnimators();
+
+        mainMenuPanel.SetActive(true);
+        gameModePanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
-    public void Padrao()
+
+    private void SetAnimators()
+    {
+        anim = gameModePanel.GetComponent<Animator>();
+        animTutorial = tutorialPanel.GetComponent<Animator>();
+        animCredits = creditsPanel.GetComponent<Animator>();
+    }
+
+    public void StartStandardGameMode()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void Extra()
+    public void OpenGameMode()
     {
-        SceneManager.LoadScene(1);
+        mainMenuPanel.SetActive(false);
+        gameModePanel.SetActive(true);
     }
 
-    public void AbrirModoJogo()
+    public void CloseGameMode()
     {
-        painelMenuInicial.SetActive(false);
-        painelModoJogo.SetActive(true);
-    }
-    public void FecharModoJogo()
-    {
-        StartCoroutine(fecharModoJogo());
-    }
-    public System.Collections.IEnumerator fecharModoJogo()
-    {
-        modoAnim.SetBool("Closer", true);
-        yield return new WaitForSeconds(0.4f);
-        painelMenuInicial.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        painelModoJogo.SetActive(false);
-        painelModoJogo.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
+        StartCoroutine(CloseAnimationPanelMode(anim, gameModePanel));
     }
 
-    public void AbrirTutorial()
+    public void OpenTutorial()
     {
-        painelMenuInicial.SetActive(false);
-        painelTutorial.SetActive(true);
+        mainMenuPanel.SetActive(false);
+        tutorialPanel.SetActive(true);
     }
-    public void PularTutorial()
+
+    public void SkipTutorial()
     {
-        tutorialAnim.SetBool("Faster", true);
+        animTutorial.SetBool("Faster", true);
     }
-    public void FecharTutorial()
+    public void CloseTutorial()
     {
-        StartCoroutine(fecharTutorial());
+        StartCoroutine(CloseAnimationPanelMode(animTutorial, tutorialPanel));
     }
-    public System.Collections.IEnumerator fecharTutorial()
+
+    public void OpenCredits()
     {
-        tutorialAnim.SetBool("Closer", true);
+        mainMenuPanel.SetActive(false);
+        creditsPanel.SetActive(true);
+    }
+
+    public void CloseCredits()
+    {
+        StartCoroutine(CloseAnimationPanelMode(animCredits, creditsPanel));
+    }
+    
+    public System.Collections.IEnumerator CloseAnimationPanelMode(Animator animator, GameObject panel)
+    {
+        animator.SetBool("Closer", true);
         yield return new WaitForSeconds(0.4f);
-        painelMenuInicial.SetActive(true);
+        mainMenuPanel.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        painelTutorial.SetActive(false);
-        painelTutorial.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
+        panel.SetActive(false);
+        panel.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
     }
-    public void AbrirCreditos()
-    {
-        painelMenuInicial.SetActive(false);
-        painelCreditos.SetActive(true);
-    }
-    public void FecharCreditos()
-    {
-        StartCoroutine(fecharCreditos());
-    }
-    public System.Collections.IEnumerator fecharCreditos()
-    {
-        creditosAnim.SetBool("Closer", true);
-        yield return new WaitForSeconds(0.4f);
-        painelMenuInicial.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        painelCreditos.SetActive(false);
-        painelCreditos.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 0.0f);
-    }
-    public void SairDoJogo()
+    
+    public void ExitGame()
     {
         Debug.Log("Sair do Jogo");
         Application.Quit();
