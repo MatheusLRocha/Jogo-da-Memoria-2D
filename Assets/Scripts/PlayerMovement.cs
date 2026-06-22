@@ -79,14 +79,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!IsMatchedCards())
         {
-            //ChangeCardScale(1.3f, 1.3f, 0);
-            //ChangeCardStateToIdle();
+            ChangeCardScale(1.3f, 1.3f, 0);
+            ChangeCardStateToIdle();
             MoveToNextCard(direction);
         }
 
         FindNextDismatchedCard(direction);
             
-        //ChangeCardScale(1.5f, 1.5f, -1f);
+        ChangeCardScale(1.5f, 1.5f, -1f);
     }
 
     private void MoveToNextCard(int direction)

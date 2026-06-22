@@ -41,12 +41,6 @@ public class GameManager : MonoBehaviour
             HandleDismatchedCards();
     }
 
-    private void ClearCards()
-    {
-        cardPlayer1 = null;
-        cardPlayer2 = null;
-    }
-
     private void SetPlayersCards(int id, Card card)
     {
         if (id == 1) cardPlayer1 = card;
@@ -61,12 +55,6 @@ public class GameManager : MonoBehaviour
     private bool IsMatchedCards()
     {
         return cardPlayer1.cardType == cardPlayer2.cardType;
-    }
-
-    void UpdatePoints(int value)
-    {
-        currentPoints += value;
-        scoreText.text = currentPoints + "/13";
     }
 
     private void HandleMatchedCards()
@@ -87,6 +75,12 @@ public class GameManager : MonoBehaviour
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
     }
 
+    void UpdatePoints(int value)
+    {
+        currentPoints += value;
+        scoreText.text = currentPoints + "/13";
+    }
+
     void HandleCardActions(Card card1, Card card2, Card.CardState animation)
     {
         DOVirtual.DelayedCall(0.1f, () =>
@@ -96,6 +90,13 @@ public class GameManager : MonoBehaviour
             ClearCards();
         });
     }
+
+    private void ClearCards()
+    {
+        cardPlayer1 = null;
+        cardPlayer2 = null;
+    }
+
 
     void ChangeCardSprites(Card card1, Card card2)
     {
