@@ -3114,11 +3114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cc1c6d5c089974d872d11b0ccf4499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowManager
-  janelaFundo: {fileID: 794387854}
+  windowBackgroundReference: {fileID: 794387854}
   playerControlObject:
   - {fileID: 1221912256}
   - {fileID: 543077094}
-  janelas:
+  windows:
   - {fileID: 11400000, guid: ec395114ae780b943862856c6943ad3c, type: 2}
   - {fileID: 11400000, guid: 4fa8eea05f698e84499c2938964f475f, type: 2}
   - {fileID: 11400000, guid: cada0a260e329b64a8f07cc9f73b5ec7, type: 2}
@@ -3132,8 +3132,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35c994aa2d69a044a80d96bef18f04a4, type: 2}
   - {fileID: 11400000, guid: be97f6ca243e9a543abe38e40880af5d, type: 2}
   - {fileID: 11400000, guid: f159babc7dfe10f4b88311ef7f964ef2, type: 2}
-  infoTexto: {fileID: 403932775}
-  imagemObjeto: {fileID: 1206025692}
+  informationText: {fileID: 403932775}
+  objectImage: {fileID: 1206025692}
   hasMatched: 0
   matchedTypeNumber: 0
   isWindowActive: 0
