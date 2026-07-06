@@ -2,10 +2,26 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using DG.Tweening;
+using System.IO;
+using SQLite;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Dados")]
+    [SerializeField] private string saveFileName = "save_data.db";
+    [SerializeField] private int id = 0;
+
     public static GameManager instance; // Torna o script globalmente acessível para outros scripts
+
+    
+
+    public Card cardPlayer1;
+    public Card cardPlayer2;
+
+    public TextMeshProUGUI scoreText;
+    int currentPoints = 0;
+
+    [SerializeField] private GameData gameData = null;
 
     void Awake()
     {
@@ -18,11 +34,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Card cardPlayer1;
-    public Card cardPlayer2;
-
-    public TextMeshProUGUI scoreText;
-    int currentPoints = 0;
+    void Start()
+    {
+        gameData = Load(id);
+    }
 
     void Update()
     {
@@ -130,5 +145,37 @@ public class GameManager : MonoBehaviour
     {
         card1.HandleCardState(animation);
         card2.HandleCardState(animation);
+    }
+
+    private GameData Load(int id)
+    {
+        var dbPath = Path.Combine(Application.persistentDataPath, saveFileName);
+        var dbConnection = new SQLiteConnection(dbPath);
+
+        dbConnection.CreateTable<GameData>();
+
+        var gameData = dbConnection.Find<GameData>(id);
+
+        if(gameData == null)
+        {
+            gameData = new GameData();
+            gameData.id = id;
+
+            dbConnection.Insert(gameData);
+        }
+
+        dbConnection.Dispose();
+
+        return gameData;
+    }
+
+    private void Save(GameData gameData)
+    {
+        var dbPath = Path.Combine(Application.persistentDataPath, saveFileName);
+        var dbConnection = new SQLiteConnection(dbPath);
+
+        dbConnection.Update(gameData);
+
+        dbConnection.Dispose();
     }
 }
