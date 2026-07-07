@@ -6,6 +6,7 @@ public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private  GameObject gameModePanel;
+    [SerializeField] private  GameObject scorePanel;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject creditsPanel;
 
@@ -19,6 +20,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
         mainMenuPanel.SetActive(true);
         gameModePanel.SetActive(false);
+        scorePanel.SetActive(false);
         creditsPanel.SetActive(false);
         tutorialPanel.SetActive(false);
     }
@@ -46,6 +48,16 @@ public class MenuPrincipalManager : MonoBehaviour
         StartCoroutine(CloseAnimationPanelMode(anim, gameModePanel));
     }
 
+    public void OpenScore()
+    {
+        mainMenuPanel.SetActive(false);
+        scorePanel.SetActive(true);
+    }
+    public void CloseScore()
+    {
+        mainMenuPanel.SetActive(true);
+        scorePanel.SetActive(false);
+    }
     public void OpenTutorial()
     {
         mainMenuPanel.SetActive(false);
