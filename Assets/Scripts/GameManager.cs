@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using DG.Tweening;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +14,7 @@ public class GameManager : MonoBehaviour
     public Card cardPlayer1;
     public Card cardPlayer2;
 
-    public TextMeshProUGUI scoreText;
-    int currentPoints = 0;
-
+    [SerializeField] public PointsManager pointsManager;
 
     void Awake()
     {
@@ -30,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //EndGame(currentPoints);
+        EndGame();
     }
 
     public void VerifyCardTypes(int id, Card card)
@@ -43,6 +42,8 @@ public class GameManager : MonoBehaviour
             HandleMatchedCards();
         else
             HandleDismatchedCards();
+
+        
     }
 
     private void SetPlayersCards(int id, Card card)
@@ -64,27 +65,23 @@ public class GameManager : MonoBehaviour
     private void HandleMatchedCards()
     {
         SetMatchedCardTypes();
-        UpdatePoints(1);
+        pointsManager.SetPoints(+1);
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
     }
+
+    private void HandleDismatchedCards()
+    {
+        pointsManager.SetPoints(-1);
+        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
+    }
+
 
     private void SetMatchedCardTypes()
     {
         WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
     }
 
-    private void HandleDismatchedCards()
-    {
-        UpdatePoints(-1);
-        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
-    }
-
-    void UpdatePoints(int value)
-    {
-        currentPoints += value;
-        scoreText.text = currentPoints + "/13";
-    }
-
+    
     void HandleCardActions(Card card1, Card card2, Card.CardState animation)
     {
         DOVirtual.DelayedCall(0.1f, () =>
@@ -134,5 +131,13 @@ public class GameManager : MonoBehaviour
     {
         card1.HandleCardState(animation);
         card2.HandleCardState(animation);
+    }
+
+    void EndGame()
+    {
+        if (pointsManager.GetPoints() < 0)
+        {
+            Debug.Log("Fim de jogo");
+        }
     }
 }
