@@ -63,10 +63,41 @@ public class Card : MonoBehaviour
         StartCoroutine(StartShowing());
     }
 
+
     public void HandleCardState(CardState newState)
     {
         ClearOldCardStates();
         ChangeState(newState);
+    }
+
+    public void Select()
+    {
+        ChangeState(CardState.Selected);
+    }
+
+    public void Match()
+    {
+        ChangeState(CardState.Matched);
+    }
+
+    public void Dismatch()
+    {
+        ChangeState(CardState.Dismatched);
+    }
+
+    public void Idle()
+    {
+        ChangeState(CardState.Idle);
+    }
+
+    public void RevealCard()
+    {
+        spriteRenderer.sprite = actualSprite;
+    }
+
+    public void HideCard()
+    {
+        spriteRenderer.sprite = backupOldSprite;
     }
 
     private void ClearOldCardStates()
@@ -79,6 +110,8 @@ public class Card : MonoBehaviour
 
     private void ChangeState(CardState newState)
     {
+        ClearOldCardStates();
+
         cardState = newState;
 
         switch (cardState) 
@@ -101,6 +134,7 @@ public class Card : MonoBehaviour
         }
     }
 
+
     // Função que seleciona o sprite específico da carta baseado no cardType
     public void CardContent()
     {
@@ -111,6 +145,7 @@ public class Card : MonoBehaviour
         actualSprite = Sprites[spriteIndex];
         contentSet = true;
     }
+
 
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
@@ -128,5 +163,3 @@ public class Card : MonoBehaviour
         spriteRenderer.sprite = backupOldSprite;
     }
 }
-
-

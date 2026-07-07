@@ -104,25 +104,26 @@ public class GameManager : MonoBehaviour
 
         if (IsMatchedCards())
         {
-            card1.GetComponent<SpriteRenderer>().sprite = card1.actualSprite;
-            card2.GetComponent<SpriteRenderer>().sprite = card2.actualSprite;
+            card1.RevealCard();
+            card2.RevealCard();
 
             DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
         }
         else
         {
-            card1.GetComponent<SpriteRenderer>().sprite = card1.actualSprite;
-            card2.GetComponent<SpriteRenderer>().sprite = card2.actualSprite;
+            card1.RevealCard();
+            card2.RevealCard();
 
             DOVirtual.DelayedCall(5f, () => {
-                card1.GetComponent<SpriteRenderer>().sprite = card1.backupOldSprite;
-                card2.GetComponent<SpriteRenderer>().sprite = card2.backupOldSprite;
+                card1.HideCard();
+                card2.HideCard();
             });
 
             
             DOVirtual.DelayedCall(0.6f, () =>
             {
                 ChangeCardAnimation(card1, card2, Card.CardState.Idle);
+                
             });
         } 
     }
