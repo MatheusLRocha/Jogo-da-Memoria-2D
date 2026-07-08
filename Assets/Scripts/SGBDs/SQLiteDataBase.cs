@@ -24,7 +24,7 @@ public class SQLiteDataBase : IDataBase
 
     public void Create<T>(T data)
     {
-        _db.CreateTable<PlayerModel>();
+        _db.CreateTable<PlayerModel>(CreateFlags.ImplicitPK | CreateFlags.AutoIncPK);
     }
 
     public void Update<T>(T data)
