@@ -1407,6 +1407,8 @@ GameObject:
   - component: {fileID: 957538767}
   - component: {fileID: 957538766}
   - component: {fileID: 957538765}
+  - component: {fileID: 957538769}
+  - component: {fileID: 957538770}
   m_Layer: 0
   m_Name: BackgroundCanvas
   m_TagString: Untagged
@@ -1498,6 +1500,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &957538769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957538764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14115f1bc3876604f9f768b4f097b607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BGChanger
+  backgroundImages:
+  - {fileID: -855298285791758126, guid: c186c953ad0107341acd5ea93422425c, type: 3}
+  - {fileID: 6937817954938267909, guid: 6609f1ae786b4074d984f5ec7b8229c3, type: 3}
+  - {fileID: -6470460504253458178, guid: 7e8a66bf4d2174542ba6fe7cea01abf0, type: 3}
+  - {fileID: -4178046375966092550, guid: f15eeb95043256342a1bebc53a7e1231, type: 3}
+  - {fileID: 4130640169021434097, guid: d12ae6b26f16e784987df4936493c93a, type: 3}
+  - {fileID: 3465286685962602723, guid: 178f3d25f48f0544fb72426cc737eca6, type: 3}
+  - {fileID: 7028616704906629411, guid: d2227c15435ccaa48a3ae5c7640e0005, type: 3}
+--- !u!95 &957538770
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957538764}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aeb6601fbf7ee1041a642cedfe373c9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1017968330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,8 +3268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.301, y: -1.295}
-  m_SizeDelta: {x: 867.434, y: 487.932}
+  m_AnchoredPosition: {x: 66, y: 0}
+  m_SizeDelta: {x: 908.643, y: 511.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136290607
 MonoBehaviour:
@@ -3247,7 +3291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2979771003613096449, guid: a8891fa442e04a740818834a41160958, type: 3}
+  m_Sprite: {fileID: -855298285791758126, guid: c186c953ad0107341acd5ea93422425c, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
