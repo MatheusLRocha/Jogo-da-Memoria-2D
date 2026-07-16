@@ -39,6 +39,11 @@ public class MenuPrincipalManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void StartCompetitiveGameMode()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void OpenGameMode()
     {
         mainMenuPanel.SetActive(false);
