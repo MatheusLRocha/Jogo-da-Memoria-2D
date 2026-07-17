@@ -4,22 +4,22 @@ using UnityEngine;
 public class PointsManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
-    private int _currentPoints = 0;
-    private const int MAX_POINTS = 5;
+    private float _currentPoints = 0.0f;
+    private const float MAX_POINTS = 100.0f;
 
-    public void SetPoints(int value)
+    public void SetPoints(float value)
     {
         _currentPoints += value;
         UpdateScoreText();
     }
 
-    public int GetPoints()
+    public float GetPoints()
     {
         return _currentPoints;
     }
 
     public void UpdateScoreText()
     {
-        _scoreText.text = $"{_currentPoints}/{MAX_POINTS}";
+        _scoreText.text = $"{_currentPoints:F2}";
     }
 }

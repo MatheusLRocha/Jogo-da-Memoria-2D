@@ -19,7 +19,6 @@ public class BGChanger : MonoBehaviour
     {
         
     }
-
     IEnumerator BackGroundChanger()
     {
         Sprite backgroundImage = backgroundImages[0];

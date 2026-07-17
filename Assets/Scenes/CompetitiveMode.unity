@@ -618,6 +618,7 @@ MonoBehaviour:
   cardPlayer1: {fileID: 0}
   cardPlayer2: {fileID: 0}
   pointsManager: {fileID: 1962417060}
+  timeManager: {fileID: 1962417062}
 --- !u!4 &498600892
 Transform:
   m_ObjectHideFlags: 0
