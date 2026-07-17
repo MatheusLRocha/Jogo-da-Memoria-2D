@@ -60,17 +60,11 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        // Pega o componente Animator do objeto
         anim = GetComponent<Animator>();
         scene = SceneManager.GetActiveScene().buildIndex;
-        if (scene !=2)
-        {
-            StartCoroutine(StartShowing());
-        }
-        else
-        {
+        if (scene ==2)
             anim.SetBool("IsComp",true);
-        }
+        StartCoroutine(StartShowing());
     }
 
 
@@ -116,7 +110,6 @@ public class Card : MonoBehaviour
         anim.SetBool("isSelected", false);
         anim.SetBool("isMatched", false);
         anim.SetBool("isDismatched", false);
-        anim.SetBool("isComp", false);
     }
 
     private void ChangeState(CardState newState)
@@ -161,7 +154,7 @@ public class Card : MonoBehaviour
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.0f);
         
         // Aguarda CardContent() ser chamado para usar o sprite correto
         while (!contentSet)
@@ -170,6 +163,9 @@ public class Card : MonoBehaviour
         }
         
         spriteRenderer.sprite = actualSprite;
+        if (scene == 2)
+        yield return new WaitForSeconds(5f);
+        else
         yield return new WaitForSeconds(10f);
         spriteRenderer.sprite = backupOldSprite;
     }
