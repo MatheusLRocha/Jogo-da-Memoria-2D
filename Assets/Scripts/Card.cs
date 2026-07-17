@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 
 public class Card : MonoBehaviour
@@ -48,6 +49,7 @@ public class Card : MonoBehaviour
     public CardState cardState;
     
     public int playerID;
+    private int scene;
 
     void Awake()
     {
@@ -60,7 +62,15 @@ public class Card : MonoBehaviour
     {
         // Pega o componente Animator do objeto
         anim = GetComponent<Animator>();
-        StartCoroutine(StartShowing());
+        scene = SceneManager.GetActiveScene().buildIndex;
+        if (scene !=2)
+        {
+            StartCoroutine(StartShowing());
+        }
+        else
+        {
+            anim.SetBool("IsComp",true);
+        }
     }
 
 
@@ -106,6 +116,7 @@ public class Card : MonoBehaviour
         anim.SetBool("isSelected", false);
         anim.SetBool("isMatched", false);
         anim.SetBool("isDismatched", false);
+        anim.SetBool("isComp", false);
     }
 
     private void ChangeState(CardState newState)
