@@ -11,14 +11,4 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bronzeName;
     [SerializeField] private TextMeshProUGUI bronzePoints;
     [SerializeField] private TextMeshProUGUI bronzeTime;
-        void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

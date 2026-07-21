@@ -70,14 +70,13 @@ public class GameManager : MonoBehaviour
         SetMatchedCardTypes();
         if (scene == 2)
         {
-            pointsManager.SetPoints(+(10000f/timeManager.time));
+            pointsManager.SetPoints(+5);
         }
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
     }
 
     private void HandleDismatchedCards()
     {
-    //   pointsManager.SetPoints(-1);
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
     }
 
