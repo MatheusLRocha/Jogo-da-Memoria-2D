@@ -8,12 +8,6 @@ public class CompManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timerText;
     public float time;
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         time = Time.timeSinceLevelLoad;
