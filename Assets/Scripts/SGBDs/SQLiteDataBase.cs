@@ -15,6 +15,7 @@ public class SQLiteDataBase : IDataBase
     public void Connect()
     {
         _db = new SQLiteConnection(Path.Combine(Application.persistentDataPath, "players.db"));
+        _db.CreateTable<PlayerModel>(CreateFlags.ImplicitPK | CreateFlags.AutoIncPK);
     }
 
     public void Disconnect()
@@ -22,9 +23,9 @@ public class SQLiteDataBase : IDataBase
         _db.Dispose();
     }
 
-    public void Create<T>(T data)
+    public void Insert<T>(T data)
     {
-        _db.CreateTable<PlayerModel>(CreateFlags.ImplicitPK | CreateFlags.AutoIncPK);
+       _db.Insert(data);
     }
 
     public void Update<T>(T data)
