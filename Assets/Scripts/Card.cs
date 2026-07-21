@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 
 public class Card : MonoBehaviour
@@ -67,31 +68,27 @@ public class Card : MonoBehaviour
         StartCoroutine(StartShowing());
     }
 
+    public void ChangeSprite(bool isMatched)
+    {
+        if (isMatched)
+        {
+           RevealCard();
+        } 
+        else
+        {
+            RevealCard();
 
-    public void HandleCardState(CardState newState)
+            DOVirtual.DelayedCall(5f, () => {
+                HideCard();
+            });
+        }
+    }
+
+    
+    public void ChangeAnimation(CardState newState)
     {
         ClearOldCardStates();
         ChangeState(newState);
-    }
-
-    public void Select()
-    {
-        ChangeState(CardState.Selected);
-    }
-
-    public void Match()
-    {
-        ChangeState(CardState.Matched);
-    }
-
-    public void Dismatch()
-    {
-        ChangeState(CardState.Dismatched);
-    }
-
-    public void Idle()
-    {
-        ChangeState(CardState.Idle);
     }
 
     public void RevealCard()
