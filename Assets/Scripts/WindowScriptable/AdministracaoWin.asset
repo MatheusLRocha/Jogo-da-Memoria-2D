@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
+  m_Name: AdministracaoWin
+  m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
+  textoCurso: "Administra\xE7\xE3o (Bacharelado - 4 anos) :                                                                                                            
+    A  Administra\xE7\xE3o forma profissionais capazes de planejar, organizar e liderar
+    empresas dos mais diversos segmentos abordando \xE1reas como finan\xE7as, marketing,
+    recursos humanos e estrat\xE9gia.                                                                                                                       
+    Por ser uma \xE1rea vers\xE1til, administradores podem trabalhar em praticamente
+    qualquer setor da economia, desde hospitais e escolas at\xE9 empresas de tecnologia,
+    ind\xFAstria e com\xE9rcio. "
+  imagemCurso: {fileID: -8623262081713137240, guid: fafe087736ca30048aa5afc9ddf3f030, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
+  m_Name: SistemasInformacaoWin
+  m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
+  textoCurso: "Sistemas de Informa\xE7\xE3o (Bacharelado - 4 anos) :                                                                                         
+    Integra conhecimentos de tecnologia e gest\xE3o empresarial, formando profissionais
+    capazes de desenvolver e administrar sistemas que apoiam as opera\xE7\xF5es das
+    organiza\xE7\xF5es, abordando banco de dados, governan\xE7a de TI e an\xE1lise
+    de neg\xF3cios.                                                                                                                                        
+    Seus profissionais geralmente atuam como intermedi\xE1rios entre equipes t\xE9cnicas
+    e gestores, transformando necessidades do neg\xF3cio em solu\xE7\xF5es tecnol\xF3gicas. "
+  imagemCurso: {fileID: -3703085759054098076, guid: 810c4e87519d9fe4793f901c8d584b56, type: 3}

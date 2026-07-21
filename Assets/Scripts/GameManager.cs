@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Card cardPlayer2;
 
     [SerializeField] public PointsManager pointsManager;
+    [SerializeField] public CompManager timeManager;
+    private int scene;
 
     void Awake()
     {
@@ -25,11 +27,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        scene = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
     {
-        EndGame();
+        //EndGame();
     }
 
     public void VerifyCardTypes(int id, Card card)
@@ -65,19 +68,23 @@ public class GameManager : MonoBehaviour
     private void HandleMatchedCards()
     {
         SetMatchedCardTypes();
-        pointsManager.SetPoints(+1);
+        if (scene == 2)
+        {
+            pointsManager.SetPoints(+(10000f/timeManager.time));
+        }
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
     }
 
     private void HandleDismatchedCards()
     {
-        pointsManager.SetPoints(-1);
+    //   pointsManager.SetPoints(-1);
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
     }
 
 
     private void SetMatchedCardTypes()
     {
+        if (scene != 2)
         WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
     }
 
@@ -134,11 +141,11 @@ public class GameManager : MonoBehaviour
         card2.HandleCardState(animation);
     }
 
-    void EndGame()
-    {
-        if (pointsManager.GetPoints() < 0)
-        {
-            Debug.Log("Fim de jogo");
-        }
-    }
+    //void EndGame()
+    //{
+    //    if (pointsManager.GetPoints() < 0)
+    //    {
+    //        Debug.Log("Fim de jogo");
+    //    }
+    //}
 }

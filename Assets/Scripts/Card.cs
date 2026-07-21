@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 
 public class Card : MonoBehaviour
@@ -48,6 +49,7 @@ public class Card : MonoBehaviour
     public CardState cardState;
     
     public int playerID;
+    private int scene;
 
     void Awake()
     {
@@ -58,8 +60,10 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        // Pega o componente Animator do objeto
         anim = GetComponent<Animator>();
+        scene = SceneManager.GetActiveScene().buildIndex;
+        if (scene ==2)
+            anim.SetBool("IsComp",true);
         StartCoroutine(StartShowing());
     }
 
@@ -150,7 +154,7 @@ public class Card : MonoBehaviour
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.0f);
         
         // Aguarda CardContent() ser chamado para usar o sprite correto
         while (!contentSet)
@@ -159,6 +163,9 @@ public class Card : MonoBehaviour
         }
         
         spriteRenderer.sprite = actualSprite;
+        if (scene == 2)
+        yield return new WaitForSeconds(5f);
+        else
         yield return new WaitForSeconds(10f);
         spriteRenderer.sprite = backupOldSprite;
     }

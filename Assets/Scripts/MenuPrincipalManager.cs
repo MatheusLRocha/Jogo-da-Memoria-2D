@@ -11,6 +11,7 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private GameObject creditsPanel;
 
     Animator anim;
+    Animator animScore;
     Animator animTutorial;
     Animator animCredits;
 
@@ -28,6 +29,7 @@ public class MenuPrincipalManager : MonoBehaviour
     private void SetAnimators()
     {
         anim = gameModePanel.GetComponent<Animator>();
+        animScore = scorePanel.GetComponent<Animator>();
         animTutorial = tutorialPanel.GetComponent<Animator>();
         animCredits = creditsPanel.GetComponent<Animator>();
     }
@@ -35,6 +37,11 @@ public class MenuPrincipalManager : MonoBehaviour
     public void StartStandardGameMode()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void StartCompetitiveGameMode()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void OpenGameMode()
@@ -55,8 +62,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
     public void CloseScore()
     {
-        mainMenuPanel.SetActive(true);
-        scorePanel.SetActive(false);
+        StartCoroutine(CloseAnimationPanelMode(animScore, scorePanel));
     }
     public void OpenTutorial()
     {
@@ -66,7 +72,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     public void SkipTutorial()
     {
-        animTutorial.SetBool("Faster", true);
+        StartCoroutine(CloseAnimationPanelMode(animCredits, creditsPanel));
     }
     public void CloseTutorial()
     {

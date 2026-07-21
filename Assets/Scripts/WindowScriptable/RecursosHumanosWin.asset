@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336ed9a1642a409479e7879e400404c5, type: 3}
+  m_Name: RecursosHumanosWin
+  m_EditorClassIdentifier: Assembly-CSharp::WindowBasic
+  textoCurso: "Gest\xE3o de Recursos Humanos                   (Tecn\xF3logo - 2
+    anos) :                                                                                                                                        
+    O curso \xE9 voltado para a administra\xE7\xE3o de pessoas dentro das organiza\xE7\xF5es,
+    cobrindo desde o recrutamento e treinamento at\xE9 \xE0 legisla\xE7\xE3o e o
+    clima dentro do ambiente de trabalho.                                                                                                                                                             
+    Objetivando ao todo o fortalecimento de equipes e o aumento de sua produtividade,
+    transformando a organiza\xE7\xE3o em um local favor\xE1vel tanto aos funcion\xE1rios
+    quanto aos objetivos da empresa."
+  imagemCurso: {fileID: 4586564314194375853, guid: afff0d5d72eec924982505818f4da885, type: 3}
