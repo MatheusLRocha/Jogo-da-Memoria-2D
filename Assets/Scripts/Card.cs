@@ -111,8 +111,6 @@ public class Card : MonoBehaviour
 
     private void ChangeState(CardState newState)
     {
-        ClearOldCardStates();
-
         cardState = newState;
 
         switch (cardState) 
