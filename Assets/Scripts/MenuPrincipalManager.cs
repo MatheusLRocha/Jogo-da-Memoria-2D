@@ -9,6 +9,7 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private  GameObject gameModePanel;
     [SerializeField] private  GameObject usernamePanel;
     public TMP_InputField inputField;
+    public string username;
     [SerializeField] private  GameObject scorePanel;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject creditsPanel;
@@ -52,7 +53,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     public void StartCompetitiveGameMode()
     {
-        username = inputField;
+        username = inputField.text;
         Debug.Log("O nome do usuário é:" + username);
         SceneManager.LoadScene(2);
     }
