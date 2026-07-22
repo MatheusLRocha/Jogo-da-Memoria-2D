@@ -9,13 +9,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; // Torna o script globalmente acessível para outros scripts
 
-    
-
     public Card cardPlayer1;
     public Card cardPlayer2;
 
     [SerializeField] public PointsManager pointsManager;
     [SerializeField] public CompManager timeManager;
+
     private int scene;
 
     void Awake()
@@ -28,11 +27,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         scene = SceneManager.GetActiveScene().buildIndex;
-    }
-
-    void Update()
-    {
-        //EndGame();
     }
 
     public void VerifyCardTypes(int id, Card card)
@@ -77,7 +71,6 @@ public class GameManager : MonoBehaviour
 
     private void HandleDismatchedCards()
     {
-    //   pointsManager.SetPoints(-1);
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
     }
 
@@ -93,8 +86,9 @@ public class GameManager : MonoBehaviour
     {
         DOVirtual.DelayedCall(0.1f, () =>
         {
-            ChangeCardAnimation(card1, card2, animation);
-            ChangeCardSprites(card1, card2);
+            HandleCardAnimations(card1, card2, animation);
+            HandleCardSprites(card1, card2);
+            HandleWindowCard();
             ClearCards();
         });
     }
@@ -105,47 +99,21 @@ public class GameManager : MonoBehaviour
         cardPlayer2 = null;
     }
 
-
-    void ChangeCardSprites(Card card1, Card card2)
+    void HandleCardSprites(Card card1, Card card2)
     {
+        card1.ChangeSprite(IsMatchedCards());
+        card2.ChangeSprite(IsMatchedCards());
+    }
 
+    void HandleWindowCard()
+    {
         if (IsMatchedCards())
-        {
-            card1.RevealCard();
-            card2.RevealCard();
-
             DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
-        }
-        else
-        {
-            card1.RevealCard();
-            card2.RevealCard();
-
-            DOVirtual.DelayedCall(5f, () => {
-                card1.HideCard();
-                card2.HideCard();
-            });
-
-            
-            DOVirtual.DelayedCall(0.6f, () =>
-            {
-                ChangeCardAnimation(card1, card2, Card.CardState.Idle);
-                
-            });
-        } 
     }
 
-    void ChangeCardAnimation(Card card1, Card card2, Card.CardState animation)
+    void HandleCardAnimations(Card card1, Card card2, Card.CardState animation)
     {
-        card1.HandleCardState(animation);
-        card2.HandleCardState(animation);
+        card1.ChangeAnimation(animation);
+        card2.ChangeAnimation(animation);
     }
-
-    //void EndGame()
-    //{
-    //    if (pointsManager.GetPoints() < 0)
-    //    {
-    //        Debug.Log("Fim de jogo");
-    //    }
-    //}
 }

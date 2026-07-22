@@ -3,11 +3,9 @@ using SQLite;
 [Table("Players")]
 public class PlayerModel
 {
-    [PrimaryKey, AutoIncrement]    
-    public int id { get; set; }
-
-    [Unique]
-    public string name { get; set; }
+    [Column("name"), Unique, NotNull]
+    public string Name { get; set; }
     
-    public int points { get; set; } = 0;
+    [Column("points")]
+    public int Points { get; set; } = 0;
 }

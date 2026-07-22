@@ -63,7 +63,7 @@ public class PlayerMovementScore : MonoBehaviour
         if (input.Confirm())
         {
             Card card = playerControl.cards[currentIndex].GetComponent<Card>();
-            card.HandleCardState(Card.CardState.Selected);
+            card.ChangeAnimation(Card.CardState.Selected);
 
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
             GameManager.instance.VerifyCardTypes(playerID, playerControl.cards[currentIndex].GetComponent<Card>());
@@ -114,7 +114,7 @@ public class PlayerMovementScore : MonoBehaviour
     private void ChangeCardStateToIdle()
     {
         Card card = playerControl.cards[currentIndex].GetComponent<Card>();
-        card.HandleCardState(Card.CardState.Idle);
+        card.ChangeAnimation(Card.CardState.Idle);
     }
 
     private void FindNextDismatchedCard(int direction)
