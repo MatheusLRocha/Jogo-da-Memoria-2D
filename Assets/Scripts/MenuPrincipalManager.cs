@@ -2,15 +2,19 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using TMPro;
 public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private  GameObject gameModePanel;
+    [SerializeField] private  GameObject usernamePanel;
+    public TMP_InputField inputField;
     [SerializeField] private  GameObject scorePanel;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject creditsPanel;
 
     Animator anim;
+    Animator animUsername;
     Animator animScore;
     Animator animTutorial;
     Animator animCredits;
@@ -21,6 +25,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
         mainMenuPanel.SetActive(true);
         gameModePanel.SetActive(false);
+        usernamePanel.SetActive(false);
         scorePanel.SetActive(false);
         creditsPanel.SetActive(false);
         tutorialPanel.SetActive(false);
@@ -29,6 +34,7 @@ public class MenuPrincipalManager : MonoBehaviour
     private void SetAnimators()
     {
         anim = gameModePanel.GetComponent<Animator>();
+        animUsername = usernamePanel.GetComponent<Animator>();
         animScore = scorePanel.GetComponent<Animator>();
         animTutorial = tutorialPanel.GetComponent<Animator>();
         animCredits = creditsPanel.GetComponent<Animator>();
@@ -39,8 +45,15 @@ public class MenuPrincipalManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void EnterUsername()
+    {
+        usernamePanel.SetActive(true);
+    }
+
     public void StartCompetitiveGameMode()
     {
+        username = inputField;
+        Debug.Log("O nome do usuário é:" + username);
         SceneManager.LoadScene(2);
     }
 
