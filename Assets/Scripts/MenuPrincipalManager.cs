@@ -19,6 +19,7 @@ public class MenuPrincipalManager : MonoBehaviour
     Animator animScore;
     Animator animTutorial;
     Animator animCredits;
+    public bool skipper;
 
     public void Awake()
     {
@@ -86,7 +87,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     public void SkipTutorial()
     {
-        StartCoroutine(CloseAnimationPanelMode(animCredits, creditsPanel));
+        animTutorial.SetBool("Faster", true);
     }
     public void CloseTutorial()
     {
