@@ -72,7 +72,7 @@ public class Card : MonoBehaviour
     {
         if (isMatched)
         {
-           RevealCard();
+            RevealCard();
         } 
         else
         {
@@ -149,7 +149,7 @@ public class Card : MonoBehaviour
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         
         // Aguarda CardContent() ser chamado para usar o sprite correto
         while (!contentSet)

@@ -1,14 +1,11 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI goldenName;
-    [SerializeField] private TextMeshProUGUI goldenPoints;
-    [SerializeField] private TextMeshProUGUI goldenTime;
-    [SerializeField] private TextMeshProUGUI silverName;
-    [SerializeField] private TextMeshProUGUI silverPoints;
-    [SerializeField] private TextMeshProUGUI silverTime;
-    [SerializeField] private TextMeshProUGUI bronzeName;
-    [SerializeField] private TextMeshProUGUI bronzePoints;
-    [SerializeField] private TextMeshProUGUI bronzeTime;
+    [SerializeField] private List<TextMeshProUGUI> scoreNames;
+    [SerializeField] private List<TextMeshProUGUI> scorePoints;
+    [SerializeField] private List<TextMeshProUGUI> scoreTime;
+
 }
