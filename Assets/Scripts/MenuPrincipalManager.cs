@@ -3,11 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using TMPro;
+using System.Linq;
 public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private  GameObject gameModePanel;
     [SerializeField] private  GameObject usernamePanel;
+    [SerializeField] public GameObject wrongAnswer;
     public TMP_InputField inputField;
     public string username;
     [SerializeField] private  GameObject scorePanel;
@@ -15,10 +17,11 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private GameObject creditsPanel;
 
     Animator anim;
-    Animator animUsername;
+    Animator animWrong;
     Animator animScore;
     Animator animTutorial;
     Animator animCredits;
+    public bool skipper;
 
     public void Awake()
     {
@@ -35,7 +38,7 @@ public class MenuPrincipalManager : MonoBehaviour
     private void SetAnimators()
     {
         anim = gameModePanel.GetComponent<Animator>();
-        animUsername = usernamePanel.GetComponent<Animator>();
+        animWrong = wrongAnswer.GetComponent<Animator>();
         animScore = scorePanel.GetComponent<Animator>();
         animTutorial = tutorialPanel.GetComponent<Animator>();
         animCredits = creditsPanel.GetComponent<Animator>();
@@ -53,9 +56,23 @@ public class MenuPrincipalManager : MonoBehaviour
 
     public void StartCompetitiveGameMode()
     {
-        username = inputField.text;
-        Debug.Log("O nome do usuário é:" + username);
-        SceneManager.LoadScene(2);
+        if (inputField.text.Length >= 1 && inputField.text != " ")
+        {
+            username = inputField.text;
+            Debug.Log("O nome do usuário é:" + username);
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            StartCoroutine(Wronger());
+        }    
+    }
+
+    public System.Collections.IEnumerator Wronger()
+    {
+        animWrong.SetBool("Wronger", true);
+        yield return new WaitForSeconds(0.4f);
+        animWrong.SetBool("Wronger", false);
     }
 
     public void OpenGameMode()
@@ -86,7 +103,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     public void SkipTutorial()
     {
-        StartCoroutine(CloseAnimationPanelMode(animCredits, creditsPanel));
+        animTutorial.SetBool("Faster", true);
     }
     public void CloseTutorial()
     {
