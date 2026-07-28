@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14115f1bc3876604f9f768b4f097b607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BGChanger
-  backgroundImages:
+  backgroundSprites:
   - {fileID: -855298285791758126, guid: c186c953ad0107341acd5ea93422425c, type: 3}
   - {fileID: 6937817954938267909, guid: 6609f1ae786b4074d984f5ec7b8229c3, type: 3}
   - {fileID: -6470460504253458178, guid: 7e8a66bf4d2174542ba6fe7cea01abf0, type: 3}
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   - {fileID: 4130640169021434097, guid: d12ae6b26f16e784987df4936493c93a, type: 3}
   - {fileID: 3465286685962602723, guid: 178f3d25f48f0544fb72426cc737eca6, type: 3}
   - {fileID: 7028616704906629411, guid: d2227c15435ccaa48a3ae5c7640e0005, type: 3}
-  background: {fileID: 2136290605}
+  backgroundImages: {fileID: 2136290607}
 --- !u!95 &957538770
 Animator:
   serializedVersion: 7

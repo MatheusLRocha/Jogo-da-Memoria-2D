@@ -2,27 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
+using Unity.UI;
 
 public class BGChanger : MonoBehaviour
 {
-    [SerializeField] private List<Sprite> backgroundImages;
-    [SerializeField] private GameObject background;
-    Sprite backgroundImage;
-    Sprite actualSprite;
-    void Start()
+    [SerializeField] private List<Sprite> backgroundSprites;
+    [SerializeField] private Image backgroundImages;
+    private int currentIndex = 0;
+
+    private void Start()
     {
-        actualSprite = background.GetComponent<Sprite>();
-        BackGroundChanger();
+        if (backgroundSprites == null || backgroundSprites.Count == 0 || backgroundImages == null)
+        {
+            Debug.LogWarning("BGChanger: Missing background sprites or image reference.");
+            return;
+        }
+
+        backgroundImages.sprite = backgroundSprites[currentIndex];
+        StartCoroutine(BackgroundChangerCoroutine());
     }
 
-    void Update()
+    private IEnumerator BackgroundChangerCoroutine()
     {
-        
-    }
-    IEnumerator BackGroundChanger()
-    {
-        Sprite backgroundImage = backgroundImages[0];
-        yield return new WaitForSeconds(20.0f);
-        actualSprite = backgroundImage;
+        while (true)
+        {
+            yield return new WaitForSeconds(20.0f);
+            currentIndex = (currentIndex + 1) % backgroundSprites.Count;
+            backgroundImages.sprite = backgroundSprites[currentIndex];
+        }
     }
 }
+
