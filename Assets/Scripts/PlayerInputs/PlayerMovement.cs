@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,17 +19,17 @@ public class PlayerMovement : MonoBehaviour
     private int DOWN = 4;
     private int LEFT = -1;
     private int RIGHT = 1;
+    private int scene;
 
     IPlayerInput input;
 
     void Start()
     {
         currentIndex = 0;
-
-
-        ChangeCardScale(1.5f, 1.5f, -1); 
-
-        StartCoroutine(StartShowing());
+        scene = SceneManager.GetActiveScene().buildIndex;
+        
+        StartShowing();
+        ChangeCardScale(1.5f, 1.5f, -1f);
     }
 
     void Update()
@@ -36,11 +39,22 @@ public class PlayerMovement : MonoBehaviour
 
     void HandlePlayerControls()
     {
-        if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
+        if (scene != 2)
         {
-            HandlePlayerMovement();
-            HandlePlayerSelectionCard();
+            if (WindowManager.instance.isWindowActive == false && youCanMoveNow)
+            {
+                HandlePlayerMovement();
+                HandlePlayerSelectionCard();
+            }
         }
+        else
+        {
+            if (youCanMoveNow)
+            {
+                HandlePlayerMovement();
+                HandlePlayerSelectionCard();
+            }        
+        }    
     }
     
     void HandlePlayerMovement()
@@ -71,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             ChangeCardScale(1.3f, 1.3f, 0f);
             
             HandleCardMovement(RIGHT);
-            StartCoroutine(StopMovimentation());
+            StopMovimentation();
         }
     }
 
@@ -107,8 +121,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeCardScale(float x, float y, float displacement)
     {
-        playerControl.cards[currentIndex].GetComponent<Transform>().localScale = new UnityEngine.Vector3(x, y, 0.0f);
-        playerControl.cards[currentIndex].GetComponent<Transform>().localPosition = new UnityEngine.Vector3(playerControl.cards[currentIndex].GetComponent<Transform>().localPosition.x, playerControl.cards[currentIndex].GetComponent<Transform>().localPosition.y, displacement);   
+        if (playerControl == null || playerControl.cards == null || playerControl.cards.Count == 0 || currentIndex < 0 || currentIndex >= playerControl.cards.Count)
+        {
+            return;
+        }
+
+        Transform cardTransform = playerControl.cards[currentIndex].transform;
+        cardTransform.localScale = new UnityEngine.Vector3(x, y, 0.0f);
+        cardTransform.localPosition = new UnityEngine.Vector3(cardTransform.localPosition.x, cardTransform.localPosition.y, displacement);
     }
 
     private void ChangeCardStateToIdle()
@@ -139,16 +159,16 @@ public class PlayerMovement : MonoBehaviour
         return playerControl.cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched;
     }
 
-    private System.Collections.IEnumerator StartShowing()
+    private void StartShowing()
     {
-        yield return new WaitForSeconds(10.5f);
-        youCanMoveNow = true;
+        float waitTime = scene == 2 ? 5.5f : 10.5f;
+        DOVirtual.DelayedCall(waitTime, () => youCanMoveNow = true);
     }
 
-    private System.Collections.IEnumerator StopMovimentation()
+    private void StopMovimentation()
     {
         youCanMoveNow = false;
-        yield return new WaitForSeconds(5f);
-        youCanMoveNow = true;
+        float waitForStop = scene == 2 ? 1.5f : 5f;
+        DOVirtual.DelayedCall(waitForStop, () => youCanMoveNow = true);
     }
 }

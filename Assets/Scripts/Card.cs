@@ -149,8 +149,10 @@ public class Card : MonoBehaviour
     // Mostra as cartas no inicio
     private IEnumerator StartShowing()
     {
-        yield return new WaitForSeconds(0.5f);
-        
+        if (scene !=2)
+            yield return new WaitForSeconds(0.4f);
+        else
+            yield return new WaitForSeconds(0.65f);
         // Aguarda CardContent() ser chamado para usar o sprite correto
         while (!contentSet)
         {

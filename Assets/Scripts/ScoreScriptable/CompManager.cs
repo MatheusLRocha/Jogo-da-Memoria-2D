@@ -1,30 +1,22 @@
 using UnityEngine;
 using TMPro;
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UIElements;
 public class CompManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;
-    private float _time;
-
-    [SerializeField] public PointsManager pointsManager;
-    
-
+    public float time;
     void Update()
     {
-        _time = Time.timeSinceLevelLoad;
-        DisplayTime(_time);
+        DisplayTime(time);
     }
 
     void DisplayTime(float timeToDisplay)
     {
+        time = Time.timeSinceLevelLoad;
         float seconds = timeToDisplay;
         _timerText.text = string.Format("{0:F2}",seconds);
-    }
-
-    public float GetTime()
-    {
-        return _time;
+        if (time >= 300.0f)
+            Debug.Log("Demorou muito!");
     }
 }

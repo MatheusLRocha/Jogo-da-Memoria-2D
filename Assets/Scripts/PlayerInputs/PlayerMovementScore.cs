@@ -19,13 +19,21 @@ public class PlayerMovementScore : MonoBehaviour
 
     IPlayerInput input;
 
+    void Awake()
+    {
+        Debug.Log("[PlayerMovementScore] Awake executed");
+    }
+
+    void OnEnable()
+    {
+        Debug.Log("[PlayerMovementScore] OnEnable executed");
+    }
+
     void Start()
     {
+        Debug.Log("[PlayerMovementScore] Start executed");
         currentIndex = 0;
-
-
-        ChangeCardScale(1.5f, 1.5f, -1); 
-
+        ChangeCardScale(1.5f, 1.5f, -1);
         StartCoroutine(StartShowing());
     }
 
@@ -141,8 +149,10 @@ public class PlayerMovementScore : MonoBehaviour
 
     private System.Collections.IEnumerator StartShowing()
     {
+        Debug.Log("[PlayerMovementScore] StartShowing coroutine started");
         yield return new WaitForSeconds(10.5f);
         youCanMoveNow = true;
+        Debug.Log("[PlayerMovementScore] youCanMoveNow is now true");
     }
 
     private System.Collections.IEnumerator StopMovimentation()

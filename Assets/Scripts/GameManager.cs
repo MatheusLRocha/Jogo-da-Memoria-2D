@@ -64,7 +64,9 @@ public class GameManager : MonoBehaviour
         SetMatchedCardTypes();
         if (scene == 2)
         {
-            pointsManager.SetPoints(+(10000f/timeManager.GetTime()));
+            float actualTime = timeManager.time;
+            //if ()
+            pointsManager.SetPoints(+(10000f/timeManager.time));
         }
         HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
     }
