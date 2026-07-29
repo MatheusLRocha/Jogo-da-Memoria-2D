@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Card cardPlayer2;
 
     [SerializeField] public PointsManager pointsManager;
-    [SerializeField] public TimeManager timeManager;
+    [SerializeField] public TimerManager timeManager;
 
     private int scene;
 

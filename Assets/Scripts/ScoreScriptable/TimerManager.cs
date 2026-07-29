@@ -10,21 +10,20 @@ public class TimerManager : MonoBehaviour
 
     void Update()
     {
-        DisplayTime(time);
+        _time = Time.timeSinceLevelLoad;
+        DisplayTime(_time);
     }
 
     private void DisplayTime(float timeToDisplay)
     {
         _timerText.text = string.Format("{0:F2}", timeToDisplay);
+        if (_time >= 300.0f)
+        Debug.Log("Demorou muito!");
     }
 
     public float GetTime()
     {
-        _time = Time.timeSinceLevelLoad;
-        float seconds = timeToDisplay;
-        _timerText.text = string.Format("{0:F2}",seconds);
-        if (_time >= 300.0f)
-            Debug.Log("Demorou muito!");
+        //_timerText.text = string.Format("{0:F2}", _time);
         return _time;
     }
 }
