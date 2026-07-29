@@ -4,9 +4,9 @@ using System.Collections;
 using UnityEngine.UIElements;
 public class TimerManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] public TextMeshProUGUI _timerText;
 
-    private float _time;
+    public float _time;
 
     void Update()
     {
