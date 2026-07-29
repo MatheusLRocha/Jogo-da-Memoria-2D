@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UIElements;
 public class TimerManager : MonoBehaviour
 {
@@ -11,8 +10,7 @@ public class TimerManager : MonoBehaviour
 
     void Update()
     {
-        _time = Time.timeSinceLevelLoad;
-        DisplayTime(_time);
+        DisplayTime(time);
     }
 
     private void DisplayTime(float timeToDisplay)
@@ -22,6 +20,11 @@ public class TimerManager : MonoBehaviour
 
     public float GetTime()
     {
+        _time = Time.timeSinceLevelLoad;
+        float seconds = timeToDisplay;
+        _timerText.text = string.Format("{0:F2}",seconds);
+        if (_time >= 300.0f)
+            Debug.Log("Demorou muito!");
         return _time;
     }
 }
