@@ -14,7 +14,7 @@ public class Card : MonoBehaviour
     [SerializeField] public List<Sprite> Sprites;
 
     public Sprite actualSprite;
-    //Variável de backup do sprite antigo
+    
     public Sprite backupOldSprite;
 
     public bool SpriteChecker = false;
@@ -66,6 +66,18 @@ public class Card : MonoBehaviour
         if (scene ==2)
             anim.SetBool("IsComp",true);
         StartShowing();
+    }
+
+    public void Match()
+    {
+        ChangeAnimation(CardState.Matched);
+        ChangeSprite(true);
+    }
+
+    public void Dismatch()
+    {
+        ChangeAnimation(CardState.Dismatched);
+        ChangeSprite(false);
     }
 
     public void ChangeSprite(bool isMatched)
