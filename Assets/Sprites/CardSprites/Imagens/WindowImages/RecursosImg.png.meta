@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: afff0d5d72eec924982505818f4da885
+guid: d9fba8d76bd1b624b83767f5ff6cfaf9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4586564314194375853
-    second: RECURSOSHUMANOS_0
+      213: 2228291321026790555
+    second: RecursosImg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RECURSOSHUMANOS_0
+      name: RecursosImg_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1515
-        height: 1503
+        width: 1516
+        height: 1504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da4f90f61ffb6af30800000000000000
-      internalID: 4586564314194375853
+      spriteID: b9443e5862b7cee10800000000000000
+      internalID: 2228291321026790555
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RECURSOSHUMANOS_0: 4586564314194375853
+      RecursosImg_0: 2228291321026790555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

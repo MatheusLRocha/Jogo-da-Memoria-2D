@@ -6979,7 +6979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4925156119044964847, guid: 384d4b588727eee4b83e78e52748ac66, type: 3}
+  m_Sprite: {fileID: 6411241466079148634, guid: 628a73eb0d573a441bc1320490c597a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7031,7 +7031,6 @@ MonoBehaviour:
   usernamePanel: {fileID: 1729958428}
   wrongAnswer: {fileID: 1422458532}
   inputField: {fileID: 1715247889}
-  username: 
   scorePanel: {fileID: 673054439}
   tutorialPanel: {fileID: 1416758980}
   creditsPanel: {fileID: 324236035}
@@ -15348,7 +15347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1416758981
 RectTransform:
   m_ObjectHideFlags: 0
