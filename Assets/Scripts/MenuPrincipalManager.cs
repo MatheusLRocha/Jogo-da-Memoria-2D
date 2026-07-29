@@ -53,6 +53,10 @@ public class MenuPrincipalManager : MonoBehaviour
         usernamePanel.SetActive(true);
     }
 
+    public void CloseUsername()
+    {
+        usernamePanel.SetActive(false);
+    }
     public void StartCompetitiveGameMode()
     {
         if (inputField.text.Length >= 1 && inputField.text != " ")
