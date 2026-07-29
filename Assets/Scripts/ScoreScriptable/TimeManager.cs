@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UIElements;
 public class TimerManager : MonoBehaviour
 {
@@ -11,8 +10,7 @@ public class TimerManager : MonoBehaviour
 
     void Update()
     {
-        _time = Time.timeSinceLevelLoad;
-        DisplayTime(_time);
+        DisplayTime(time);
     }
 
     private void DisplayTime(float timeToDisplay)

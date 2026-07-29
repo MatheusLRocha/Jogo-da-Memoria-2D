@@ -1518,7 +1518,7 @@ MonoBehaviour:
   - {fileID: -4178046375966092550, guid: f15eeb95043256342a1bebc53a7e1231, type: 3}
   - {fileID: 4130640169021434097, guid: d12ae6b26f16e784987df4936493c93a, type: 3}
   - {fileID: 3465286685962602723, guid: 178f3d25f48f0544fb72426cc737eca6, type: 3}
-  - {fileID: 7028616704906629411, guid: d2227c15435ccaa48a3ae5c7640e0005, type: 3}
+  - {fileID: -4987914821148657504, guid: 02c04d12c56af96428dfca1eb3a5f5f3, type: 3}
   backgroundImages: {fileID: 2136290607}
 --- !u!95 &957538770
 Animator:
@@ -3080,8 +3080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 908.643, y: 511.112}
+  m_AnchoredPosition: {x: 40, y: 0.984}
+  m_SizeDelta: {x: 908.643, y: 475.764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136290607
 MonoBehaviour:

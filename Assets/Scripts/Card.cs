@@ -19,7 +19,7 @@ public class Card : MonoBehaviour
 
     public bool SpriteChecker = false;
 
-    private bool contentSet = false;
+    //private bool contentSet = false;
 
     public enum CardType
     {
@@ -65,7 +65,7 @@ public class Card : MonoBehaviour
         scene = SceneManager.GetActiveScene().buildIndex;
         if (scene ==2)
             anim.SetBool("IsComp",true);
-        StartCoroutine(StartShowing());
+        StartShowing();
     }
 
     public void Match()
@@ -89,10 +89,11 @@ public class Card : MonoBehaviour
         else
         {
             RevealCard();
-
-            DOVirtual.DelayedCall(5f, () => {
+            float waitForHide = scene == 2 ? 1.27f : 3.25f;
+            DOVirtual.DelayedCall(waitForHide, () => {
                 HideCard();
-            });
+                anim.SetBool("isDismatched", false);
+                });
         }
     }
 
@@ -154,26 +155,23 @@ public class Card : MonoBehaviour
         int spriteIndex = (int)cardType;
 
         actualSprite = Sprites[spriteIndex];
-        contentSet = true;
+        //contentSet = true;
     }
 
 
     // Mostra as cartas no inicio
-    private IEnumerator StartShowing()
+    private void StartShowing()
     {
-        yield return new WaitForSeconds(0.5f);
-        
-        // Aguarda CardContent() ser chamado para usar o sprite correto
-        while (!contentSet)
+        float waitForOpen = scene == 2 ? 1.15f : 1.35f;
+        float waitForStart = scene == 2 ? 6.05f : 11.25f;
+        DOTween.SetTweensCapacity(200, 150);
+        DOVirtual.DelayedCall(waitForOpen, () => 
         {
-            yield return null;
-        }
-        
-        spriteRenderer.sprite = actualSprite;
-        if (scene == 2)
-        yield return new WaitForSeconds(5f);
-        else
-        yield return new WaitForSeconds(10f);
-        spriteRenderer.sprite = backupOldSprite;
+            spriteRenderer.sprite = actualSprite;
+        });
+        DOVirtual.DelayedCall(waitForStart, () =>
+        {
+            spriteRenderer.sprite = backupOldSprite;
+        });
     }
 }
