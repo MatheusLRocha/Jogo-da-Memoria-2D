@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
     private void StopMovimentation()
     {
         youCanMoveNow = false;
-        float waitForStop = scene == 2 ? 1.5f : 5f;
+        float waitForStop = scene == 2 ? 1.5f : 3.28f;
         DOVirtual.DelayedCall(waitForStop, () => youCanMoveNow = true);
     }
 }

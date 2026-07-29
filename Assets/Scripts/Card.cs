@@ -19,7 +19,6 @@ public class Card : MonoBehaviour
 
     public bool SpriteChecker = false;
 
-    private bool contentSet = false;
 
     public enum CardType
     {
@@ -65,7 +64,6 @@ public class Card : MonoBehaviour
         scene = SceneManager.GetActiveScene().buildIndex;
         if (scene ==2)
             anim.SetBool("IsComp",true);
-        StartCoroutine(StartShowing());
     }
 
     public void ChangeSprite(bool isMatched)
@@ -77,10 +75,7 @@ public class Card : MonoBehaviour
         else
         {
             RevealCard();
-
-            DOVirtual.DelayedCall(5f, () => {
                 HideCard();
-            });
         }
     }
 
@@ -142,28 +137,11 @@ public class Card : MonoBehaviour
         int spriteIndex = (int)cardType;
 
         actualSprite = Sprites[spriteIndex];
-        contentSet = true;
     }
 
 
     // Mostra as cartas no inicio
-    private IEnumerator StartShowing()
     {
-        if (scene !=2)
-            yield return new WaitForSeconds(0.4f);
-        else
-            yield return new WaitForSeconds(0.65f);
-        // Aguarda CardContent() ser chamado para usar o sprite correto
-        while (!contentSet)
         {
-            yield return null;
-        }
-        
-        spriteRenderer.sprite = actualSprite;
-        if (scene == 2)
-        yield return new WaitForSeconds(5f);
-        else
-        yield return new WaitForSeconds(10f);
-        spriteRenderer.sprite = backupOldSprite;
     }
 }
