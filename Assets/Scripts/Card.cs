@@ -19,6 +19,7 @@ public class Card : MonoBehaviour
 
     public bool SpriteChecker = false;
 
+    //private bool contentSet = false;
 
     public enum CardType
     {
@@ -64,6 +65,7 @@ public class Card : MonoBehaviour
         scene = SceneManager.GetActiveScene().buildIndex;
         if (scene ==2)
             anim.SetBool("IsComp",true);
+        StartShowing();
     }
 
     public void ChangeSprite(bool isMatched)
@@ -75,7 +77,11 @@ public class Card : MonoBehaviour
         else
         {
             RevealCard();
+            float waitForHide = scene == 2 ? 1.27f : 3.25f;
+            DOVirtual.DelayedCall(waitForHide, () => {
                 HideCard();
+                anim.SetBool("isDismatched", false);
+                });
         }
     }
 
@@ -137,11 +143,23 @@ public class Card : MonoBehaviour
         int spriteIndex = (int)cardType;
 
         actualSprite = Sprites[spriteIndex];
+        //contentSet = true;
     }
 
 
     // Mostra as cartas no inicio
+    private void StartShowing()
     {
+        float waitForOpen = scene == 2 ? 1.15f : 1.35f;
+        float waitForStart = scene == 2 ? 6.05f : 11.25f;
+        DOTween.SetTweensCapacity(200, 150);
+        DOVirtual.DelayedCall(waitForOpen, () => 
         {
+            spriteRenderer.sprite = actualSprite;
+        });
+        DOVirtual.DelayedCall(waitForStart, () =>
+        {
+            spriteRenderer.sprite = backupOldSprite;
+        });
     }
 }
