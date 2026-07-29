@@ -7,7 +7,7 @@ public class PlayerModel
     public string Name { get; set; }
     
     [Column("points"), NotNull]
-    public int Points { get; set; } = 0;
+    public float Points { get; set; } = 0;
 
     [Column("time"), NotNull]
     public float Time { get; set; } = 0;

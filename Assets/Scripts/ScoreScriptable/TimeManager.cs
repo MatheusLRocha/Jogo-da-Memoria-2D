@@ -3,13 +3,11 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
-public class CompManager : MonoBehaviour
+public class TimerManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;
-    private float _time;
 
-    [SerializeField] public PointsManager pointsManager;
-    
+    private float _time;
 
     void Update()
     {
@@ -17,10 +15,9 @@ public class CompManager : MonoBehaviour
         DisplayTime(_time);
     }
 
-    void DisplayTime(float timeToDisplay)
+    private void DisplayTime(float timeToDisplay)
     {
-        float seconds = timeToDisplay;
-        _timerText.text = string.Format("{0:F2}",seconds);
+        _timerText.text = string.Format("{0:F2}", timeToDisplay);
     }
 
     public float GetTime()

@@ -11,7 +11,6 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private  GameObject usernamePanel;
     [SerializeField] public GameObject wrongAnswer;
     public TMP_InputField inputField;
-    public string username;
     [SerializeField] private  GameObject scorePanel;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject creditsPanel;
@@ -58,8 +57,7 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         if (inputField.text.Length >= 1 && inputField.text != " ")
         {
-            username = inputField.text;
-            Debug.Log("O nome do usuário é:" + username);
+            PlayerPrefs.SetString("Username", inputField.text);
             SceneManager.LoadScene(2);
         }
         else

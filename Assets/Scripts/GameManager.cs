@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Card cardPlayer2;
 
     [SerializeField] public PointsManager pointsManager;
-    [SerializeField] public CompManager timeManager;
+    [SerializeField] public TimerManager timeManager;
 
     private int scene;
 
@@ -62,35 +62,34 @@ public class GameManager : MonoBehaviour
     private void HandleMatchedCards()
     {
         SetMatchedCardTypes();
+
         if (scene == 2)
         {
-            pointsManager.SetPoints(+(10000f/timeManager.GetTime()));
+            pointsManager.AddPoints(timeManager.GetTime());
         }
-        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Matched);
+
+        cardPlayer1.Match();
+        cardPlayer2.Match();
+
+        HandleWindowCard();
+
+        ClearCards();
     }
 
     private void HandleDismatchedCards()
     {
-        HandleCardActions(cardPlayer1, cardPlayer2, Card.CardState.Dismatched);
+
+        cardPlayer1.Dismatch();
+        cardPlayer2.Dismatch();
+
+        ClearCards();
     }
 
 
     private void SetMatchedCardTypes()
     {
         if (scene != 2)
-        WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
-    }
-
-    
-    void HandleCardActions(Card card1, Card card2, Card.CardState animation)
-    {
-        DOVirtual.DelayedCall(0.1f, () =>
-        {
-            HandleCardAnimations(card1, card2, animation);
-            HandleCardSprites(card1, card2);
-            HandleWindowCard();
-            ClearCards();
-        });
+            WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
     }
 
     private void ClearCards()
@@ -99,21 +98,10 @@ public class GameManager : MonoBehaviour
         cardPlayer2 = null;
     }
 
-    void HandleCardSprites(Card card1, Card card2)
-    {
-        card1.ChangeSprite(IsMatchedCards());
-        card2.ChangeSprite(IsMatchedCards());
-    }
-
     void HandleWindowCard()
     {
         if (IsMatchedCards())
-            DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
-    }
-
-    void HandleCardAnimations(Card card1, Card card2, Card.CardState animation)
-    {
-        card1.ChangeAnimation(animation);
-        card2.ChangeAnimation(animation);
+            if (scene != 2)
+                DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
     }
 }
