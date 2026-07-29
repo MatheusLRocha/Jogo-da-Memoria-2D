@@ -59,7 +59,7 @@ public class MenuPrincipalManager : MonoBehaviour
         if (inputField.text.Length >= 1 && inputField.text != " ")
         {
             username = inputField.text;
-            Debug.Log("O nome do usuário é:" + username);
+            Debug.Log("O nome do usuário é: " + username);
             SceneManager.LoadScene(2);
         }
         else
