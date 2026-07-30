@@ -17,7 +17,7 @@ public class TimerManager : MonoBehaviour
     private void DisplayTime(float timeToDisplay)
     {
         _timerText.text = string.Format("{0:F2}", timeToDisplay);
-        if (timeToDisplay >= 300.0f)
+        if (timeToDisplay >= 150.0f)
             Debug.Log("Demorou muito!");
     }
 
