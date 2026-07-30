@@ -30,7 +30,7 @@ public class SQLiteDataBase : IDataBase
 
     public void Update<T>(T data)
     {
-        
+        _db.Update(data);
     }
 
     public void Delete<T>(T data)

@@ -23,7 +23,6 @@ public class TimerManager : MonoBehaviour
 
     public float GetTime()
     {
-        //_timerText.text = string.Format("{0:F2}", _time);
         return _time;
     }
 }
