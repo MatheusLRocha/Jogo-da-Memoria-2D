@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] public List<Transform> posicoes;
 
     // Campo para selecionar onde as cartas vão nascer
-    [SerializeField] public Transform pai;
+    [SerializeField] public Transform parent;
 
     [SerializeField] public GameObject CardPrefab;
 
@@ -33,7 +33,7 @@ public class PlayerControl : MonoBehaviour
         // Grande loop que randomiza as cartas ao mesmo tempo que cria elas
         for (int i = posicoes.Count - 1; i > -1; i--)
         {
-            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity, pai);
+            cards[i] = Instantiate(CardPrefab, posicoes[i].position, Quaternion.identity, parent);
         }
     }
 

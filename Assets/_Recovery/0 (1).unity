@@ -10745,19 +10745,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   scorePrefab: {fileID: 5934974271165183537, guid: 91a34cac20afda44fbe3cf2083d39b52, type: 3}
-  parent:
-  - {fileID: 1715701413}
-  - {fileID: 512760332}
-  - {fileID: 171159430}
-  - {fileID: 552010356}
-  - {fileID: 1525405294}
-  - {fileID: 1152769914}
-  - {fileID: 1399660526}
-  - {fileID: 1266772842}
-  - {fileID: 598851096}
-  - {fileID: 858159382}
-  - {fileID: 502696668}
-  - {fileID: 1741557303}
+  parent: []
 --- !u!1 &934600447
 GameObject:
   m_ObjectHideFlags: 0
