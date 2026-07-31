@@ -25,34 +25,55 @@ public class CompetitiveManager : MonoBehaviour
 
     void Start()
     {
-        player = _db.GetPlayerByName(_username);
-
-        if (player == null)
-        {
-            player = new PlayerModel
-            {
-                Name = _username,
-                Points = (decimal)_pointsManager.GetPoints(),
-                Time = (decimal)_timerManager.GetTime(),
-            };
-
-            _db.Insert(player);
-        }
+        player = LoadPlayer();
 
         _oldPoints = (float)player.Points;
     }
 
     void Update()
     {
-        if (_pointsManager.GetPoints() > _oldPoints)
+        if (!HasNewScore()) return;
+
+        UpdatePlayerProgress();
+    }
+
+    private PlayerModel LoadPlayer()
+    {
+        PlayerModel player = _db.GetPlayerByName(_username);
+
+        if (player != null) return player;
+
+        player = CreatePlayer();
+        _db.Insert(player);
+
+        return player;
+    }
+
+    private PlayerModel CreatePlayer()
+    {
+        PlayerModel player = new PlayerModel
         {
-            player.Points =  Math.Round((decimal)_pointsManager.GetPoints(), 2);
-            player.Time = Math.Round((decimal)_timerManager.GetTime(), 2);
+            Name = _username,
+            Points = (decimal)_pointsManager.GetPoints(),
+            Time = (decimal)_timerManager.GetTime(),
+        };
 
-            _db.Update(player);
+        return player;
+    }
 
-            _oldPoints = _pointsManager.GetPoints();
-        }
+    private bool HasNewScore()
+    {
+        return _pointsManager.GetPoints() > _oldPoints;
+    }
+
+    private void UpdatePlayerProgress()
+    {
+        player.Points =  Math.Round((decimal)_pointsManager.GetPoints(), 2);
+        player.Time = Math.Round((decimal)_timerManager.GetTime(), 2);
+
+        _db.Update(player);
+
+        _oldPoints = _pointsManager.GetPoints();
     }
 
     private void OnDestroy()
