@@ -38,6 +38,8 @@ public class CompetitiveManager : MonoBehaviour
 
             _db.Insert(player);
         }
+
+        _oldPoints = (float)player.Points;
     }
 
     void Update()
@@ -48,9 +50,9 @@ public class CompetitiveManager : MonoBehaviour
             player.Time = Math.Round((decimal)_timerManager.GetTime(), 2);
 
             _db.Update(player);
-        }
 
-        _oldPoints = _pointsManager.GetPoints();
+            _oldPoints = _pointsManager.GetPoints();
+        }
     }
 
     private void OnDestroy()
