@@ -12,8 +12,10 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] public GameObject wrongAnswer;
     public TMP_InputField inputField;
     [SerializeField] private  GameObject scorePanel;
+    [SerializeField] private ScoreManager ScoreManager;
     [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private GameObject creditsPanel;
+
 
     Animator anim;
     Animator animWrong;
@@ -92,9 +94,11 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         mainMenuPanel.SetActive(false);
         scorePanel.SetActive(true);
+        animScore.SetBool("Closer", false);
     }
     public void CloseScore()
     {
+        animScore.SetBool("Closer", true);
         StartCoroutine(CloseAnimationPanelMode(animScore, scorePanel));
     }
     public void OpenTutorial()

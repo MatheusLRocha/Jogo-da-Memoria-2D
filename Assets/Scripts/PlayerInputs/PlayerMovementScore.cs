@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerMovementScore : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovementScore : MonoBehaviour
     private int currentIndex;
 
     private bool youCanMoveNow = false;
+    private bool isSelectionPending = false;
 
     private int UP = -4;
     private int DOWN = 4;
@@ -70,15 +72,34 @@ public class PlayerMovementScore : MonoBehaviour
     {
         if (input.Confirm())
         {
-            Card card = playerControl.cards[currentIndex].GetComponent<Card>();
+            isSelectionPending = true;
+            int selectedIndex = currentIndex;
+            Card card = playerControl.cards[selectedIndex].GetComponent<Card>();
             card.ChangeAnimation(Card.CardState.Selected);
 
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
-            GameManager.instance.VerifyCardTypes(playerID, playerControl.cards[currentIndex].GetComponent<Card>());
+            GameManager.instance.VerifyCardTypes(playerID, playerControl.cards[selectedIndex].GetComponent<Card>());
 
             ChangeCardScale(1.3f, 1.3f, 0f);
             
             HandleCardMovement(RIGHT);
+
+            DOVirtual.DelayedCall(0.2f, () =>
+            {
+                isSelectionPending = false;
+                if (playerControl == null || playerControl.cards == null || playerControl.cards.Count == 0 || selectedIndex < 0 || selectedIndex >= playerControl.cards.Count)
+                    return;
+
+                Card selectedCard = playerControl.cards[selectedIndex].GetComponent<Card>();
+                if (selectedCard == null)
+                    return;
+
+                if (selectedCard.cardState != Card.CardState.Matched && selectedCard.cardState != Card.CardState.Dismatched)
+                {
+                    selectedCard.ChangeAnimation(Card.CardState.Idle);
+                }
+            });
+
             StartCoroutine(StopMovimentation());
         }
     }
@@ -88,7 +109,10 @@ public class PlayerMovementScore : MonoBehaviour
         if (!IsMatchedCards())
         {
             ChangeCardScale(1.3f, 1.3f, 0);
-            ChangeCardStateToIdle();
+            if (!isSelectionPending)
+            {
+                ChangeCardStateToIdle();
+            }
             MoveToNextCard(direction);
         }
 
