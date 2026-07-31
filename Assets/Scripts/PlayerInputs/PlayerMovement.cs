@@ -162,13 +162,18 @@ public class PlayerMovement : MonoBehaviour
     private void StartShowing()
     {
         float waitTime = scene == 2 ? 5.5f : 10.5f;
-        DOVirtual.DelayedCall(waitTime, () => youCanMoveNow = true);
+        DOVirtual.DelayedCall(waitTime, () => youCanMoveNow = true).SetTarget(this);
     }
 
     private void StopMovimentation()
     {
         youCanMoveNow = false;
         float waitForStop = scene == 2 ? 1.5f : 3.28f;
-        DOVirtual.DelayedCall(waitForStop, () => youCanMoveNow = true);
+        DOVirtual.DelayedCall(waitForStop, () => youCanMoveNow = true).SetTarget(this);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this);
     }
 }

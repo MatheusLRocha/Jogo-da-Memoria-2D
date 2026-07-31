@@ -102,6 +102,15 @@ public class GameManager : MonoBehaviour
     {
         if (IsMatchedCards())
             if (scene != 2)
-                DOVirtual.DelayedCall(2f, () => WindowManager.instance.hasMatched = true);
+                DOVirtual.DelayedCall(2f, () =>
+                {
+                    if (WindowManager.instance != null)
+                        WindowManager.instance.hasMatched = true;
+                }).SetTarget(this);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this);
     }
 }
