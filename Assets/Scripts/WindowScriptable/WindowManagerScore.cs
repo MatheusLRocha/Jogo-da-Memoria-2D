@@ -34,7 +34,9 @@ public class WindowManagerScore : MonoBehaviour{
     private bool hasIncrementedThisActivation = false; // Rastreia se já incrementou nesta ativação
 
     [SerializeField] public GameObject Points;
-    [SerializeField] public TimerManager _timer;
+
+    [SerializeField] public TimerManager _timerManager;
+
     [SerializeField] public GameObject finalScreen;
     [SerializeField] public GameObject failureScreen;
     Animator anim;
@@ -119,7 +121,8 @@ public class WindowManagerScore : MonoBehaviour{
             finalScreen.SetActive(true);
             Points.SetActive(false);
         }
-        if (_timer._time >= 300f)
+
+        if (_timerManager.GetTime() >= 300f)
         {
             failureScreen.SetActive(true);
             Points.SetActive(false);
