@@ -3156,6 +3156,7 @@ GameObject:
   - component: {fileID: 1296836942}
   - component: {fileID: 1296836944}
   - component: {fileID: 1296836943}
+  - component: {fileID: 1296836945}
   m_Layer: 0
   m_Name: PointsImage
   m_TagString: Untagged
@@ -3220,6 +3221,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296836941}
   m_CullTransparentMesh: 0
+--- !u!114 &1296836945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296836941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce6c674cd35f0b40a2ea7028633564e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PointsUIManager
+  _scoreText: {fileID: 1620044924}
+  _pointsManager: {fileID: 1962417060}
 --- !u!1 &1298722308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,7 +4935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed94de590cf3c142818afce467ad7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PointsManager
-  _scoreText: {fileID: 1620044924}
 --- !u!224 &1962417061
 RectTransform:
   m_ObjectHideFlags: 0
