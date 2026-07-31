@@ -48,11 +48,11 @@ public class Card : MonoBehaviour
     public CardState cardState;
     
     public int playerID;
+
     private int scene;
 
     void Awake()
     {
-        // Captura o SpriteRenderer e salva o sprite original do prefab o mais cedo possível
         spriteRenderer = GetComponent<SpriteRenderer>();
         backupOldSprite = spriteRenderer.sprite;
         anim = GetComponent<Animator>();
@@ -62,7 +62,9 @@ public class Card : MonoBehaviour
     {
         if (anim == null)
             anim = GetComponent<Animator>();
+        
         scene = SceneManager.GetActiveScene().buildIndex;
+        
         if (scene ==2)
             anim.SetBool("IsComp",true);
         StartShowing();
