@@ -7,13 +7,21 @@ using System.Linq;
 public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
+
     [SerializeField] private  GameObject gameModePanel;
+
     [SerializeField] private  GameObject usernamePanel;
+
     [SerializeField] public GameObject wrongAnswer;
+
     public TMP_InputField inputField;
+
     [SerializeField] private  GameObject scorePanel;
+
     [SerializeField] private ScoreManager ScoreManager;
+
     [SerializeField] private GameObject tutorialPanel;
+
     [SerializeField] private GameObject creditsPanel;
 
 
@@ -22,6 +30,7 @@ public class MenuPrincipalManager : MonoBehaviour
     Animator animScore;
     Animator animTutorial;
     Animator animCredits;
+
     public bool skipper;
 
     public void Awake()
@@ -59,6 +68,7 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         usernamePanel.SetActive(false);
     }
+
     public void StartCompetitiveGameMode()
     {
         if (inputField.text.Length >= 1 && inputField.text != " ")
@@ -96,11 +106,13 @@ public class MenuPrincipalManager : MonoBehaviour
         scorePanel.SetActive(true);
         animScore.SetBool("Closer", false);
     }
+
     public void CloseScore()
     {
         animScore.SetBool("Closer", true);
         StartCoroutine(CloseAnimationPanelMode(animScore, scorePanel));
     }
+
     public void OpenTutorial()
     {
         mainMenuPanel.SetActive(false);
@@ -111,6 +123,7 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         animTutorial.SetBool("Faster", true);
     }
+    
     public void CloseTutorial()
     {
         StartCoroutine(CloseAnimationPanelMode(animTutorial, tutorialPanel));

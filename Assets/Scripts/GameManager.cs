@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // Torna o script globalmente acessível para outros scripts
+    public static GameManager instance;
 
     public Card cardPlayer1;
     public Card cardPlayer2;
@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
             HandleMatchedCards();
         else
             HandleDismatchedCards();
-
-        
     }
 
     private void SetPlayersCards(int id, Card card)
@@ -78,7 +76,6 @@ public class GameManager : MonoBehaviour
 
     private void HandleDismatchedCards()
     {
-
         cardPlayer1.Dismatch();
         cardPlayer2.Dismatch();
 

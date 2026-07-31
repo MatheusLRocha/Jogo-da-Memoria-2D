@@ -19,8 +19,6 @@ public class Card : MonoBehaviour
 
     public bool SpriteChecker = false;
 
-    //private bool contentSet = false;
-
     public enum CardType
     {
         Administracao,
