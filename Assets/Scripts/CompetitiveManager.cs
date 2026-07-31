@@ -25,14 +25,19 @@ public class CompetitiveManager : MonoBehaviour
 
     void Start()
     {
-        player = new PlayerModel
-        {
-            Name = _username,
-            Points = (decimal)_pointsManager.GetPoints(),
-            Time = (decimal)_timerManager.GetTime(),
-        };
+        player = _db.GetPlayerByName(_username);
 
-        _db.Insert(player);
+        if (player == null)
+        {
+            player = new PlayerModel
+            {
+                Name = _username,
+                Points = (decimal)_pointsManager.GetPoints(),
+                Time = (decimal)_timerManager.GetTime(),
+            };
+
+            _db.Insert(player);
+        }
     }
 
     void Update()
@@ -46,5 +51,10 @@ public class CompetitiveManager : MonoBehaviour
         }
 
         _oldPoints = _pointsManager.GetPoints();
+    }
+
+    private void OnDestroy()
+    {
+        _db?.Disconnect();
     }
 }
