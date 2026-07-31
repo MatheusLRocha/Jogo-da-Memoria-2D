@@ -7,6 +7,7 @@ public class ExitButton : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    
     public void Start()
     {
         if (WindowManager.instance != null)
@@ -14,7 +15,4 @@ public class ExitButton : MonoBehaviour
             WindowManager.instance.hasMatched = false;
         }
     }
-
-    
-
 }

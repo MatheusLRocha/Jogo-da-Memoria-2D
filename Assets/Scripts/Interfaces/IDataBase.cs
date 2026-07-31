@@ -3,7 +3,12 @@ public interface IDataBase
     void Connect();
     void Disconnect();
 
-    void Insert<T>(T data);
-    void Update<T>(T data);
-    void Delete<T>(T data);
+    void Insert(PlayerModel data);
+    void Update(PlayerModel data);
+
+    int GetTotalPlayers();
+
+    PlayerModel GetPlayerById(int id);
+
+    PlayerModel GetPlayerByName(string name);
 }

@@ -6,120 +6,47 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private List<RectTransform> scoreSlots;
+
     [SerializeField] private List<RectTransform> scoreParents;
+
     [SerializeField] private GameObject scorePrefab;
+
     [SerializeField] private int pageSize = 12;
+
     [SerializeField] private float slotSpacing = 70f;
+
+    private SQLiteDataBase _db;
 
     private readonly List<GameObject> spawnedScoreBlocks = new List<GameObject>();
     private readonly List<ScoreEntry> allScores = new List<ScoreEntry>();
-    public List<ScoreEntry> sc = new List<ScoreEntry>
-    {
-        
-            new ScoreEntry
-            {
-                rank = "1",
-                username = "Jonhaton",
-                points = 298.54f,
-                time = 123.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "2",
-                username = "Golan",
-                points = 466.54f,
-                time = 78.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "3",
-                username = "Begarrit",
-                points = 1328.54f,
-                time = 12.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "4",
-                username = "Visn",
-                points = 4626.54f,
-                time = 178.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "5",
-                username = "Jqswssn",
-                points = 122228.54f,
-                time = 123.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "6",
-                username = "Bartrs",
-                points = 46.54f,
-                time = 728.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "7",
-                username = "Blimb",
-                points = 2298.54f,
-                time = 113.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "8",
-                username = "Jgesn",
-                points = 26.54f,
-                time = 78.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "9",
-                username = "Jasda",
-                points = 12.54f,
-                time = 0.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "10",
-                username = "Derf",
-                points = 466.54f,
-                time = 78.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "11",
-                username = "Cica",
-                points = 1298.54f,
-                time = 123.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "12",
-                username = "Vincan",
-                points = 466.54f,
-                time = 78.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "13",
-                username = "Blue-Palms",
-                points = 1298.54f,
-                time = 123.34f,
-            },
-            new ScoreEntry
-            {
-                rank = "14",
-                username = "Gingerboy",
-                points = 42266.54f,
-                time = 78.34f,
-            }
-        
-    };
+
+    public List<ScoreEntry> sc = new List<ScoreEntry>();
+
     private int currentPage = 0;
 
     private void Awake()
     {
+        _db = new SQLiteDataBase();
+
+        int count = _db.GetTotalPlayers();
+
+        for (int i = 0; i < count; i++)
+        {
+            var player = _db.GetPlayerById(i + 1);
+
+            if (player == null) return;
+
+            sc.Add(
+                new ScoreEntry
+                {
+                    rank = $"{i + 1}",
+                    username = $"{player.Name}",
+                    points = (float)player.Points,
+                    time = (float)player.Time,
+                }
+            );
+        }
+
         SetScores(sc);
     }
 

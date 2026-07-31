@@ -9077,58 +9077,6 @@ MonoBehaviour:
     username: Jonhaton
     points: 298.54
     time: 123.34
-  - rank: 2
-    username: Golan
-    points: 466.54
-    time: 78.34
-  - rank: 3
-    username: Begarrit
-    points: 1328.54
-    time: 12.34
-  - rank: 4
-    username: Visn
-    points: 4626.54
-    time: 178.34
-  - rank: 5
-    username: Jqswssn
-    points: 122228.54
-    time: 1213.34
-  - rank: 6
-    username: Bartrs
-    points: 46.54
-    time: 728.34
-  - rank: 7
-    username: Blimb
-    points: 2298.54
-    time: 113.34
-  - rank: 8
-    username: Jgesn
-    points: 26.54
-    time: 78.34
-  - rank: 9
-    username: Jasda
-    points: 12.54
-    time: 0.34
-  - rank: 10
-    username: Derf
-    points: 466.54
-    time: 78.34
-  - rank: 11
-    username: Cica
-    points: 1298.54
-    time: 123.34
-  - rank: 12
-    username: Vincan
-    points: 466.54
-    time: 78.34
-  - rank: 13
-    username: Blue-Palms
-    points: 1298.54
-    time: 123.34
-  - rank: 14
-    username: Gingerboy
-    points: 42266.54
-    time: 78.34
 --- !u!224 &820294724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10926,63 +10874,7 @@ MonoBehaviour:
   scorePrefab: {fileID: 7013893043775130955, guid: 872858c8f95d0ea458fcf9d0dd638deb, type: 3}
   pageSize: 12
   slotSpacing: 70
-  sc:
-  - rank: 1
-    username: Jonhaton
-    points: 298.54
-    time: 123.34
-  - rank: 2
-    username: Golan
-    points: 466.54
-    time: 78.34
-  - rank: 3
-    username: Begarrit
-    points: 1328.54
-    time: 12.34
-  - rank: 4
-    username: Visn
-    points: 4626.54
-    time: 178.34
-  - rank: 5
-    username: Jqswssn
-    points: 122228.54
-    time: 1213.34
-  - rank: 6
-    username: Bartrs
-    points: 46.54
-    time: 728.34
-  - rank: 7
-    username: Blimb
-    points: 2298.54
-    time: 113.34
-  - rank: 8
-    username: Jgesn
-    points: 26.54
-    time: 78.34
-  - rank: 9
-    username: Jasda
-    points: 12.54
-    time: 0.34
-  - rank: 10
-    username: Derf
-    points: 466.54
-    time: 78.34
-  - rank: 11
-    username: Cica
-    points: 1298.54
-    time: 123.34
-  - rank: 12
-    username: Vincan
-    points: 466.54
-    time: 78.34
-  - rank: 13
-    username: Blue-Palms
-    points: 1298.54
-    time: 123.34
-  - rank: 14
-    username: Gingerboy
-    points: 42266.54
-    time: 78.34
+  sc: []
 --- !u!1 &934600447
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,18 +23,28 @@ public class SQLiteDataBase : IDataBase
         _db.Dispose();
     }
 
-    public void Insert<T>(T data)
+    public void Insert(PlayerModel data)
     {
        _db.Insert(data);
     }
 
-    public void Update<T>(T data)
+    public void Update(PlayerModel data)
     {
         _db.Update(data);
     }
 
-    public void Delete<T>(T data)
+    public int GetTotalPlayers()
     {
-        
+        return _db.ExecuteScalar<int>("SELECT COUNT(*) FROM Players");
+    }
+
+    public PlayerModel GetPlayerById(int id)
+    {
+        return _db.Find<PlayerModel>(id);
+    }
+
+    public PlayerModel GetPlayerByName(string name)
+    {
+        return _db.Find<PlayerModel>(p => p.Name == name);
     }
 }
