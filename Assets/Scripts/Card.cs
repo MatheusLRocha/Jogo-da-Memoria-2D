@@ -91,11 +91,14 @@ public class Card : MonoBehaviour
         else
         {
             RevealCard();
+
             float waitForHide = scene == 2 ? 1.27f : 3.25f;
+
             DOVirtual.DelayedCall(waitForHide, () => {
                 HideCard();
+
                 anim.SetBool("isDismatched", false);
-                });
+            }).SetTarget(this);
         }
     }
 
@@ -167,13 +170,20 @@ public class Card : MonoBehaviour
         float waitForOpen = scene == 2 ? 1.15f : 1.35f;
         float waitForStart = scene == 2 ? 6.05f : 11.25f;
         DOTween.SetTweensCapacity(200, 150);
+
         DOVirtual.DelayedCall(waitForOpen, () => 
         {
             spriteRenderer.sprite = actualSprite;
-        });
+        }).SetTarget(this);
+
         DOVirtual.DelayedCall(waitForStart, () =>
         {
             spriteRenderer.sprite = backupOldSprite;
-        });
+        }).SetTarget(this);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this);
     }
 }

@@ -1,4 +1,6 @@
+using Mono.Cecil.Cil;
 using UnityEngine;
+using System;
 
 public class CompetitiveManager : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class CompetitiveManager : MonoBehaviour
 
     private string _username;
 
+    private float _oldPoints;
+
+    private PlayerModel player;
+
     private SQLiteDataBase _db;
 
     void Awake()
@@ -15,23 +21,30 @@ public class CompetitiveManager : MonoBehaviour
         _username = PlayerPrefs.GetString("Username");
 
         _db = new SQLiteDataBase();
-
-        _db.Connect();
     }
 
     void Start()
     {
-        var player = new PlayerModel
+        player = new PlayerModel
         {
             Name = _username,
-            Points = _pointsManager.GetPoints(),
-            Time = _timerManager.GetTime(),
+            Points = (decimal)_pointsManager.GetPoints(),
+            Time = (decimal)_timerManager.GetTime(),
         };
 
         _db.Insert(player);
+    }
 
-        Debug.Log(player.Name);
-        Debug.Log(player.Points);
-        Debug.Log(player.Time);
+    void Update()
+    {
+        if (_pointsManager.GetPoints() > _oldPoints)
+        {
+            player.Points =  Math.Round((decimal)_pointsManager.GetPoints(), 2);
+            player.Time = Math.Round((decimal)_timerManager.GetTime(), 2);
+
+            _db.Update(player);
+        }
+
+        _oldPoints = _pointsManager.GetPoints();
     }
 }
