@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private int currentIndex;
 
     private bool youCanMoveNow = false;
+    private bool isSelectionPending = false;
 
     private int UP = -4;
     private int DOWN = 4;
@@ -28,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
         currentIndex = 0;
         scene = SceneManager.GetActiveScene().buildIndex;
         
-        StartShowing();
         ChangeCardScale(1.5f, 1.5f, -1f);
+        StartShowing();
     }
 
     void Update()
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input.Confirm())
         {
+            isSelectionPending = true;
             Card card = playerControl.cards[currentIndex].GetComponent<Card>();
             card.ChangeAnimation(Card.CardState.Selected);
 
@@ -85,6 +87,19 @@ public class PlayerMovement : MonoBehaviour
             ChangeCardScale(1.3f, 1.3f, 0f);
             
             HandleCardMovement(RIGHT);
+
+            DOVirtual.DelayedCall(0.2f, () =>
+            {
+                isSelectionPending = false;
+
+                Card currentCard = playerControl.cards[currentIndex].GetComponent<Card>();
+
+                if (currentCard.cardState != Card.CardState.Matched && currentCard.cardState != Card.CardState.Dismatched)
+                {
+                    currentCard.ChangeAnimation(Card.CardState.Idle);
+                }
+            });
+
             StopMovimentation();
         }
     }
@@ -94,7 +109,10 @@ public class PlayerMovement : MonoBehaviour
         if (!IsMatchedCards())
         {
             ChangeCardScale(1.3f, 1.3f, 0);
-            ChangeCardStateToIdle();
+            if (!isSelectionPending)
+            {
+                ChangeCardStateToIdle();
+            }
             MoveToNextCard(direction);
         }
 
@@ -161,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartShowing()
     {
-        float waitTime = scene == 2 ? 5.5f : 10.5f;
+        float waitTime = scene == 2 ? 6.0f : 11.0f;
         DOVirtual.DelayedCall(waitTime, () => youCanMoveNow = true);
     }
 

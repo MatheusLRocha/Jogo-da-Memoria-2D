@@ -57,11 +57,13 @@ public class Card : MonoBehaviour
         // Captura o SpriteRenderer e salva o sprite original do prefab o mais cedo possível
         spriteRenderer = GetComponent<SpriteRenderer>();
         backupOldSprite = spriteRenderer.sprite;
+        anim = GetComponent<Animator>();
     }
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        if (anim == null)
+            anim = GetComponent<Animator>();
         scene = SceneManager.GetActiveScene().buildIndex;
         if (scene ==2)
             anim.SetBool("IsComp",true);

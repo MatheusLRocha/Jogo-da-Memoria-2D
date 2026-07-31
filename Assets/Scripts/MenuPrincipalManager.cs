@@ -92,9 +92,11 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         mainMenuPanel.SetActive(false);
         scorePanel.SetActive(true);
+        animScore.SetBool("Closer", false);
     }
     public void CloseScore()
     {
+        animScore.SetBool("Closer", true);
         StartCoroutine(CloseAnimationPanelMode(animScore, scorePanel));
     }
     public void OpenTutorial()
