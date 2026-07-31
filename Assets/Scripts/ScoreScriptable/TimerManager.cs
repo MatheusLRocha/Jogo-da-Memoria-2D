@@ -4,20 +4,20 @@ using System.Collections;
 using UnityEngine.UIElements;
 public class TimerManager : MonoBehaviour
 {
-    [SerializeField] public TextMeshProUGUI _timerText;
+    private float _time;
 
-    public float _time;
+    private float _maxTime = 50.0f;
 
     void Update()
     {
         _time = Time.timeSinceLevelLoad;
-        DisplayTime(_time);
+
+        TimeHasExpired(_time);
     }
 
-    private void DisplayTime(float timeToDisplay)
+    private void TimeHasExpired(float time)
     {
-        _timerText.text = string.Format("{0:F2}", timeToDisplay);
-        if (timeToDisplay >= 150.0f)
+        if (time >= _maxTime)
             Debug.Log("Demorou muito!");
     }
 

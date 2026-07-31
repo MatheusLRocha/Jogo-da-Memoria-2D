@@ -1416,7 +1416,7 @@ MonoBehaviour:
   - {fileID: 1615078867}
   - {fileID: 1651163419}
   - {fileID: 469902126}
-  pai: {fileID: 543077096}
+  parent: {fileID: 0}
   CardPrefab: {fileID: 3925345478453370164, guid: cb0ed8eef42f591cea8ba5ebb7bd473e, type: 3}
   cards:
   - {fileID: 0}
@@ -2262,6 +2262,7 @@ GameObject:
   - component: {fileID: 885325790}
   - component: {fileID: 885325792}
   - component: {fileID: 885325791}
+  - component: {fileID: 885325793}
   m_Layer: 0
   m_Name: TimerImage
   m_TagString: Untagged
@@ -2326,6 +2327,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885325789}
   m_CullTransparentMesh: 0
+--- !u!114 &885325793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885325789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fbb09403e503145bffed576082cab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimerUIManager
+  _timerText: {fileID: 1560674273}
+  _timerManager: {fileID: 1962417062}
 --- !u!1 &935758538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3056,7 @@ MonoBehaviour:
   - {fileID: 1578812272}
   - {fileID: 1820814519}
   - {fileID: 305650254}
-  pai: {fileID: 1221912258}
+  parent: {fileID: 0}
   CardPrefab: {fileID: 6357209652806761062, guid: 21ec52c30cb52c1458f77264be5d4ecf, type: 3}
   cards:
   - {fileID: 0}
@@ -4937,8 +4952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21f666c17d3ba549acab61a9e15e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompManager
-  _timerText: {fileID: 1560674273}
-  _time: 0
 --- !u!1 &2065908220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,7 +5096,7 @@ MonoBehaviour:
   finaleActivator: 0
   changer: 1
   Points: {fileID: 0}
-  _timer: {fileID: 0}
+  _timerManager: {fileID: 1962417062}
   finalScreen: {fileID: 0}
   failureScreen: {fileID: 0}
 --- !u!1 &2084527094
