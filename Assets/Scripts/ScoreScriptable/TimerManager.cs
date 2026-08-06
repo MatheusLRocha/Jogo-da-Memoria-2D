@@ -6,7 +6,7 @@ public class TimerManager : MonoBehaviour
 {
     private float _time;
 
-    private float _maxTime = 50.0f;
+    private float _maxTime = 150.0f;
 
     void Update()
     {
