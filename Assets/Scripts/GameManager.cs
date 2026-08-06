@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public PointsManager pointsManager;
     [SerializeField] public TimerManager timeManager;
-
     private int scene;
+    public int finaleActivator;
 
     void Awake()
     {
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
         if (IsMatchedCards())
             HandleMatchedCards();
+            
         else
             HandleDismatchedCards();
     }
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
         return cardPlayer1.cardType == cardPlayer2.cardType;
     }
 
-    private void HandleMatchedCards()
+    public void HandleMatchedCards()
     {
         SetMatchedCardTypes();
 
@@ -68,9 +69,10 @@ public class GameManager : MonoBehaviour
 
         cardPlayer1.Match();
         cardPlayer2.Match();
+        finaleActivator++;
 
         HandleWindowCard();
-
+        
         ClearCards();
     }
 
@@ -88,7 +90,7 @@ public class GameManager : MonoBehaviour
         if (scene != 2)
             WindowManager.instance.matchedTypeNumber = (int)cardPlayer1.cardType;
     }
-
+    
     private void ClearCards()
     {
         cardPlayer1 = null;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (youCanMoveNow)
+            if (WindowManagerScore.instance.isWindowActive == false &&youCanMoveNow)
             {
                 HandlePlayerMovement();
                 HandlePlayerSelectionCard();
@@ -83,21 +84,25 @@ public class PlayerMovement : MonoBehaviour
 
             // Acessa o script do GameManager com o ID do jogador e a carta que foi selecionada por ele
             GameManager.instance.VerifyCardTypes(playerID, playerControl.cards[currentIndex].GetComponent<Card>());
-
+            
             ChangeCardScale(1.3f, 1.3f, 0f);
             
-            HandleCardMovement(RIGHT);
+            if (GameManager.instance.finaleActivator != 13)
+                HandleCardMovement(RIGHT);
 
-            DOVirtual.DelayedCall(0.2f, () =>
-            {
-                isSelectionPending = false;
-
-                Card currentCard = playerControl.cards[currentIndex].GetComponent<Card>();
-
-                if (currentCard.cardState != Card.CardState.Matched && currentCard.cardState != Card.CardState.Dismatched)
+                DOVirtual.DelayedCall(0.2f, () =>
                 {
-                    currentCard.ChangeAnimation(Card.CardState.Idle);
-                }
+                    isSelectionPending = false;
+
+                    Card currentCard = playerControl.cards[currentIndex].GetComponent<Card>();
+
+                    if (currentCard.cardState != Card.CardState.Matched && currentCard.cardState != Card.CardState.Dismatched)
+                    {
+                        currentCard.ChangeAnimation(Card.CardState.Idle);
+                    }
+            else 
+                Debug.Log("Acabou");
+                return;
             });
 
             StopMovimentation();
@@ -133,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         {
             newIndex = playerControl.cards.Count - 1;
         }
-    
+
         currentIndex = newIndex;
     }
 
@@ -145,8 +150,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Transform cardTransform = playerControl.cards[currentIndex].transform;
-        cardTransform.localScale = new UnityEngine.Vector3(x, y, 0.0f);
-        cardTransform.localPosition = new UnityEngine.Vector3(cardTransform.localPosition.x, cardTransform.localPosition.y, displacement);
+        cardTransform.localScale = new Vector3(x, y, 0.0f);
+        cardTransform.localPosition = new Vector3(cardTransform.localPosition.x, cardTransform.localPosition.y, displacement);
     }
 
     private void ChangeCardStateToIdle()
@@ -172,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsMatchedCards()
+    public bool IsMatchedCards()
     {
         return playerControl.cards[currentIndex].GetComponent<Card>().cardState == Card.CardState.Matched;
     }
