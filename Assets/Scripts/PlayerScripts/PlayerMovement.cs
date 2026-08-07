@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System.Diagnostics;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -98,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                         currentCard.ChangeAnimation(Card.CardState.Idle);
                     }
             else 
-                Debug.Log("Acabou");
+                UnityEngine.Debug.Log("Acabou");
                 return;
             });
 
@@ -159,8 +160,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FindNextDismatchedCard(int direction)
     {
+        int tryCount = 0;
         while (IsMatchedCards())
         {
+            tryCount ++;
             currentIndex += direction;
 
             if (currentIndex > playerControl.cards.Count - 1)
@@ -171,6 +174,50 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentIndex = playerControl.cards.Count - 1;
             }
+            else if (tryCount > 4 && (direction == UP || direction == DOWN))
+            {
+                if (direction == UP)
+                {   
+                    currentIndex = 0;
+
+                    for (int i = 13; i > -1; i--)
+                    {
+                        currentIndex --;
+
+                        if (currentIndex > playerControl.cards.Count - 1)
+                        {
+                            currentIndex = 0;
+                        }
+                        else if (currentIndex < 0)
+                        {
+                            currentIndex = playerControl.cards.Count - 1;
+                        }
+                        if (!IsMatchedCards())
+                            break;
+                    }
+                }
+                else if (direction == DOWN)
+                {
+                    currentIndex = 0;
+
+                    for (int i = 13; i > -1; i--)
+                    {
+                        currentIndex ++;
+
+                        if (currentIndex > playerControl.cards.Count - 1)
+                        {
+                            currentIndex = 0;
+                        }
+                        else if (currentIndex < 0)
+                        {
+                            currentIndex = playerControl.cards.Count - 1;
+                        }
+                        if (!IsMatchedCards())
+                            break;
+                    }
+                }
+            }
+
         }
     }
 
