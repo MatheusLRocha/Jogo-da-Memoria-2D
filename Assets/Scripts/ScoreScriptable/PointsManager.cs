@@ -9,28 +9,28 @@ public class PointsManager : MonoBehaviour
         switch (time)
         {
             case <= 15.0f:
-                SetPoints(550f - time);
-                break;
-            case <= 30.0f:
-                SetPoints(650f - time);
-                break;
-            case <= 45.0f:
                 SetPoints(700f - time);
                 break;
-            case <= 60.0f:
+            case <= 30.0f:
                 SetPoints(600f - time);
                 break;
-            case <= 75.0f:
+            case <= 45.0f:
                 SetPoints(550f - time);
                 break;
+            case <= 60.0f:
+                SetPoints(450f - time);
+                break;
+            case <= 75.0f:
+                SetPoints(300f - time);
+                break;
             case <= 90.0f:
-                SetPoints(480f - time);
+                SetPoints(275f - time);
                 break;
             case <= 105.0f:
-                SetPoints(400f - time);
+                SetPoints(200f - time);
                 break;
             default:
-                SetPoints(340f - time);
+                SetPoints(175f - time);
                 break;
         }
     }
