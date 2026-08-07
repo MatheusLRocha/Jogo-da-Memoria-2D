@@ -13,7 +13,7 @@ public class CompetitiveManager : MonoBehaviour
 
     public PlayerModel player;
 
-    private SQLiteDataBase _db;
+    public SQLiteDataBase _db;
 
     void Awake()
     {
