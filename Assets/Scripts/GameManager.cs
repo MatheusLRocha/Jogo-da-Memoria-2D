@@ -1,8 +1,5 @@
 using UnityEngine;
-using TMPro;
-using System.Collections;
 using DG.Tweening;
-using System.IO;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -37,7 +34,7 @@ public class GameManager : MonoBehaviour
 
         if (IsMatchedCards())
             HandleMatchedCards();
-            
+
         else
             HandleDismatchedCards();
     }

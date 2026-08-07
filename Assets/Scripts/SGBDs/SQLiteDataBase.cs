@@ -25,7 +25,7 @@ public class SQLiteDataBase : IDataBase
 
     public void Insert(PlayerModel data)
     {
-       _db.Insert(data);
+        _db.Insert(data);
     }
 
     public void Update(PlayerModel data)

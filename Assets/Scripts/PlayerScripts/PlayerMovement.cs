@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
-using Unity.VisualScripting;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -154,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         cardTransform.localPosition = new Vector3(cardTransform.localPosition.x, cardTransform.localPosition.y, displacement);
     }
 
-    private void ChangeCardStateToIdle()
+    public void ChangeCardStateToIdle()
     {
         Card card = playerControl.cards[currentIndex].GetComponent<Card>();
         card.ChangeAnimation(Card.CardState.Idle);
