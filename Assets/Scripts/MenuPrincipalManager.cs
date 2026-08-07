@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using TMPro;
 using System.Linq;
+using System.Collections.Generic;
 public class MenuPrincipalManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuPanel;
@@ -17,11 +18,9 @@ public class MenuPrincipalManager : MonoBehaviour
     public TMP_InputField inputField;
 
     [SerializeField] private  GameObject scorePanel;
-
-    [SerializeField] private ScoreManager ScoreManager;
-
     [SerializeField] private GameObject tutorialPanel;
-
+    [SerializeField] private List<GameObject> basicTutorial;
+    [SerializeField] private GameObject cardsIndex;
     [SerializeField] private GameObject creditsPanel;
 
 
@@ -123,9 +122,36 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         animTutorial.SetBool("Faster", true);
     }
+    public void IndexOpen()
+    {
+        if (basicTutorial == null) return;
+        for (int i = 0; i < basicTutorial.Count; i++)
+        {
+            if (basicTutorial[i] != null)
+                basicTutorial[i].SetActive(false);
+        }
+        cardsIndex.SetActive(true);
+    }
+    public void IndexClose()
+    {
+        cardsIndex.SetActive(false);
+        if (basicTutorial == null) return;
+        for (int i = 0; i < basicTutorial.Count; i++)
+        {
+            if (basicTutorial[i] != null)
+                basicTutorial[i].SetActive(true);
+        }
+    }
     
     public void CloseTutorial()
     {
+        cardsIndex.SetActive(false);
+        if (basicTutorial == null) return;
+        for (int i = 0; i < basicTutorial.Count; i++)
+        {
+            if (basicTutorial[i] != null)
+                basicTutorial[i].SetActive(true);
+        }
         StartCoroutine(CloseAnimationPanelMode(animTutorial, tutorialPanel));
     }
 
