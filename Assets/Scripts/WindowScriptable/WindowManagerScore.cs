@@ -18,6 +18,7 @@ public class WindowManagerScore : MonoBehaviour{
     [SerializeField] public GameObject failureScreen;
     [SerializeField] public TextMeshProUGUI failureRankText;
     [SerializeField] public CompetitiveManager competitiveManager;
+    private SQLiteDataBase _db;
     private PlayerModel actualPlayer;
     
     void Awake()
@@ -34,20 +35,56 @@ public class WindowManagerScore : MonoBehaviour{
     void Update()
     {
         finaleActivator = gameManager.finaleActivator;
+
         if (gameManager.finaleActivator == 13)
         {
-            actualPlayer = competitiveManager.player;
+            actualPlayer = GetCurrentPlayer();
+
+            if (actualPlayer != null)
+            {
+                finalRankText.text = BuildScoreText(actualPlayer);
+            }
+
             isWindowActive = true;
             finalScreen.SetActive(true);
-            finalRankText.text = $"Você fez\n{actualPlayer.Points} pts \nem {actualPlayer.Time} segundos";
             Points.SetActive(false);
         }
         else if (_timerManager.GetTime() >= 150.0f)
         {
+            actualPlayer = GetCurrentPlayer();
+
+            if (actualPlayer != null)
+            {
+                failureRankText.text = BuildScoreText(actualPlayer);
+            }
+
             isWindowActive = true;
             failureScreen.SetActive(true);
-            failureRankText.text = $"Você fez\n{actualPlayer.Points} pontos \nem {actualPlayer.Time} segundos";
             Points.SetActive(false);
-        }   
+        }
+    }
+
+    private PlayerModel GetCurrentPlayer()
+    {
+        if (competitiveManager != null && competitiveManager.player != null)
+        {
+            return competitiveManager.player;
+        }
+
+        if (competitiveManager != null && competitiveManager._db != null)
+        {
+            string username = PlayerPrefs.GetString("Username");
+            return competitiveManager._db.GetPlayerByName(username);
+        }
+
+        return null;
+    }
+
+    private string BuildScoreText(PlayerModel player)
+    {
+        string points = player.Points.ToString("0.##");
+        string time = player.Time.ToString("0.##");
+
+        return $"Você fez\n{points} pts\nem {time} segundos";
     }
 }

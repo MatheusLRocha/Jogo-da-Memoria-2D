@@ -65,7 +65,7 @@ public class Card : MonoBehaviour
         
         scene = SceneManager.GetActiveScene().buildIndex;
         
-        if (scene ==2)
+        if (scene == 2)
             anim.SetBool("IsComp",true);
         StartShowing();
     }
@@ -90,9 +90,14 @@ public class Card : MonoBehaviour
         } 
         else
         {
-            RevealCard();
+            float waitForShow = scene == 2 ? 0.1f : 0.3f;
 
-            float waitForHide = scene == 2 ? 1.27f : 3.25f;
+            DOVirtual.DelayedCall(waitForShow, () =>
+            {
+                RevealCard();
+            });
+
+            float waitForHide = scene == 2 ? 1.27f : 2.92f;
 
             DOVirtual.DelayedCall(waitForHide, () => {
                 HideCard();
@@ -167,8 +172,8 @@ public class Card : MonoBehaviour
     // Mostra as cartas no inicio
     private void StartShowing()
     {
-        float waitForOpen = scene == 2 ? 1.15f : 1.35f;
-        float waitForStart = scene == 2 ? 6.05f : 11.25f;
+        float waitForOpen = scene == 2 ?0.9f : 1.0f;
+        float waitForStart = scene == 2 ? 5.8f : 11.0f;
         DOTween.SetTweensCapacity(200, 150);
 
         DOVirtual.DelayedCall(waitForOpen, () => 

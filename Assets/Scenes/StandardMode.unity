@@ -762,6 +762,7 @@ MonoBehaviour:
   cardPlayer2: {fileID: 0}
   pointsManager: {fileID: 0}
   timeManager: {fileID: 0}
+  finaleActivator: 0
 --- !u!4 &498600892
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +959,7 @@ MonoBehaviour:
   - {fileID: 1615078867}
   - {fileID: 1651163419}
   - {fileID: 469902126}
-  pai: {fileID: 543077096}
+  parent: {fileID: 543077096}
   CardPrefab: {fileID: 3925345478453370164, guid: cb0ed8eef42f591cea8ba5ebb7bd473e, type: 3}
   cards:
   - {fileID: 0}
@@ -2205,7 +2206,7 @@ MonoBehaviour:
   - {fileID: 1578812272}
   - {fileID: 1820814519}
   - {fileID: 305650254}
-  pai: {fileID: 1221912258}
+  parent: {fileID: 1221912258}
   CardPrefab: {fileID: 6357209652806761062, guid: 21ec52c30cb52c1458f77264be5d4ecf, type: 3}
   cards:
   - {fileID: 0}
@@ -3679,7 +3680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911565880710133119, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531048544077259067, guid: d14f52850d1067b49a29b110a426d8ff, type: 3}
       propertyPath: m_Pivot.x
