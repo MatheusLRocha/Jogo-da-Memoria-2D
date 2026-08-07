@@ -1,4 +1,3 @@
-using Mono.Cecil.Cil;
 using UnityEngine;
 using System;
 
@@ -12,7 +11,7 @@ public class CompetitiveManager : MonoBehaviour
 
     private float _oldPoints;
 
-    private PlayerModel player;
+    public PlayerModel player;
 
     private SQLiteDataBase _db;
 
@@ -49,7 +48,7 @@ public class CompetitiveManager : MonoBehaviour
         return player;
     }
 
-    private PlayerModel CreatePlayer()
+    public PlayerModel CreatePlayer()
     {
         PlayerModel player = new PlayerModel
         {

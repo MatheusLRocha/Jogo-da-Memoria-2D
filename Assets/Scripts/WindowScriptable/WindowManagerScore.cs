@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +17,8 @@ public class WindowManagerScore : MonoBehaviour{
     [SerializeField] public TextMeshProUGUI finalRankText;
     [SerializeField] public GameObject failureScreen;
     [SerializeField] public TextMeshProUGUI failureRankText;
+    [SerializeField] public CompetitiveManager competitiveManager;
+    private PlayerModel actualPlayer;
     
     void Awake()
     {
@@ -36,16 +36,17 @@ public class WindowManagerScore : MonoBehaviour{
         finaleActivator = gameManager.finaleActivator;
         if (gameManager.finaleActivator == 13)
         {
+            actualPlayer = competitiveManager.player;
             isWindowActive = true;
             finalScreen.SetActive(true);
-            //finalRankText = "Seu rank foi" + rank + tempo + pontos
+            finalRankText.text = $"Você fez\n{actualPlayer.Points} pts \nem {actualPlayer.Time} segundos";
             Points.SetActive(false);
         }
         else if (_timerManager.GetTime() >= 150.0f)
         {
             isWindowActive = true;
             failureScreen.SetActive(true);
-            //failureRankText = "Seu rank foi" + rank + tempo + pontos
+            failureRankText.text = $"Você fez\n{actualPlayer.Points} pontos \nem {actualPlayer.Time} segundos";
             Points.SetActive(false);
         }   
     }
