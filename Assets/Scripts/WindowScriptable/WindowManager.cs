@@ -34,6 +34,7 @@ public class WindowManager : MonoBehaviour{
     private bool hasIncrementedThisActivation = false; // Rastreia se já incrementou nesta ativação
 
     [SerializeField] public GameObject TelaFinal;
+    [SerializeField] public GameObject exitButton;
 
     Animator anim;
     
@@ -74,7 +75,7 @@ public class WindowManager : MonoBehaviour{
 
     
     IEnumerator WindowControl(){
-        
+        exitButton.SetActive(false);
         // Espera 0,5 segundos para mostrar a janela
         yield return new WaitForSeconds(0.5f);
 
@@ -118,7 +119,7 @@ public class WindowManager : MonoBehaviour{
         }
 
         yield return new WaitForSeconds(1.3f);
-
+        exitButton.SetActive(true);
         changer = true;
     }
 
