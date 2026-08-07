@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
             allScores.AddRange(scores);
         }
 
-        //allScores.Sort((a, b) => b.points.CompareTo(a.points));
+        allScores.Sort((a, b) => b.points.CompareTo(a.points));
         currentPage = 0;
         RenderCurrentPage();
     }
